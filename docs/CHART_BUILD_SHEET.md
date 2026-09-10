@@ -71,16 +71,20 @@ Sort descending by measure. The Philippines lands **8th of 10** — leave it the
 
 ---
 
-## ⬜ P4 — Philippines vs ASEAN median
+## ✅ P4 — Philippines vs ASEAN median
 
-**Bar/Column, orientation Horizontal** · `AGOS_PH_vs_ASEAN` *(import needed)*
+**Bar/Column, orientation Horizontal** · `AGOS_PH_vs_ASEAN`
 
 | Slot | Field |
 |---|---|
 | Measure | `Gap vs ASEAN median` |
 | Dimension | `Dimension` |
 
-Diverging around zero: negative on river flood hazard (−1.6), strongly positive on all-hazard exposure (+2.25). Two hues with a neutral grey at zero — never a hue at the midpoint.
+Renders diverging around zero, and the inversion reads in one glance:
+**all-hazard exposure +2.25** and **INFORM Risk +1.10** to the right, **river flood hazard
+−1.6** to the left, vulnerability +1.30, coping capacity −0.10.
+
+Still to polish: two hues with a neutral grey at zero — never a hue at the midpoint.
 
 ---
 
@@ -183,7 +187,7 @@ Lowest value, build last. P9 needs a small channel-reach dataset; P7 needs only 
 |---|---|
 | `AGOS_ASEAN_INFORM_2026` | ✅ imported, in story |
 | `AGOS_Olongapo_Rainfall` | ✅ imported, in story |
-| `AGOS_PH_vs_ASEAN` | ✅ imported, not yet in story |
+| `AGOS_PH_vs_ASEAN` | ✅ imported, in story |
 | `AGOS_Aeta_Isolation` | ✅ imported, not yet in story |
 | `leadtime_scenarios` · `risk_matrix` · `roadmap_phases` · `zambales_lahar_*` | ⬜ to import |
 
