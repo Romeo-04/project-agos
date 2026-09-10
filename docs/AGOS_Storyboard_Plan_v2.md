@@ -54,10 +54,31 @@ The argument in one line per act:
 1. **Flood exposure is an ASEAN condition, not a Philippine one** — six of ten member states score ≥8.0 on river flood hazard. *(This is v1's own thesis, now provable.)*
 2. **What separates outcomes is not hazard, it is coping capacity** — and that is a solvable variable.
 3. **The Philippines sits at the sharp end — but standard flood indices miss it.** 8th of 10 on *river flood* hazard (6.7), yet **1st in ASEAN on all-hazard exposure (8.3, tied with Myanmar)** and 3rd on composite INFORM Risk (5.3). Philippine flooding is compound — typhoon-driven, and in Zambales lahar-amplified — so a river-flood metric under-counts it by 1.6 points against the ASEAN median. **That measurement gap is the problem AGOS exists to close.**
-4. **Zambales/Olongapo shows the mechanism** — three floods in one month, August 2026.
+4. **Zambales shows the mechanism, and it is not just rain.** **4.7 billion m³** of Pinatubo lahar sits in the Bucao and Santo Tomas river systems. In 35 years **1.06% has been dredged**. The channels that should carry floodwater are full, so ordinary monsoon rain produces extraordinary floods — and that is invisible to every river-flood index in the world.
 5. **It was foreseeable.** PAGASA's own 30-year normals already made August Olongapo's wettest month at 865.97 mm. The data existed; the warning did not reach anyone.
 6. **Therefore: close the gap between the data that exists and the people who need it.** That is AGOS.
 7. **And the gap AGOS closes is widest exactly where coping capacity is weakest** — Myanmar, Lao PDR, Cambodia — which is the replication case.
+
+---
+
+### 2.1 Two sites, one system — read this before building
+
+The data gathered in Phase 1 makes explicit something v1 left implicit, and it must be stated on the pages or the deck will read as two unrelated stories.
+
+**AGOS has two pilot sites in Zambales, and they are different problems sharing one cause.**
+
+| | **Upstream — Bucao / Santo Tomas** | **Downstream — Olongapo City** |
+|---|---|---|
+| Towns | Botolan, San Marcelino, San Felipe, San Narciso | Olongapo City |
+| Cause | Lahar-choked channels: 4.7 bn m³ deposited, 1.06% dredged | Urban river flooding, three bridges |
+| Population at risk | 21 barangays under lahar threat; **11 Aeta communities, 2,519 families** | 11 barangays, 517→1,076 evacuated Aug 2026 |
+| Current monitoring | Essentially none | **Manual** gauge reading at three bridges |
+| AGOS component | **EYE + PULSE** — SAR lahar scanning, upstream river sensors | **PULSE + VOICE + PATH** — sensor retrofit on existing bridges |
+| Why it is the right pilot | Highest exposure, least connected, zero existing coverage | Existing infrastructure, staffed DRRMO, fastest deployment |
+
+This is a strength, not a complication: it shows one system serving a remote high-exposure population **and** a dense urban one, which is precisely the "replication" argument in miniature. v1 already implied it in §3.2 (automated Bucao/Santo Tomas sensors vs. manual Olongapo bridge readings) — v2 makes it a stated design, so a judge is never confused about which Zambales they are looking at.
+
+**Scope tags must distinguish them:** use **ZAMBALES (UPSTREAM)** and **OLONGAPO** rather than a single ZAMBALES tag.
 
 ---
 
@@ -209,6 +230,8 @@ Each page lists: scope tag · headline · SAC visual · data binding · rubric t
 - **SAC visual:** revenue-vs-cost projection over the roadmap horizon — the FUND self-funding loop made quantitative
 - **Four streams (from v1, retained):** hardware sales · platform subscription · anonymised data-insights licensing · grant/development finance
 - **The original idea worth protecting:** lahar-sand dredging revenue recycled into system operating cost, structured as a **reserve fund** (banking surplus in high-demand quarters) rather than pass-through. This is the most original element in the whole plan.
+- **The baseline that makes it credible:** **50 million m³ dredged out of 4.7 billion — 1.06% in 35 years**, with the Zambales River Restoration Program only running since 2023 and only river deltas cleared. At the current rate the backlog is permanent. That is the strongest possible argument that the constraint is *financing cadence*, not engineering, and therefore that a self-funding loop is the right intervention rather than a larger one-off budget request.
+- **Data:** `data/processed/zambales_lahar_dredging.csv`, `zambales_lahar_share.csv`
 
 ---
 
