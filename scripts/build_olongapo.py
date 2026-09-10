@@ -33,37 +33,37 @@ MONTH_ORDER = [
 AUG_2026_EVENTS = [
     {
         "Date": "2026-08-10",
-        "EventLabel": "First evacuation",
-        "Individuals": 517,
-        "Families": 165,
-        "BarangaysAffected": 11,
+        "Event": "First evacuation",
+        "Individuals evacuated": 517,
+        "Families evacuated": 165,
+        "Barangays affected": 11,
         "Scope": "Olongapo City",
         "Source": "Inquirer / GMA News, 2026-08-10",
     },
     {
         "Date": "2026-08-17",
-        "EventLabel": "Bridges reach evacuation level",
-        "Individuals": "",       # reported qualitatively, no count given
-        "Families": "",
-        "BarangaysAffected": "",
+        "Event": "Bridges reach evacuation level",
+        "Individuals evacuated": "",       # reported qualitatively, no count given
+        "Families evacuated": "",
+        "Barangays affected": "",
         "Scope": "Olongapo City",
         "Source": "Inquirer, 2026-08-17",
     },
     {
         "Date": "2026-08-18",
-        "EventLabel": "Second evacuation",
-        "Individuals": 1076,
-        "Families": 336,
-        "BarangaysAffected": "",
+        "Event": "Second evacuation",
+        "Individuals evacuated": 1076,
+        "Families evacuated": 336,
+        "Barangays affected": "",
         "Scope": "Olongapo City",
         "Source": "Inquirer, 2026-08-18",
     },
     {
         "Date": "2026-08-28",
-        "EventLabel": "Flooding and soil erosion; roads impassable",
-        "Individuals": "",
-        "Families": "",
-        "BarangaysAffected": "",
+        "Event": "Flooding and soil erosion; roads impassable",
+        "Individuals evacuated": "",
+        "Families evacuated": "",
+        "Barangays affected": "",
         "Scope": "Olongapo City",
         "Source": "Inquirer, 2026-08-28/29",
     },
@@ -93,52 +93,55 @@ def main() -> None:
             {
                 "MonthNumber": MONTH_ORDER.index(month) + 1,
                 "Month": month,
-                "MonthShort": month[:3],
-                "RainfallMm": float(r["Rainfall"]),
-                "MeanTempC": float(r["MeanTemp"]),
+                "Month short": month[:3],
+                "Rainfall (mm)": float(r["Rainfall"]),
+                "Mean temperature (C)": float(r["MeanTemp"]),
                 "Municipality": r["Municipality"].strip(),
                 "Province": r["Province"].strip(),
             }
         )
     rows.sort(key=lambda r: r["MonthNumber"])
 
-    wettest = max(rows, key=lambda r: r["RainfallMm"])
-    annual = sum(r["RainfallMm"] for r in rows)
+    wettest = max(rows, key=lambda r: r["Rainfall (mm)"])
+    annual = sum(r["Rainfall (mm)"] for r in rows)
 
     # Flags SAC uses for conditional highlighting on P6, so the emphasis is
     # driven by the data rather than by hand-picking a bar in the chart editor.
     for r in rows:
-        r["IsWettestMonth"] = "Yes" if r["Month"] == wettest["Month"] else "No"
-        r["ShareOfAnnualPct"] = round(r["RainfallMm"] / annual * 100, 1)
+        r["Wettest month"] = "Yes" if r["Month"] == wettest["Month"] else "No"
+        r["Share of annual rainfall (%)"] = round(
+            r["Rainfall (mm)"] / annual * 100, 1
+        )
 
     write_csv(
         PROC / "olongapo_rainfall_normals.csv",
-        ["MonthNumber", "Month", "MonthShort", "RainfallMm", "MeanTempC",
-         "ShareOfAnnualPct", "IsWettestMonth", "Municipality", "Province"],
+        ["MonthNumber", "Month", "Month short", "Rainfall (mm)",
+         "Mean temperature (C)", "Share of annual rainfall (%)",
+         "Wettest month", "Municipality", "Province"],
         rows,
     )
 
     write_csv(
         PROC / "olongapo_aug2026_events.csv",
-        ["Date", "EventLabel", "Individuals", "Families",
-         "BarangaysAffected", "Scope", "Source"],
+        ["Date", "Event", "Individuals evacuated", "Families evacuated",
+         "Barangays affected", "Scope", "Source"],
         AUG_2026_EVENTS,
     )
 
     # ---- console summary, for the citation register --------------------------
-    runner_up = sorted(rows, key=lambda r: -r["RainfallMm"])[1]
+    runner_up = sorted(rows, key=lambda r: -r["Rainfall (mm)"])[1]
     jja_son = [r for r in rows if r["Month"] in ("June", "July", "August", "September")]
     print("\n  Findings for SOURCES.md:")
-    print(f"    Wettest month: {wettest['Month']} at {wettest['RainfallMm']} mm")
+    print(f"    Wettest month: {wettest['Month']} at {wettest['Rainfall (mm)']} mm")
     print(
         f"    Margin over {runner_up['Month']}: "
-        f"{round(wettest['RainfallMm'] - runner_up['RainfallMm'], 2)} mm"
+        f"{round(wettest['Rainfall (mm)'] - runner_up['Rainfall (mm)'], 2)} mm"
     )
-    print(f"    August share of annual rainfall: {wettest['ShareOfAnnualPct']}%")
+    print(f"    August share of annual rainfall: {wettest['Share of annual rainfall (%)']}%")
     print(f"    Annual total (normals): {round(annual, 2)} mm")
     print(
         "    Jun-Sep share of annual: "
-        f"{round(sum(r['RainfallMm'] for r in jja_son) / annual * 100, 1)}%"
+        f"{round(sum(r['Rainfall (mm)'] for r in jja_son) / annual * 100, 1)}%"
     )
 
 

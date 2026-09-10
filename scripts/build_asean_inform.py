@@ -38,13 +38,23 @@ ASEAN = {
     "VNM": "Viet Nam",
 }
 
-# INFORM indicator -> the column name used in the storyboard
+# INFORM indicator -> the column name used in the storyboard.
+#
+# These names are DELIBERATELY presentation-ready, not analysis-shorthand.
+# SAC uses the column name verbatim as the axis title, so naming them here
+# sets every axis label across all 13 charts in one place, reproducibly,
+# instead of hand-editing labels in the SAC UI chart by chart.
+#
+# The "higher = weaker" suffix on coping capacity is not decoration: the
+# indicator is scored so that a HIGHER number is WORSE, and without the
+# suffix the P3 scatter reads backwards to anyone who has not read the
+# INFORM methodology.
 INDICATORS = {
-    "HA.NAT.FL": "FloodHazard",       # river flood hazard & exposure, 0-10
-    "HA": "HazardExposure",           # overall Hazard & Exposure dimension
-    "VU": "Vulnerability",            # Vulnerability dimension
-    "CC": "LackOfCopingCapacity",     # Lack of Coping Capacity dimension
-    "INFORM": "InformRisk",           # composite INFORM Risk score
+    "HA.NAT.FL": "River flood hazard (0-10)",
+    "HA": "Hazard & exposure, all hazards (0-10)",
+    "VU": "Vulnerability (0-10)",
+    "CC": "Lack of coping capacity (higher = weaker)",
+    "INFORM": "INFORM Risk score (0-10)",
 }
 
 
@@ -94,8 +104,10 @@ def main() -> None:
     # ---- P3 / P15: full multi-dimensional table, plus the quadrant flag -------
     # Quadrant lines are the ASEAN medians, so the split is defined by the region
     # itself rather than by an arbitrary threshold.
-    med_flood = statistics.median(scores[i]["FloodHazard"] for i in ASEAN)
-    med_cc = statistics.median(scores[i]["LackOfCopingCapacity"] for i in ASEAN)
+    FLOOD = INDICATORS["HA.NAT.FL"]
+    CC = INDICATORS["CC"]
+    med_flood = statistics.median(scores[i][FLOOD] for i in ASEAN)
+    med_cc = statistics.median(scores[i][CC] for i in ASEAN)
     print(f"  ASEAN medians -> FloodHazard {med_flood}, LackOfCopingCapacity {med_cc}")
 
     multidim = []
@@ -104,8 +116,8 @@ def main() -> None:
         row.update({c: scores[iso3][c] for c in cols})
         # Note on direction: LackOfCopingCapacity is scored so that HIGHER means
         # WORSE. "Weak capacity" is therefore >= the median, not <=.
-        high_hazard = row["FloodHazard"] >= med_flood
-        weak_capacity = row["LackOfCopingCapacity"] >= med_cc
+        high_hazard = row[FLOOD] >= med_flood
+        weak_capacity = row[CC] >= med_cc
         row["Quadrant"] = (
             "High flood hazard / Weak capacity" if high_hazard and weak_capacity
             else "High flood hazard / Stronger capacity" if high_hazard
@@ -114,43 +126,35 @@ def main() -> None:
         )
         # Carried on every row so SAC can draw the quadrant lines straight from
         # the dataset rather than from a hardcoded value in the chart definition.
-        row["MedianFloodHazard"] = med_flood
-        row["MedianLackOfCopingCapacity"] = med_cc
+        row["Median river flood hazard"] = med_flood
+        row["Median lack of coping capacity"] = med_cc
         multidim.append(row)
 
-    multidim.sort(key=lambda r: -r["FloodHazard"])
+    multidim.sort(key=lambda r: -r[FLOOD])
     write_csv(
         PROC / "asean_inform_multidim_2026.csv",
         ["Country", "ISO3"] + cols
-        + ["Quadrant", "MedianFloodHazard", "MedianLackOfCopingCapacity"],
+        + ["Quadrant", "Median river flood hazard", "Median lack of coping capacity"],
         multidim,
     )
 
     # ---- P2: single-measure flood hazard bar chart ---------------------------
     write_csv(
         PROC / "asean_flood_inform2026.csv",
-        ["Country", "ISO3", "FloodHazard", "SevereThreshold"],
+        ["Country", "ISO3", FLOOD, "Severe threshold"],
         [
             {
                 "Country": r["Country"],
                 "ISO3": r["ISO3"],
-                "FloodHazard": r["FloodHazard"],
+                FLOOD: r[FLOOD],
                 # 8.0 = the "severe" reference line drawn on P2
-                "SevereThreshold": 8.0,
+                "Severe threshold": 8.0,
             }
             for r in multidim
         ],
     )
 
     # ---- P4: Philippines against the ASEAN median, by dimension --------------
-    # Readable axis labels; the raw indicator names are not presentation-grade.
-    LABELS = {
-        "FloodHazard": "River flood hazard",
-        "HazardExposure": "Hazard & exposure (all hazards)",
-        "Vulnerability": "Vulnerability",
-        "LackOfCopingCapacity": "Lack of coping capacity",
-        "InformRisk": "INFORM Risk (composite)",
-    }
     ph_rows = []
     for column in cols:
         median = round(statistics.median(scores[i][column] for i in ASEAN), 2)
@@ -160,30 +164,31 @@ def main() -> None:
         ).index(ph) + 1
         ph_rows.append(
             {
-                "Dimension": LABELS[column],
+                "Dimension": column,
                 "Philippines": ph,
-                "ASEANMedian": median,
-                "GapVsMedian": round(ph - median, 2),
-                "PhilippinesRank": rank,
+                "ASEAN median": median,
+                "Gap vs ASEAN median": round(ph - median, 2),
+                "Philippines rank": rank,
             }
         )
     write_csv(
         PROC / "ph_vs_asean_dimensions.csv",
-        ["Dimension", "Philippines", "ASEANMedian", "GapVsMedian", "PhilippinesRank"],
+        ["Dimension", "Philippines", "ASEAN median",
+         "Gap vs ASEAN median", "Philippines rank"],
         ph_rows,
     )
 
     # ---- console summary, for the citation register --------------------------
     print("\n  Findings for SOURCES.md:")
-    ranked = sorted(multidim, key=lambda r: -r["FloodHazard"])
+    ranked = sorted(multidim, key=lambda r: -r[FLOOD])
     ph_rank = [r["ISO3"] for r in ranked].index("PHL") + 1
-    severe = [r["Country"] for r in ranked if r["FloodHazard"] >= 8.0]
+    severe = [r["Country"] for r in ranked if r[FLOOD] >= 8.0]
     print(f"    Philippines river flood hazard rank: {ph_rank} of {len(ranked)}")
     print(f"    States at or above 8.0: {len(severe)} -> {', '.join(severe)}")
-    worst_cc = sorted(multidim, key=lambda r: -r["LackOfCopingCapacity"])[:3]
+    worst_cc = sorted(multidim, key=lambda r: -r[CC])[:3]
     print(
         "    Weakest coping capacity: "
-        + ", ".join(f"{r['Country']} {r['LackOfCopingCapacity']}" for r in worst_cc)
+        + ", ".join(f"{r['Country']} {r[CC]}" for r in worst_cc)
     )
 
 

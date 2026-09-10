@@ -1,4 +1,4 @@
-AssumptionId,Page,Assumption,Status,Basis
+Assumption,Page,Detail,Status,Basis
 A1,P10,"Olongapo evacuation, 18 Aug 2026: 1,076 individuals / 336 families",SOURCED,SOURCES.md S6
 A2,P10,Current warning is reactive: alert issued when river reaches evacuation level at the bridge,SOURCED,"Reported practice, SOURCES.md S5-S7"
 A3,P10,AGOS lead time of 2 hours from upstream sensor threshold to downstream evacuation level,ESTIMATE,Team to validate against Bucao-to-Olongapo channel travel time

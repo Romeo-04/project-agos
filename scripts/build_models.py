@@ -116,13 +116,15 @@ def write_csv(path: Path, fieldnames: list, rows: list) -> None:
 def main() -> None:
     write_csv(
         PROC / "model_assumptions.csv",
-        ["AssumptionId", "Page", "Assumption", "Status", "Basis"],
+        ["Assumption", "Page", "Detail", "Status", "Basis"],
         ASSUMPTIONS,
     )
 
     write_csv(
         PROC / "leadtime_scenarios.csv",
-        ["MinutesFromFirstAlert", "ReactiveWarningPct", "AgosLeadTimePct"],
+        ["Minutes from first alert",
+         "Current reactive warning (% evacuated)",
+         "With AGOS lead time (% evacuated)"],
         LEADTIME,
     )
 
@@ -132,15 +134,15 @@ def main() -> None:
     ]
     write_csv(
         PROC / "risk_matrix.csv",
-        ["RiskId", "Component", "Risk", "Likelihood1to5", "Impact1to5",
-         "RiskScore", "Mitigation"],
+        ["RiskId", "Component", "Risk", "Likelihood (1-5)", "Impact (1-5)",
+         "Risk score", "Mitigation"],
         risk_rows,
     )
 
     write_csv(
         PROC / "roadmap_phases.csv",
-        ["Phase", "PhaseName", "StartMonth", "EndMonth", "Step", "Action",
-         "KpiName", "KpiBaseline", "KpiTarget"],
+        ["Phase", "Phase name", "Start month", "End month", "Step", "Action",
+         "KPI", "KPI baseline", "KPI target"],
         ROADMAP,
     )
 

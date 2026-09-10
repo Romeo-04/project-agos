@@ -1,4 +1,4 @@
-Country,ISO3,FloodHazard,SevereThreshold
+Country,ISO3,River flood hazard (0-10),Severe threshold
 Viet Nam,VNM,9.9,8.0
 Thailand,THA,9.8,8.0
 Myanmar,MMR,8.8,8.0

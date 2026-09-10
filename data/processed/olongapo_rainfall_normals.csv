@@ -1,4 +1,4 @@
-MonthNumber,Month,MonthShort,RainfallMm,MeanTempC,ShareOfAnnualPct,IsWettestMonth,Municipality,Province
+MonthNumber,Month,Month short,Rainfall (mm),Mean temperature (C),Share of annual rainfall (%),Wettest month,Municipality,Province
 1,January,Jan,5.64,26.39,0.2,No,Olongapo City,Zambales
 2,February,Feb,6.49,26.96,0.2,No,Olongapo City,Zambales
 3,March,Mar,14.34,28.17,0.4,No,Olongapo City,Zambales

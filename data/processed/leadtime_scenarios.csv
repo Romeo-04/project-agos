@@ -1,4 +1,4 @@
-MinutesFromFirstAlert,ReactiveWarningPct,AgosLeadTimePct
+Minutes from first alert,Current reactive warning (% evacuated),With AGOS lead time (% evacuated)
 0,0,0
 15,3,18
 30,9,41

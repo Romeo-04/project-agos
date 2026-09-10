@@ -1,6 +1,6 @@
-Dimension,Philippines,ASEANMedian,GapVsMedian,PhilippinesRank
-River flood hazard,6.7,8.3,-1.6,8
-Hazard & exposure (all hazards),8.3,6.05,2.25,1
-Vulnerability,4.7,3.4,1.3,3
-Lack of coping capacity,3.8,3.9,-0.1,7
-INFORM Risk (composite),5.3,4.2,1.1,3
+Dimension,Philippines,ASEAN median,Gap vs ASEAN median,Philippines rank
+River flood hazard (0-10),6.7,8.3,-1.6,8
+"Hazard & exposure, all hazards (0-10)",8.3,6.05,2.25,1
+Vulnerability (0-10),4.7,3.4,1.3,3
+Lack of coping capacity (higher = weaker),3.8,3.9,-0.1,7
+INFORM Risk score (0-10),5.3,4.2,1.1,3
