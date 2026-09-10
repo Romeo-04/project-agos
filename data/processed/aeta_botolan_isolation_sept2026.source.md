@@ -24,6 +24,15 @@
 **Human cost:** a father and his 5-year-old daughter drowned earlier that week when their cart
 was swept away by river currents while travelling to Barangay Palis.
 
+## `Communities` column
+
+Every row carries `Communities = 1`, so summing it gives a count of communities. The dataset
+is otherwise entirely text, and SAC's Dimension-to-Measure conversion returns empty values for
+non-numeric members — so without this column the 9-vs-2 split cannot be charted at all.
+
+Summing by `Access method during cutoff` gives **Helicopter airlift 9, Carabao-drawn cart 2**,
+which matches the source exactly.
+
 ## Data note — read before charting
 
 `DistanceFromTownProperKm` is recorded as **27.5 for every row**: the source gives a single
