@@ -207,6 +207,34 @@ re-headered dataset remains attached.
 
 ---
 
+## P6 — BUILT, one open issue
+
+**Chart:** Bar/Column (horizontal) · **Dataset:** `AGOS_Olongapo_Rainfall`
+
+| Slot | Field |
+|---|---|
+| Measure | `Rainfall (mm)` |
+| Dimension | `Month` |
+| Colour | `Wettest month` |
+
+Renders all 12 months with data labels on, and the **August bar is highlighted automatically**
+because `Wettest month = Yes` drives the colour. That part works exactly as designed — the
+emphasis is data-driven, not hand-picked.
+
+### Open issue: month order
+
+SAC sorts the dimension alphabetically, which scrambles the calendar and destroys the seasonal
+curve. The fix is in the data — `Month` now reads `01 Jan` … `12 Dec`, so alphabetical *is*
+calendar order — and the **dataset has been reimported and verified to hold the new values**.
+
+**But the chart still displays the old member names.** SAC caches dimension members in the
+chart definition; a story reload does not refresh them. The remaining step is to remove and
+re-add the `Month` dimension in the Builder, which forces the chart to re-read members.
+
+Nothing is wrong with the data. This is one rebinding action away from correct.
+
+---
+
 ## Remaining build queue
 
 Pages in score order, per `EXECUTION_SEQUENCE.md`. Datasets marked ✅ are already in the tenant.
