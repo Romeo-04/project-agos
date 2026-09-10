@@ -8,6 +8,19 @@ Written to be followed click-by-click in your own browser. No prior context need
 
 ---
 
+## Datasets already in the tenant — nothing to import for the next three charts
+
+| Dataset | Use for |
+|---|---|
+| `AGOS_ASEAN_INFORM_2026` | P2 ✅, P3 ✅, **P15** |
+| `AGOS_Olongapo_Rainfall_v2` | **P8** — has the `Date` column Time Series needs |
+| `AGOS_Aeta_Isolation_v2` | **P11** — has the `Communities` count column |
+| `AGOS_PH_vs_ASEAN` | P4 ✅ |
+
+Only P10, P12, P14 and the P13 fallback still need a CSV imported (Recipe A).
+
+---
+
 ## Already done — don't rebuild these
 
 | Page | Chart | What it shows |
@@ -54,12 +67,7 @@ All four are on **Page_1** of the story. Leave them; you'll rearrange during pag
 
 ### 1. P11 — Aeta community isolation ⭐ highest value
 
-**Import first.** The CSV changed (a countable `Communities` column was added), so import it fresh under a new name.
-
-- Recipe A with `data/processed/aeta_botolan_isolation_sept2026.csv`
-- Name it **`AGOS_Aeta_Isolation_v2`**
-
-Then Recipe B:
+**Dataset is already imported** as **`AGOS_Aeta_Isolation_v2`** — skip Recipe A, go straight to Recipe B.
 
 | Setting | Value |
 |---|---|
@@ -97,13 +105,8 @@ Then annotate the weak-capacity corner: **Myanmar 5.6 · Lao PDR 5.6 · Cambodia
 
 ### 3. P8 — Rainfall forecast ⭐ this one earns the Innovation marks
 
-**Import first.** SAC's Time Series chart refuses a text dimension, and `Month` is text — so
-the CSV now carries a real ISO `Date` column. Import it fresh:
-
-- Recipe A with `data/processed/olongapo_rainfall_normals.csv`
-- Name it **`AGOS_Olongapo_Rainfall_v2`**
-
-Then Recipe B:
+**Dataset is already imported** as **`AGOS_Olongapo_Rainfall_v2`**, with a real `Date` column
+that SAC types as a date — verified. Skip Recipe A, go straight to Recipe B.
 
 | Setting | Value |
 |---|---|
