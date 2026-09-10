@@ -139,27 +139,63 @@ find on the source filename rather than caching a ref.
 
 ---
 
-## P3 — built
+## P3 — BUILT AND SAVED
 
-**Chart:** Bubble
-**Dataset:** `AGOS_P3_ASEAN_INFORM_2026`
+**Chart:** Bubble · **Dataset:** `AGOS_ASEAN_INFORM_2026` · **Size:** 960 × 560 px
 
 | Slot | Field |
 |---|---|
-| X-Axis | `FloodHazard` |
-| Y-Axis | `LackOfCopingCapacity` |
-| Size | `InformRisk` |
+| X-Axis | `River flood hazard (0-10)` |
+| Y-Axis | `Lack of coping capacity (higher = weaker)` |
+| Size | `INFORM Risk score (0-10)` |
 | Dimension | `Country` |
 | Colour | `Quadrant` |
 
-Renders all 10 ASEAN states. The legend shows **three** quadrants, not four — no ASEAN member state occupies *High flood hazard / Stronger capacity*. That is a true property of the data, not a rendering fault.
+Renders all 10 ASEAN states. Axis titles come through correctly from the column names, so
+the "higher = weaker" warning is on the chart without any UI editing — which was the whole
+point of moving labels into the data layer.
 
-### Outstanding refinements for P3
+The legend shows **three** quadrants, not four: no ASEAN member state occupies *High flood
+hazard / Stronger capacity*. True property of the data, not a rendering fault.
 
-- [ ] Title → *"Hazard and capacity are independent. Where they diverge, floods become disasters."*
-- [ ] **Y-axis label must read "Lack of coping capacity (higher = weaker)"** — without it the chart reads backwards
-- [ ] X-axis label → "River flood hazard (INFORM, 0–10)"
-- [ ] Apply the validated categorical palette; the default `sapColorfulPalette` has not been colour-validated
-- [ ] Data labels on (required — resolves the contrast WARN and ADSE's readability rule)
+Data spot-checked against source via the chart tooltip — Brunei Darussalam reads 4.70 /
+2.80 / 2.30, matching `asean_inform_multidim_2026.csv` exactly.
+
+### Still to do on P3
+
+- [ ] Replace the auto-generated title with the page headline
+- [ ] Apply the validated categorical palette (still on default `sapColorfulPalette`)
+- [ ] Turn on data labels — required by the contrast WARN *and* ADSE's readability rule
 - [ ] Source note on chart: *INFORM Risk Mid 2026, EC JRC*
 - [ ] Annotate the high-hazard / weak-capacity quadrant
+
+---
+
+## Remaining build queue
+
+Pages in score order, per `EXECUTION_SEQUENCE.md`. Datasets marked ✅ are already in the tenant.
+
+| # | Page | Chart | Dataset |
+|---|---|---|---|
+| ~~1~~ | ~~P3~~ | ~~Bubble quadrant~~ | ✅ **DONE** |
+| 2 | P6 | Column, August highlighted | ✅ `AGOS_Olongapo_Rainfall` |
+| 3 | P8 | Time series + SAC forecast | ✅ `AGOS_Olongapo_Rainfall` |
+| 4 | P2 | Horizontal bar, 10 states | ✅ `AGOS_ASEAN_INFORM_2026` |
+| 5 | P4 | Diverging bar, gap vs median | ✅ `AGOS_PH_vs_ASEAN` |
+| 6 | P11 | Access method by barangay | ✅ `AGOS_Aeta_Isolation` |
+| 7 | P15 | Quadrant + deployment priority | ✅ `AGOS_ASEAN_INFORM_2026` |
+| 8 | P10 | Lead-time scenarios | ⬜ import `leadtime_scenarios.csv` |
+| 9 | P13 | Revenue vs cost | ⬜ **blocked on pricing inputs** |
+| 10 | P12 | Risk heat map | ⬜ import `risk_matrix.csv` |
+| 11 | P14 | Roadmap timeline | ⬜ import `roadmap_phases.csv` |
+| 12 | P9 | Alert reach by channel | ⬜ |
+| 13 | P7 | Architecture data tile | ⬜ |
+
+**Pace observed:** roughly 12–15 tool calls per chart once the dataset is in, plus about 9
+per dataset import. The first chart cost far more because of the UI discovery recorded above;
+that cost is now paid and does not recur.
+
+### Page creation
+
+`+` next to the page tab → **Add Canvas Page** / Add Responsive Page / Import Story Pages.
+Use **Add Canvas Page** for every storyboard page, to match Page_1.
