@@ -24,9 +24,11 @@
   --t-xs: 11px; --t-sm: 13px; --t-md: 15px;
   --t-lg: 19px; --t-xl: 25px; --t-2xl: 33px;
 
-  /* neutral ramp */
+  /* neutral ramp — n500 is the muted-text step and is darker than a
+     conventional mid-grey on purpose: at 11px it must clear 4.5:1 on
+     white (5.17), n50 (4.87) and n100 (4.57). */
   --n0:#ffffff; --n50:#f7f8fa; --n100:#eef1f5; --n200:#dfe4ea;
-  --n300:#c3ccd6; --n500:#7b8794; --n700:#48525e; --n900:#1b2129;
+  --n300:#c3ccd6; --n500:#646e7b; --n700:#48525e; --n900:#1b2129;
 
   /* brand — deck chrome, not data marks */
   --navy:#10344C; --teal:#1C7293;
@@ -46,30 +48,84 @@
        watch    #F2C14E on #4a3708 = 6.80:1
        warning  #C74A1A on #ffffff = 4.75:1
        evacuate #9E1F17 on #ffffff = 7.89:1 */
-  --watch:#F2C14E;    --watch-ink:#4a3708;   --watch-bg:#fdf5e2;
+  --watch:#F2C14E;    --watch-ink:#4a3708;   --watch-bg:#fdf5e2;  --watch-line:#e8d49a;
   --warning:#C74A1A;  --warning-ink:#ffffff; --warning-bg:#fdeee7;
-  --evacuate:#9E1F17; --evacuate-ink:#ffffff;--evacuate-bg:#fbeae9;
-  --ok:#2F7D4F;       --ok-bg:#eaf4ee;
+  --evacuate:#9E1F17; --evacuate-ink:#ffffff;--evacuate-bg:#fbeae9; --evacuate-press:#87180f;
+  --ok:#2C7549;       --ok-bg:#eaf4ee;
 
   --border:1px solid var(--n200);
   --shadow-card:0 1px 2px rgba(16,52,76,.06), 0 1px 3px rgba(16,52,76,.04);
   --shadow-float:0 8px 24px rgba(16,52,76,.14);
+
+  /* the one authored motion curve — exponential ease-out */
+  --ease-out:cubic-bezier(.16,1,.3,1);
 }
 
 * { box-sizing:border-box; }
+
+/* ---- browser surfaces ----------------------------------------
+   The parts we did not draw still carry the design: selection,
+   caret, scrollbars, focus rings, form-control accents. Left on
+   defaults they belong to no design system.                 */
+:root { color-scheme:light; accent-color:var(--accent); }
+::selection { background:rgba(28,114,147,.20); color:var(--n900); }
+* { caret-color:var(--accent); }
+:focus-visible { outline:3px solid var(--teal); outline-offset:2px; border-radius:var(--r-ctl); }
+* { scrollbar-width:thin; scrollbar-color:var(--n300) transparent; }
+*::-webkit-scrollbar { width:10px; height:10px; }
+*::-webkit-scrollbar-track { background:transparent; }
+*::-webkit-scrollbar-thumb { background:var(--n300); border-radius:var(--r-pill); border:3px solid var(--n100); }
+*::-webkit-scrollbar-thumb:hover { background:var(--n500); }
+a { color:var(--accent); text-underline-offset:.18em; text-decoration-thickness:.08em; }
+
 body {
   margin:0; background:var(--n100); color:var(--n900);
   font:400 var(--t-md)/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3 { margin:0; line-height:1.2; }
+h1,h2,h3,h4 { margin:0; line-height:1.2; }
+
+/* every number in this interface is data — align it */
+.v,.val,.vol,.num { font-variant-numeric:tabular-nums; }
+
+/* ---- icons ----------------------------------------------------
+   Every icon is authored SVG on one stroke weight, never emoji or
+   a glyph. This base rule is load-bearing: without it they render
+   as full-size black fills. */
+svg.i {
+  width:16px; height:16px; flex:none;
+  stroke:currentColor; fill:none;
+  stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+}
+svg.i-lg { width:20px; height:20px; }
 
 .page { padding:var(--s7) clamp(16px,4vw,56px); max-width:1500px; margin-inline:auto; }
-.page > header { margin-bottom:var(--s6); }
+.page > header { margin-bottom:var(--s5); }
 .page > header h1 { font-size:var(--t-2xl); font-weight:700; color:var(--navy); }
 .page > header p  { margin:var(--s2) 0 0; color:var(--n700); max-width:66ch; }
 
+/* ---- mode bar ---- */
+.modebar {
+  display:flex; flex-wrap:wrap; align-items:center; gap:var(--s3);
+  margin-bottom:var(--s6); padding-bottom:var(--s4); border-bottom:var(--border);
+}
+.seg-ctl { display:inline-flex; background:var(--n0); border:var(--border); border-radius:var(--r-ctl); padding:3px; gap:3px; }
+.seg-ctl button {
+  appearance:none; border:0; background:transparent; cursor:pointer;
+  font:600 var(--t-sm)/1 system-ui,sans-serif; color:var(--n700);
+  padding:var(--s2) var(--s4); border-radius:6px; min-height:36px;
+  transition:background 160ms var(--ease-out), color 160ms var(--ease-out);
+}
+.seg-ctl button:hover { background:var(--n50); }
+.seg-ctl button[aria-pressed="true"] { background:var(--navy); color:var(--n0); }
+.modebar .hint { font-size:var(--t-sm); color:var(--n500); }
+
+/* ---- gallery grid ---- */
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--s6); align-items:start; }
+.specimen { min-width:0; }
+/* The desktop dashboard wants two columns, but only once two exist —
+   an unconditional span forces a 2-track grid and overflows a phone. */
+@media (min-width:720px) { .specimen.wide { grid-column:span 2; } }
 
 .screen-label { font-size:var(--t-sm); font-weight:600; color:var(--n700); margin-bottom:var(--s3); letter-spacing:.02em; }
 .screen-label span { color:var(--n500); font-weight:400; }
@@ -84,6 +140,8 @@ h1,h2,h3 { margin:0; line-height:1.2; }
   display:flex; justify-content:space-between; align-items:center;
   padding:var(--s2) var(--s4); font-size:var(--t-xs); color:var(--n500); background:var(--n0);
 }
+.statusbar .sig { display:inline-flex; align-items:center; gap:var(--s1); }
+.statusbar .sig .i { width:12px; height:12px; }
 .appbar {
   display:flex; align-items:center; gap:var(--s2);
   padding:var(--s3) var(--s4); background:var(--navy); color:var(--n0);
@@ -109,11 +167,17 @@ h1,h2,h3 { margin:0; line-height:1.2; }
 
 /* ---- generic card ---- */
 .card { background:var(--n0); border:var(--border); border-radius:var(--r-card); padding:var(--s4); box-shadow:var(--shadow-card); }
+.card--tight { padding:var(--s3); }
+.card--center { text-align:center; }
 .card h3 { font-size:var(--t-sm); font-weight:600; color:var(--n700); margin-bottom:var(--s3); }
-.kv { display:flex; justify-content:space-between; align-items:baseline; padding:var(--s2) 0; }
+.card--tight h3 { margin-bottom:var(--s2); }
+.kv { display:flex; justify-content:space-between; align-items:baseline; gap:var(--s3); padding:var(--s2) 0; }
 .kv + .kv { border-top:var(--border); }
 .kv .k { font-size:var(--t-sm); color:var(--n700); }
 .kv .v { font-size:var(--t-md); font-weight:600; font-variant-numeric:tabular-nums; }
+
+.stack { display:flex; flex-direction:column; gap:var(--s4); }
+.status-slot { margin:var(--s3) 0; }
 
 .steps { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:var(--s3); }
 .steps li { display:flex; gap:var(--s3); align-items:flex-start; font-size:var(--t-sm); }
@@ -128,15 +192,28 @@ h1,h2,h3 { margin:0; line-height:1.2; }
   display:inline-flex; align-items:center; justify-content:center; gap:var(--s2);
   min-height:44px; padding:0 var(--s4); border-radius:var(--r-ctl);
   font:600 var(--t-sm)/1 system-ui,sans-serif; cursor:pointer;
-  border:1px solid transparent; transition:background 160ms ease-out, border-color 160ms ease-out;
+  border:1px solid transparent;
+  transition:background 160ms var(--ease-out), border-color 160ms var(--ease-out),
+             opacity 160ms var(--ease-out), transform 90ms var(--ease-out);
 }
 .btn--primary { background:var(--accent); color:var(--n0); }
-.btn--primary:hover { background:var(--accent-press); }
+.btn--primary:hover:not(:disabled) { background:var(--accent-press); }
 .btn--ghost { background:var(--n0); color:var(--navy); border-color:var(--n300); }
-.btn--ghost:hover { background:var(--n50); }
-.btn--danger { background:var(--evacuate); color:var(--n0); }
-.btn:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
+.btn--ghost:hover:not(:disabled) { background:var(--n50); }
+.btn--danger { background:var(--evacuate); color:var(--evacuate-ink); }
+.btn--danger:hover:not(:disabled) { background:var(--evacuate-press); }
+.btn:active:not(:disabled) { transform:translateY(1px); }
+.btn:disabled { opacity:.45; cursor:not-allowed; }
+.btn--full { width:100%; }
 .btn-row { display:grid; grid-template-columns:1fr 1fr; gap:var(--s2); }
+/* loading: the control names what it is doing and stops taking input */
+.btn[data-loading="true"] { pointer-events:none; opacity:.75; }
+.spin {
+  width:14px; height:14px; border-radius:50%; flex:none;
+  border:2px solid currentColor; border-top-color:transparent;
+  animation:spin 700ms linear infinite;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
 
 /* ---- status pills (icon + text, never colour alone) ---- */
 .pill {
@@ -148,13 +225,24 @@ h1,h2,h3 { margin:0; line-height:1.2; }
 .pill--caution  { background:var(--watch-bg);    color:var(--watch-ink); }
 .pill--blocked  { background:var(--evacuate-bg); color:var(--evacuate); }
 .pill--stale    { background:var(--n100);        color:var(--n700); }
+.pill--lg       { font-size:var(--t-sm); padding:6px 14px; }
+.pill .i        { width:12px; height:12px; }
+.pill--lg .i    { width:14px; height:14px; }
 
 /* ---- route rows ---- */
 .route { display:flex; align-items:center; gap:var(--s3); padding:var(--s3) 0; }
-.route + .route { border-top:var(--border); }
 .route .name { font-size:var(--t-sm); font-weight:500; }
 .route .sub  { font-size:var(--t-xs); color:var(--n500); }
 .route .right{ margin-left:auto; text-align:right; }
+/* the officer sets status by tapping the row, so it behaves like a control */
+button.route {
+  width:100%; text-align:left; background:transparent; border:0;
+  border-top:var(--border); font:inherit; color:inherit; cursor:pointer;
+  transition:background 140ms var(--ease-out);
+}
+button.route:first-child { border-top:0; }
+button.route:hover { background:var(--n50); }
+button.route:active { background:var(--n100); }
 
 /* ---- desktop panels ---- */
 .desktop { background:var(--n0); border:var(--border); border-radius:var(--r-card); box-shadow:var(--shadow-card); overflow:hidden; }
@@ -166,17 +254,17 @@ h1,h2,h3 { margin:0; line-height:1.2; }
 .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:var(--s3); }
 .metric { border:var(--border); border-radius:var(--r-ctl); padding:var(--s3); }
 .metric .lab { font-size:var(--t-xs); color:var(--n500); }
-.metric .val { font-size:var(--t-xl); font-weight:700; font-variant-numeric:tabular-nums; color:var(--navy); }
-.metric .note{ font-size:var(--t-xs); color:var(--n500); }
+.metric .val { font-size:var(--t-xl); font-weight:700; color:var(--navy); font-variant-numeric:tabular-nums; }
+.metric .sub { font-size:var(--t-xs); color:var(--n500); }
 
 /* river segment bar */
 .seg { display:flex; flex-direction:column; gap:var(--s2); }
 .seg .top { display:flex; align-items:baseline; gap:var(--s2); font-size:var(--t-sm); }
-.seg .top .vol { margin-left:auto; font-variant-numeric:tabular-nums; color:var(--n700); font-size:var(--t-xs); }
+.seg .top .vol { margin-left:auto; color:var(--n700); font-size:var(--t-xs); }
 .bar { height:10px; border-radius:var(--r-pill); background:var(--n100); overflow:hidden; }
 .bar > i { display:block; height:100%; border-radius:var(--r-pill); }
 
-.legend { display:flex; flex-wrap:wrap; gap:var(--s3); font-size:var(--t-xs); color:var(--n700); }
+.legend { display:flex; flex-wrap:wrap; gap:var(--s3); font-size:var(--t-xs); color:var(--n700); margin-top:var(--s4); }
 .legend span { display:inline-flex; align-items:center; gap:var(--s1); }
 .dot { width:9px; height:9px; border-radius:var(--r-pill); display:inline-block; }
 
@@ -185,46 +273,171 @@ h1,h2,h3 { margin:0; line-height:1.2; }
   border:var(--border); border-radius:var(--r-ctl); padding:var(--s3);
 }
 .note b { color:var(--navy); }
-.blocked-note { background:var(--watch-bg); border-color:#e8d49a; }
+.note--blocked { background:var(--watch-bg); border-color:var(--watch-line); }
 
 .src { font-size:var(--t-xs); color:var(--n500); margin-top:var(--s2); }
+.src--flush { margin-top:0; }
 
-svg.i { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none; }
-svg.i-lg { width:20px; height:20px; }
+/* ---- simulated-reading marker --------------------------------
+   No sensor is deployed, so any live reading here is a
+   demonstration value rather than a measurement. Sourced figures
+   carry their citation; simulated ones carry this dotted rule and
+   are explained once in the header. Em-dashing every reading
+   instead would leave the screens unable to show what they do. */
+.sim { border-bottom:1px dotted currentColor; cursor:help; }
 
-@media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+/* ---- empty / error states ---- */
+.state { display:flex; flex-direction:column; align-items:center; text-align:center; gap:var(--s2); padding:var(--s5) var(--s4); }
+.state .i-badge { width:40px; height:40px; border-radius:var(--r-pill); display:grid; place-items:center; background:var(--n100); color:var(--n700); }
+.state--err .i-badge { background:var(--evacuate-bg); color:var(--evacuate); }
+.state h4 { font-size:var(--t-md); font-weight:600; }
+.state p { margin:0; font-size:var(--t-sm); color:var(--n700); max-width:34ch; }
+
+/* ---- SMS thread ---- */
+.sms { display:flex; flex-direction:column; gap:var(--s3); }
+.sms .from { font-size:var(--t-xs); color:var(--n500); margin-bottom:var(--s1); }
+.sms .bubble { background:var(--n100); border-radius:var(--r-card); border-top-left-radius:4px; padding:var(--s3); }
+.sms .bubble--alert { background:var(--evacuate-bg); border:1px solid var(--evacuate); }
+.sms .txt { font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace; font-size:12px; line-height:1.5; white-space:pre-wrap; margin:0; }
+.sms .count { font-size:var(--t-xs); color:var(--n500); text-align:right; margin-top:var(--s1); }
+
+/* ---- siren device ---- */
+.device { border:var(--border); border-radius:var(--r-card); padding:var(--s4); display:flex; flex-direction:column; align-items:center; gap:var(--s3); background:var(--n50); }
+.siren { width:84px; height:84px; border-radius:var(--r-pill); display:grid; place-items:center; background:var(--evacuate); color:var(--evacuate-ink); }
+.siren .i { width:36px; height:36px; }
+
+/* ---- prototype mode ------------------------------------------
+   Same DOM, different presentation. Nothing is duplicated, so a
+   screen can never drift between the gallery and the prototype. */
+.protobar { display:none; align-items:center; justify-content:center; gap:var(--s3); margin-bottom:var(--s5); flex-wrap:wrap; }
+.protobar .step { font-size:var(--t-sm); color:var(--n700); min-width:8ch; text-align:center; font-variant-numeric:tabular-nums; }
+.dots { display:flex; gap:6px; }
+.dots button {
+  width:9px; height:9px; padding:0; border-radius:var(--r-pill);
+  border:0; background:var(--n300); cursor:pointer;
+  transition:background 160ms var(--ease-out), transform 160ms var(--ease-out);
+}
+.dots button:hover { background:var(--n500); }
+.dots button[aria-current="true"] { background:var(--navy); transform:scale(1.35); }
+
+body[data-mode="proto"] .grid { display:block; }
+body[data-mode="proto"] .specimen { display:none; }
+body[data-mode="proto"] .specimen.is-active { display:block; }
+body[data-mode="proto"] .stagewrap { display:flex; justify-content:center; }
+body[data-mode="proto"] .screen-label { text-align:center; }
+body[data-mode="proto"] .protobar { display:flex; }
+
+/* the one authored moment: a screen arriving in the prototype */
+body[data-mode="proto"] .specimen.is-active .stagewrap > * {
+  animation:arrive 260ms var(--ease-out) both;
+}
+@keyframes arrive {
+  from { opacity:0; transform:translateY(10px) scale(.985); filter:blur(6px); }
+  to   { opacity:1; transform:none;                        filter:blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition:none !important; animation:none !important; }
+}
+
+/* the gallery has to survive being screenshotted and printed */
+@media print {
+  .modebar, .protobar { display:none !important; }
+  .phone, .desktop, .card { box-shadow:none; }
+}
 </style>
 </head>
-<body>
+<body data-mode="gallery">
 <div class="page">
 
 <header>
   <h1>AGOS — interface mockups</h1>
-  <p>Seven screens for the ASEAN DSE storyboard and finals deck. Severity colours follow
+  <p>Ten screens for the ASEAN DSE storyboard and finals deck. Severity colours follow
      PAGASA's own rainfall-warning convention, so residents do not have to learn a second
-     colour language, and every severity state carries an icon and a text label — never
-     colour alone. All figures shown are the sourced values from the citation register.</p>
+     colour language, and every severity state carries an icon and a text label, never
+     colour alone. Sourced figures are cited on the screen that shows them. Live sensor
+     readings are <span class="sim" title="Demonstration value; no sensor is deployed yet">marked like this</span>,
+     because no sensor is deployed and no reading of the real river exists to quote.</p>
 </header>
 
-<div class="grid">
+<div class="modebar">
+  <div class="seg-ctl" role="group" aria-label="View mode">
+    <button type="button" id="mode-gallery" aria-pressed="true">Gallery</button>
+    <button type="button" id="mode-proto"   aria-pressed="false">Prototype</button>
+  </div>
+  <span class="hint" id="mode-hint">All ten screens, laid out for screenshotting into the storyboard.</span>
+</div>
 
-  <!-- ============ 1. VOICE — Watch ============ -->
-  <div>
-    <div class="screen-label">VOICE — household alert <span>· state 1 of 3</span></div>
-    <div class="phone">
-      <div class="statusbar"><span>09:41</span><span>LTE</span></div>
+<div class="protobar">
+  <button class="btn btn--ghost" type="button" id="prev">
+    <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Back
+  </button>
+  <span class="step" id="step">1 / 10</span>
+  <div class="dots" id="dots" role="tablist" aria-label="Screens"></div>
+  <button class="btn btn--primary" type="button" id="next">
+    Next<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+</div>
+
+<div class="grid" id="grid">
+
+  <!-- ============ 1. HOME ============ -->
+  <article class="specimen is-active" data-name="Home · resident landing">
+    <h2 class="screen-label">Home <span>· resident landing</span></h2>
+    <div class="stagewrap"><div class="phone">
+      <div class="statusbar"><span>09:41</span><span class="sig">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-4M10 20v-8M15 20v-12M20 20V4"/></svg>LTE</span></div>
       <div class="appbar">
-        <svg class="i" viewBox="0 0 24 24"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
+        <span class="brand">AGOS</span><span class="brgy">Brgy. Sta. Rita</span>
+      </div>
+      <div class="body">
+        <div class="card card--center">
+          <h3>Current status</h3>
+          <div class="status-slot">
+            <span class="pill pill--ok pill--lg">
+              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Normal</span>
+          </div>
+          <div class="src src--flush">Kalaklan <span class="sim" title="Demonstration value; no sensor is deployed yet">1.4 m</span> · updated 3 min ago</div>
+        </div>
+
+        <div class="card">
+          <h3>This month</h3>
+          <div class="kv"><span class="k">Rainfall so far</span><span class="v"><span class="sim" title="Demonstration value; no gauge feed is connected yet">612 mm</span></span></div>
+          <div class="kv"><span class="k">August normal</span><span class="v">866 mm</span></div>
+          <div class="kv"><span class="k">Alerts sent</span><span class="v"><span class="sim" title="Demonstration value">3</span></span></div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn--ghost" type="button">Route map</button>
+          <button class="btn btn--ghost" type="button">Centres</button>
+          <button class="btn btn--ghost" type="button">River levels</button>
+          <button class="btn btn--ghost" type="button">Report</button>
+        </div>
+        <div class="src">August is Olongapo's wettest month, at 865.97 mm on the 30-year normal.
+          PAGASA ClimGridPh CliMap v2.0.</div>
+      </div>
+    </div></div>
+  </article>
+
+  <!-- ============ 2. VOICE — Watch ============ -->
+  <article class="specimen" data-name="VOICE · Watch">
+    <h2 class="screen-label">VOICE household alert <span>· state 1 of 3</span></h2>
+    <div class="stagewrap"><div class="phone">
+      <div class="statusbar"><span>09:41</span><span class="sig">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-4M10 20v-8M15 20v-12M20 20V4"/></svg>LTE</span></div>
+      <div class="appbar">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
         <span class="brand">AGOS</span><span class="brgy">Brgy. Sta. Rita</span>
       </div>
       <div class="body">
         <div class="alert alert--watch">
           <div class="row">
-            <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
             <span class="sev">Watch</span>
           </div>
           <div class="headline">River rising upstream</div>
-          <div class="meta">Kalaklan Bridge · 2.1 m · below evacuation level</div>
+          <div class="meta">Kalaklan Bridge · <span class="sim" title="Demonstration value; no sensor is deployed yet">2.1 m</span> · below evacuation level</div>
         </div>
         <div class="card">
           <h3>What to do now</h3>
@@ -235,155 +448,291 @@ svg.i-lg { width:20px; height:20px; }
           </ul>
         </div>
         <div class="btn-row">
-          <button class="btn btn--ghost">Evacuation route</button>
-          <button class="btn btn--ghost">Nearest centre</button>
+          <button class="btn btn--ghost" type="button">Evacuation route</button>
+          <button class="btn btn--ghost" type="button">Nearest centre</button>
         </div>
         <div class="src">Updated 4 min ago · PULSE sensor, Kalaklan</div>
       </div>
-    </div>
-  </div>
+    </div></div>
+  </article>
 
-  <!-- ============ 2. VOICE — Warning ============ -->
-  <div>
-    <div class="screen-label">VOICE — household alert <span>· state 2 of 3</span></div>
-    <div class="phone">
-      <div class="statusbar"><span>12:26</span><span>LTE</span></div>
+  <!-- ============ 3. VOICE — Warning ============ -->
+  <article class="specimen" data-name="VOICE · Warning">
+    <h2 class="screen-label">VOICE household alert <span>· state 2 of 3</span></h2>
+    <div class="stagewrap"><div class="phone">
+      <div class="statusbar"><span>12:26</span><span class="sig">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-4M10 20v-8M15 20v-12M20 20V4"/></svg>LTE</span></div>
       <div class="appbar">
-        <svg class="i" viewBox="0 0 24 24"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
         <span class="brand">AGOS</span><span class="brgy">Brgy. Sta. Rita</span>
       </div>
       <div class="body">
         <div class="alert alert--warning">
           <div class="row">
-            <svg class="i" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
             <span class="sev">Warning</span>
           </div>
-          <div class="headline">Move valuables up now</div>
-          <div class="meta">Kalaklan Bridge · 3.4 m · approaching evacuation level</div>
+          <div class="headline">Flooding likely within 2 hours</div>
+          <div class="meta">Kalaklan Bridge · <span class="sim" title="Demonstration value; no sensor is deployed yet">3.8 m</span> · rising fast</div>
         </div>
         <div class="card">
           <h3>What to do now</h3>
           <ul class="steps">
-            <li><span class="n">1</span><span>Move appliances and documents to the highest floor.</span></li>
-            <li><span class="n">2</span><span>Bring animals in. Move vehicles to higher ground.</span></li>
-            <li><span class="n">3</span><span>Be ready to leave within the hour if this escalates.</span></li>
+            <li><span class="n">1</span><span>Move valuables and livestock to higher ground.</span></li>
+            <li><span class="n">2</span><span>Be ready to leave. Agree where your household will meet.</span></li>
+            <li><span class="n">3</span><span>Do not wait for water to reach the road.</span></li>
           </ul>
         </div>
-        <div class="btn-row">
-          <button class="btn btn--ghost">Evacuation route</button>
-          <button class="btn btn--ghost">Nearest centre</button>
-        </div>
-        <div class="note"><b>Three tiers, not two.</b> Watch → Warning → Evacuate Now lets
-          people match effort to severity, instead of tuning out a single repeated alarm.</div>
+        <button class="btn btn--primary btn--full" type="button">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4"/><path d="m14 16 4-4-4-4M18 12H9"/></svg>
+          Open evacuation route
+        </button>
+        <div class="src">Updated 1 min ago · PULSE sensor, Kalaklan</div>
       </div>
-    </div>
-  </div>
+    </div></div>
+  </article>
 
-  <!-- ============ 3. VOICE — Evacuate ============ -->
-  <div>
-    <div class="screen-label">VOICE — household alert <span>· state 3 of 3</span></div>
-    <div class="phone">
-      <div class="statusbar"><span>14:07</span><span>LTE</span></div>
+  <!-- ============ 4. VOICE — Evacuate ============ -->
+  <article class="specimen" data-name="VOICE · Evacuate Now">
+    <h2 class="screen-label">VOICE household alert <span>· state 3 of 3</span></h2>
+    <div class="stagewrap"><div class="phone">
+      <div class="statusbar"><span>13:04</span><span class="sig">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-4M10 20v-8M15 20v-12M20 20V4"/></svg>LTE</span></div>
       <div class="appbar">
-        <svg class="i" viewBox="0 0 24 24"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
         <span class="brand">AGOS</span><span class="brgy">Brgy. Sta. Rita</span>
       </div>
       <div class="body">
         <div class="alert alert--evacuate">
           <div class="row">
-            <svg class="i i-lg" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
-            <span class="sev">Evacuate now</span>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 21h20L12 2Z"/><path d="M12 9v5M12 18h.01"/></svg>
+            <span class="sev">Evacuate Now</span>
           </div>
-          <div class="headline">Leave for higher ground</div>
-          <div class="meta">Kalaklan Bridge · 4.6 m · evacuation level reached</div>
+          <div class="headline">Leave for the evacuation centre</div>
+          <div class="meta">Kalaklan Bridge · <span class="sim" title="Demonstration value; no sensor is deployed yet">5.2 m</span> · above evacuation level</div>
         </div>
         <div class="card">
-          <h3>Nearest open centre</h3>
-          <div class="kv"><span class="k">Sta. Rita Elementary</span><span class="v">700 m</span></div>
-          <div class="kv"><span class="k">Walking time</span><span class="v">9 min</span></div>
-          <div class="kv"><span class="k">Route status</span><span class="v"><span class="pill pill--ok">
-            <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Passable</span></span></div>
+          <h3>Go now. Do not collect belongings</h3>
+          <ul class="steps">
+            <li><span class="n">1</span><span>Take your go-bag and leave immediately.</span></li>
+            <li><span class="n">2</span><span>Use Gordon Ave. Del Rosario Bridge is impassable.</span></li>
+            <li><span class="n">3</span><span>Never walk or drive through moving water.</span></li>
+          </ul>
         </div>
-        <button class="btn btn--danger" style="width:100%">
-          <svg class="i" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>Start guided route
+        <button class="btn btn--danger btn--full" type="button">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2Z"/></svg>
+          Directions to evacuation centre
         </button>
-        <div class="note"><b>No signal?</b> The barangay siren carries the same alert.
-          It runs on solar and needs no phone.</div>
+        <div class="src">Issued 13:04 · Olongapo CDRRMO via AGOS VOICE</div>
       </div>
-    </div>
-  </div>
+    </div></div>
+  </article>
 
-  <!-- ============ 4. PATH ============ -->
-  <div>
-    <div class="screen-label">PATH — barangay officer <span>· road status</span></div>
-    <div class="phone">
-      <div class="statusbar"><span>14:12</span><span>LTE</span></div>
+  <!-- ============ 5. SMS FALLBACK ============ -->
+  <article class="specimen" data-name="VOICE · SMS fallback">
+    <h2 class="screen-label">VOICE SMS fallback <span>· feature phone, no data</span></h2>
+    <div class="stagewrap"><div class="phone">
+      <div class="statusbar"><span>14:20</span><span class="sig">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-2M10 20v-4"/><path d="M15 20v-8M20 20V4" opacity=".3"/></svg>2G</span></div>
       <div class="appbar">
-        <svg class="i" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span class="brand">Messages</span><span class="brgy">AGOS</span>
+      </div>
+      <div class="body">
+        <div class="sms">
+          <div>
+            <div class="from">AGOS · 14:20</div>
+            <div class="bubble bubble--alert">
+<pre class="txt">AGOS: EVACUATE NOW
+Bucao River, Brgy Poonbato.
+Water above evacuation level.
+Go to Botolan Central School.
+Do not cross the river.
+06SEP 14:20</pre>
+            </div>
+            <div class="count">158 characters · 1 SMS</div>
+          </div>
+          <div>
+            <div class="from">AGOS · 11:05</div>
+            <div class="bubble">
+<pre class="txt">AGOS: WARNING
+Bucao rising fast. Prepare to
+leave. Keep your phone on.
+06SEP 11:05</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="note"><b>Why SMS is not a downgrade.</b> It needs no app, no data plan and
+          no smartphone, and it arrives on 2G. One alert fits inside a single 160-character
+          message, so it cannot be split or truncated in transit.</div>
+
+        <div class="src">On 6 September 2026, 11 Aeta communities in Botolan (2,519 families)
+          were cut off, and nine could only be reached by helicopter. Data coverage there
+          cannot be assumed, so SMS and the siren carry the alert.</div>
+      </div>
+    </div></div>
+  </article>
+
+  <!-- ============ 6. SOLAR SIREN ============ -->
+  <article class="specimen" data-name="VOICE · Solar siren">
+    <h2 class="screen-label">VOICE solar barangay siren <span>· no phone required</span></h2>
+    <div class="stagewrap"><div class="phone">
+      <div class="statusbar"><span>13:04</span><span class="sig">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Solar</span></div>
+      <div class="appbar">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+        <span class="brand">AGOS · SIREN</span><span class="brgy">Brgy. Poonbato</span>
+      </div>
+      <div class="body">
+        <div class="device">
+          <div class="siren">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+          </div>
+          <span class="pill pill--blocked pill--lg">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 21h20L12 2Z"/><path d="M12 9v5M12 18h.01"/></svg>Sounding — Evacuate Now</span>
+          <div class="src src--flush">Triggered by the same PULSE threshold as the phone alert</div>
+        </div>
+
+        <div class="card">
+          <h3>Device</h3>
+          <div class="kv"><span class="k">Power</span><span class="v">Solar + battery</span></div>
+          <div class="kv"><span class="k">Units deployed</span><span class="v">—</span></div>
+          <div class="kv"><span class="k">Audible radius</span><span class="v">—</span></div>
+          <div class="kv"><span class="k">Last self-test</span><span class="v">—</span></div>
+        </div>
+
+        <div class="note note--blocked"><b>Awaiting real figures.</b> Unit count, audible radius
+          and self-test cadence depend on hardware not yet selected. No placeholder
+          specification is shown.</div>
+
+        <div class="note"><b>Primary, not backup.</b> For the households most likely to be cut
+          off, this is the channel that still works when the phone network does not, so it
+          runs off the same threshold as VOICE rather than as a manual last resort.</div>
+      </div>
+    </div></div>
+  </article>
+
+  <!-- ============ 7. OFFLINE ============ -->
+  <article class="specimen" data-name="Home · offline">
+    <h2 class="screen-label">Home <span>· offline, last known</span></h2>
+    <div class="stagewrap"><div class="phone">
+      <div class="statusbar"><span>15:52</span><span class="sig">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 2l20 20"/><path d="M5 20v-4M10 20v-6"/><path d="M15 20v-8M20 20V4" opacity=".3"/></svg>No signal</span></div>
+      <div class="appbar">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
+        <span class="brand">AGOS</span><span class="brgy">Brgy. Poonbato</span>
+      </div>
+      <div class="body">
+        <div class="alert alert--warning">
+          <div class="row">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+            <span class="sev">Warning · last known</span>
+          </div>
+          <div class="headline">Showing data from 47 minutes ago</div>
+          <div class="meta">No connection since 15:05. This may no longer be accurate.</div>
+        </div>
+
+        <div class="card">
+          <h3>Still working without signal</h3>
+          <ul class="steps">
+            <li><span class="n">1</span><span>The barangay siren sounds on its own threshold.</span></li>
+            <li><span class="n">2</span><span>SMS alerts still arrive on 2G.</span></li>
+            <li><span class="n">3</span><span>Your evacuation route is saved on this phone.</span></li>
+          </ul>
+        </div>
+
+        <button class="btn btn--primary btn--full" type="button" data-demo="retry">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+          <span class="lab">Try again</span>
+        </button>
+
+        <div class="card">
+          <div class="state state--err">
+            <span class="i-badge">
+              <svg class="i i-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 2l20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 3.3-2.2M18.7 10.6A10 10 0 0 0 12 8"/><path d="M12 20h.01"/></svg>
+            </span>
+            <h4>Cannot reach the sensor</h4>
+            <p>Nothing you do on this phone will change the river. Follow the last instruction you received.</p>
+          </div>
+        </div>
+
+        <div class="src">In upland Botolan, offline is the normal case rather than the exception.</div>
+      </div>
+    </div></div>
+  </article>
+
+  <!-- ============ 8. PATH ============ -->
+  <article class="specimen" data-name="PATH · road status">
+    <h2 class="screen-label">PATH barangay officer <span>· tap a road to change its status</span></h2>
+    <div class="stagewrap"><div class="phone">
+      <div class="statusbar"><span>14:12</span><span class="sig">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-4M10 20v-8M15 20v-12M20 20V4"/></svg>LTE</span></div>
+      <div class="appbar">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
         <span class="brand">AGOS · PATH</span><span class="brgy">Officer view</span>
       </div>
       <div class="body">
-        <div class="card" style="padding:var(--s3)">
-          <h3 style="margin-bottom:var(--s2)">Set road status</h3>
-          <div class="route">
-            <div><div class="name">Del Rosario Bridge</div><div class="sub">Confirmed 12 min ago</div></div>
-            <div class="right"><span class="pill pill--blocked">
-              <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg>Impassable</span></div>
-          </div>
-          <div class="route">
-            <div><div class="name">Sta. Rita Bridge</div><div class="sub">Confirmed 6 min ago</div></div>
-            <div class="right"><span class="pill pill--caution">
-              <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Caution</span></div>
-          </div>
-          <div class="route">
-            <div><div class="name">Kalaklan Bridge</div><div class="sub">Confirmed 3 min ago</div></div>
-            <div class="right"><span class="pill pill--ok">
-              <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Passable</span></div>
-          </div>
-          <div class="route">
-            <div><div class="name">Gordon Ave.</div><div class="sub">Last set 2h 14m ago</div></div>
-            <div class="right"><span class="pill pill--stale">
-              <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Unconfirmed</span></div>
+        <div class="card card--tight">
+          <h3>Set road status</h3>
+          <div id="routes">
+            <button class="route" type="button" data-status="blocked">
+              <div><div class="name">Del Rosario Bridge</div><div class="sub">Confirmed 12 min ago</div></div>
+              <div class="right"></div>
+            </button>
+            <button class="route" type="button" data-status="caution">
+              <div><div class="name">Sta. Rita Bridge</div><div class="sub">Confirmed 6 min ago</div></div>
+              <div class="right"></div>
+            </button>
+            <button class="route" type="button" data-status="ok">
+              <div><div class="name">Kalaklan Bridge</div><div class="sub">Confirmed 3 min ago</div></div>
+              <div class="right"></div>
+            </button>
+            <button class="route" type="button" data-status="stale">
+              <div><div class="name">Gordon Ave.</div><div class="sub">Last set 2h 14m ago</div></div>
+              <div class="right"></div>
+            </button>
           </div>
         </div>
         <div class="note"><b>Auto-downgrade.</b> A status older than 2 hours becomes
-          <i>Unconfirmed — proceed with caution</i> rather than showing stale “Passable”.</div>
-        <button class="btn btn--primary" style="width:100%">
-          <svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Update a road
+          <i>Unconfirmed — proceed with caution</i> rather than showing a stale “Passable”.</div>
+        <button class="btn btn--primary btn--full" type="button" data-demo="submit">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="lab">Update a road</span>
         </button>
         <div class="src">Only barangay-verified officers can set status. Residents may flag for review.</div>
       </div>
-    </div>
-  </div>
+    </div></div>
+  </article>
 
-  <!-- ============ 5. EYE ============ -->
-  <div style="grid-column:span 2; min-width:0">
-    <div class="screen-label">EYE — LGU engineer dashboard <span>· desktop</span></div>
-    <div class="desktop">
+  <!-- ============ 9. EYE ============ -->
+  <article class="specimen wide" data-name="EYE · LGU engineer dashboard">
+    <h2 class="screen-label">EYE LGU engineer dashboard <span>· desktop</span></h2>
+    <div class="stagewrap"><div class="desktop">
       <div class="head">
-        <svg class="i" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
         <span class="brand">AGOS · EYE</span><span class="who">Zambales PDRRMO · Provincial Engineering</span>
       </div>
       <div class="inner">
         <div class="metrics">
-          <div class="metric"><div class="lab">Lahar in Zambales rivers</div><div class="val">4.7 bn</div><div class="note" style="border:0;background:0;padding:0">cubic metres</div></div>
-          <div class="metric"><div class="lab">Dredged since 1991</div><div class="val">1.06%</div><div class="note" style="border:0;background:0;padding:0">50 m m³ of 4.7 bn</div></div>
-          <div class="metric"><div class="lab">Barangays under threat</div><div class="val">21</div><div class="note" style="border:0;background:0;padding:0">6 Bucao · 15 Sto. Tomas</div></div>
-          <div class="metric"><div class="lab">Sensors reporting</div><div class="val">—</div><div class="note" style="border:0;background:0;padding:0">pilot not yet deployed</div></div>
+          <div class="metric"><div class="lab">Lahar in Zambales rivers</div><div class="val">4.7 bn</div><div class="sub">cubic metres</div></div>
+          <div class="metric"><div class="lab">Dredged since 1991</div><div class="val">1.06%</div><div class="sub">50 m m³ of 4.7 bn</div></div>
+          <div class="metric"><div class="lab">Barangays under threat</div><div class="val">21</div><div class="sub">6 Bucao · 15 Sto. Tomas</div></div>
+          <div class="metric"><div class="lab">Sensors reporting</div><div class="val">—</div><div class="sub">pilot not yet deployed</div></div>
         </div>
 
         <div class="card">
           <h3>Remaining lahar by river segment</h3>
-          <div style="display:flex; flex-direction:column; gap:var(--s4)">
+          <div class="stack">
             <div class="seg">
               <div class="top"><b>Bucao River</b><span class="pill pill--blocked">
-                <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Priority dredge</span>
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Priority dredge</span>
                 <span class="vol">3.0 bn m³ · 63.8%</span></div>
               <div class="bar"><i style="width:63.8%; background:var(--evacuate)"></i></div>
             </div>
             <div class="seg">
               <div class="top"><b>Santo Tomas River</b><span class="pill pill--caution">
-                <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Monitor</span>
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Monitor</span>
                 <span class="vol">1.6 bn m³ · 34.0%</span></div>
               <div class="bar"><i style="width:34%; background:var(--warning)"></i></div>
             </div>
@@ -392,7 +741,7 @@ svg.i-lg { width:20px; height:20px; }
               <div class="bar"><i style="width:2.2%; background:var(--n300)"></i></div>
             </div>
           </div>
-          <div class="legend" style="margin-top:var(--s4)">
+          <div class="legend">
             <span><i class="dot" style="background:var(--evacuate)"></i>Priority dredge</span>
             <span><i class="dot" style="background:var(--warning)"></i>Monitor</span>
             <span><i class="dot" style="background:var(--n300)"></i>Low volume</span>
@@ -401,20 +750,32 @@ svg.i-lg { width:20px; height:20px; }
             “Other channels” is the arithmetic residual, not a reported figure.</div>
         </div>
 
+        <div class="card">
+          <h3>Live river stage</h3>
+          <div class="state">
+            <span class="i-badge">
+              <svg class="i i-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h4l3 8 4-16 3 8h6"/></svg>
+            </span>
+            <h4>No sensors deployed yet</h4>
+            <p>This panel fills once PULSE units are installed on Del Rosario, Sta. Rita and
+               Kalaklan. Until then there is nothing real to show here.</p>
+          </div>
+        </div>
+
         <div class="note"><b>Why SAR, not optical.</b> Monsoon cloud blocks optical satellite imagery
           exactly when scanning matters most, so Sentinel-1 radar is the primary feed during
           active monsoon windows. A drone flyover is triggered automatically whenever a PULSE
           sensor crosses its warning threshold.</div>
       </div>
-    </div>
-  </div>
+    </div></div>
+  </article>
 
-  <!-- ============ 6. FUND ============ -->
-  <div>
-    <div class="screen-label">FUND — provincial treasurer <span>· widget</span></div>
-    <div class="desktop">
+  <!-- ============ 10. FUND ============ -->
+  <article class="specimen" data-name="FUND · treasurer widget">
+    <h2 class="screen-label">FUND provincial treasurer <span>· widget</span></h2>
+    <div class="stagewrap"><div class="desktop">
       <div class="head">
-        <svg class="i" viewBox="0 0 24 24"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         <span class="brand">AGOS · FUND</span><span class="who">Treasurer</span>
       </div>
       <div class="inner">
@@ -424,8 +785,8 @@ svg.i-lg { width:20px; height:20px; }
             <div class="top"><b>Removed</b><span class="vol">50 m m³ · 1.06%</span></div>
             <div class="bar"><i style="width:1.06%; background:var(--ok)"></i></div>
           </div>
-          <div class="src" style="margin-top:var(--s3)">35 years since the 1991 eruption.
-            Restoration programme running since 2023; river deltas cleared only.</div>
+          <div class="src">35 years since the 1991 eruption. Restoration programme running
+            since 2023; river deltas cleared only.</div>
         </div>
 
         <div class="card">
@@ -435,58 +796,131 @@ svg.i-lg { width:20px; height:20px; }
           <div class="kv"><span class="k">Net to reserve fund</span><span class="v">—</span></div>
         </div>
 
-        <div class="note blocked-note">
+        <div class="note note--blocked">
           <b>Awaiting real figures.</b> Needs lahar-sand price per m³ from the Provincial
           Treasurer's Office and sensor/subscription costs from vendor quotes. No placeholder
-          pricing is shown — an invented revenue projection would not survive scrutiny.
+          pricing is shown: an invented revenue projection would not survive scrutiny.
         </div>
 
         <div class="note"><b>Reserve fund, not pass-through.</b> Sand demand swings with
           construction. Surplus in strong quarters banks against weak ones, so sensor uptime
           never depends on this month's sand price.</div>
       </div>
-    </div>
-  </div>
-
-  <!-- ============ 7. HOME ============ -->
-  <div>
-    <div class="screen-label">Home <span>· resident landing</span></div>
-    <div class="phone">
-      <div class="statusbar"><span>09:41</span><span>LTE</span></div>
-      <div class="appbar">
-        <svg class="i" viewBox="0 0 24 24"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
-        <span class="brand">AGOS</span><span class="brgy">Brgy. Sta. Rita</span>
-      </div>
-      <div class="body">
-        <div class="card" style="text-align:center">
-          <div style="font-size:var(--t-xs); color:var(--n500); letter-spacing:.08em; text-transform:uppercase">Current status</div>
-          <div style="margin:var(--s3) 0">
-            <span class="pill pill--ok" style="font-size:var(--t-sm); padding:6px 14px">
-              <svg class="i" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Normal</span>
-          </div>
-          <div style="font-size:var(--t-xs); color:var(--n500)">Kalaklan 1.4 m · updated 3 min ago</div>
-        </div>
-
-        <div class="card">
-          <h3>This month</h3>
-          <div class="kv"><span class="k">Rainfall so far</span><span class="v">612 mm</span></div>
-          <div class="kv"><span class="k">August normal</span><span class="v">866 mm</span></div>
-          <div class="kv"><span class="k">Alerts sent</span><span class="v">3</span></div>
-        </div>
-
-        <div class="btn-row">
-          <button class="btn btn--ghost">Route map</button>
-          <button class="btn btn--ghost">Centres</button>
-          <button class="btn btn--ghost">River levels</button>
-          <button class="btn btn--ghost">Report</button>
-        </div>
-        <div class="src">August is Olongapo's wettest month — 865.97 mm on the 30-year normal.
-          PAGASA ClimGridPh CliMap v2.0.</div>
-      </div>
-    </div>
-  </div>
+    </div></div>
+  </article>
 
 </div>
 </div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- PATH: tapping a road cycles its status ----------
+     A real control, not a picture of one. The officer taps, the row
+     re-labels and re-stamps itself.                              */
+  var STATUS = {
+    ok:      { cls:"pill--ok",      label:"Passable",    icon:'<path d="M20 6 9 17l-5-5"/>' },
+    caution: { cls:"pill--caution", label:"Caution",     icon:'<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>' },
+    blocked: { cls:"pill--blocked", label:"Impassable",  icon:'<circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/>' },
+    stale:   { cls:"pill--stale",   label:"Unconfirmed", icon:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>' }
+  };
+  var CYCLE = ["ok", "caution", "blocked"];
+
+  function paintRoute(row) {
+    var s = STATUS[row.dataset.status] || STATUS.stale;
+    row.querySelector(".right").innerHTML =
+      '<span class="pill ' + s.cls + '">' +
+      '<svg class="i" viewBox="0 0 24 24" aria-hidden="true">' + s.icon + "</svg>" +
+      s.label + "</span>";
+    row.setAttribute("aria-label", row.querySelector(".name").textContent + ": " + s.label);
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("#routes .route"), function (row) {
+    paintRoute(row);
+    row.addEventListener("click", function () {
+      var i = CYCLE.indexOf(row.dataset.status);
+      row.dataset.status = CYCLE[(i + 1) % CYCLE.length];
+      paintRoute(row);
+      row.querySelector(".sub").textContent = "Confirmed just now";
+    });
+  });
+
+  /* ---------- loading state on demo actions ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-demo]"), function (btn) {
+    var label = btn.querySelector(".lab");
+    var original = label ? label.textContent : "";
+    btn.addEventListener("click", function () {
+      if (btn.dataset.loading === "true") return;
+      btn.dataset.loading = "true";
+      btn.setAttribute("aria-busy", "true");
+      if (label) label.textContent = btn.dataset.demo === "retry" ? "Reconnecting…" : "Sending…";
+      btn.insertAdjacentHTML("afterbegin", '<span class="spin" aria-hidden="true"></span>');
+      setTimeout(function () {
+        btn.dataset.loading = "false";
+        btn.removeAttribute("aria-busy");
+        var sp = btn.querySelector(".spin");
+        if (sp) { sp.parentNode.removeChild(sp); }
+        if (label) label.textContent = btn.dataset.demo === "retry" ? "Still no signal" : original;
+      }, 1600);
+    });
+  });
+
+  /* ---------- gallery / prototype mode ---------- */
+  var body    = document.body;
+  var screens = Array.prototype.slice.call(document.querySelectorAll(".specimen"));
+  var stepEl  = document.getElementById("step");
+  var dotsEl  = document.getElementById("dots");
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var hintEl  = document.getElementById("mode-hint");
+  var gBtn    = document.getElementById("mode-gallery");
+  var pBtn    = document.getElementById("mode-proto");
+  var at = 0;
+
+  screens.forEach(function (s, i) {
+    var d = document.createElement("button");
+    d.type = "button";
+    d.setAttribute("role", "tab");
+    d.setAttribute("aria-label", s.dataset.name);
+    d.addEventListener("click", function () { go(i); });
+    dotsEl.appendChild(d);
+  });
+  var dots = Array.prototype.slice.call(dotsEl.children);
+
+  function go(i) {
+    at = (i + screens.length) % screens.length;
+    screens.forEach(function (s, n) { s.classList.toggle("is-active", n === at); });
+    dots.forEach(function (d, n) { d.setAttribute("aria-current", n === at ? "true" : "false"); });
+    stepEl.textContent = (at + 1) + " / " + screens.length;
+    prevBtn.disabled = at === 0;
+    nextBtn.disabled = at === screens.length - 1;
+  }
+
+  function setMode(mode) {
+    body.dataset.mode = mode;
+    gBtn.setAttribute("aria-pressed", String(mode === "gallery"));
+    pBtn.setAttribute("aria-pressed", String(mode === "proto"));
+    hintEl.textContent = mode === "proto"
+      ? "One screen at a time. Arrow keys work. Tap a road on PATH to change its status."
+      : "All ten screens, laid out for screenshotting into the storyboard.";
+    if (mode === "proto") { go(at); }
+    else { screens.forEach(function (s) { s.classList.add("is-active"); }); }
+  }
+
+  gBtn.addEventListener("click", function () { setMode("gallery"); });
+  pBtn.addEventListener("click", function () { setMode("proto"); });
+  prevBtn.addEventListener("click", function () { go(at - 1); });
+  nextBtn.addEventListener("click", function () { go(at + 1); });
+
+  document.addEventListener("keydown", function (e) {
+    if (body.dataset.mode !== "proto") { return; }
+    if (e.key === "ArrowRight") { go(at + 1); }
+    if (e.key === "ArrowLeft")  { go(at - 1); }
+  });
+
+  setMode("gallery");
+})();
+</script>
 </body>
 </html>

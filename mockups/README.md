@@ -11,7 +11,7 @@ python -m http.server 8823
 
 | File | Covers |
 |---|---|
-| `agos-screens.html` | the seven app screens — **P9**, P7/P8 support, **P13**, finals deck |
+| `agos-screens.html` | the ten app screens, in two modes — **P9**, P7/P8 support, **P13**, finals deck |
 | `agos-architecture.html` | the system architecture diagram — **P7** |
 
 Both carry the same token block. It is duplicated rather than imported so each file opens
@@ -19,13 +19,26 @@ standalone from disk with nothing missing.
 
 ## Screens
 
+**Two modes, one DOM.** A toggle at the top switches between **Gallery** (all ten screens
+laid out, for screenshotting into the PDF) and **Prototype** (one screen at a time, arrow
+keys, tap-through, for the finals demo). Nothing is duplicated between them, so a screen
+cannot drift between the two.
+
 | # | Screen | Used on |
 |---|---|---|
-| 1–3 | **VOICE** household alert — Watch / Warning / Evacuate Now | Storyboard **P9**, finals deck |
-| 4 | **PATH** barangay-officer road status | Storyboard **P9**, finals deck |
-| 5 | **EYE** LGU engineer dashboard | Storyboard **P7/P8**, finals deck |
-| 6 | **FUND** provincial treasurer widget | Storyboard **P13**, finals deck |
-| 7 | **Home** resident landing | Finals deck |
+| 1 | **Home** resident landing | Finals deck |
+| 2–4 | **VOICE** household alert · Watch / Warning / Evacuate Now | Storyboard **P9**, finals deck |
+| 5 | **VOICE** SMS fallback, one 160-character message on 2G | Storyboard **P9**, finals deck |
+| 6 | **VOICE** solar barangay siren | Storyboard **P9**, finals deck |
+| 7 | **Home** offline / last known | Finals deck |
+| 8 | **PATH** barangay-officer road status *(tap a road to change it)* | Storyboard **P9**, finals deck |
+| 9 | **EYE** LGU engineer dashboard | Storyboard **P7/P8**, finals deck |
+| 10 | **FUND** provincial treasurer widget | Storyboard **P13**, finals deck |
+
+Screens 5, 6 and 7 exist because the households most likely to be cut off are the least
+connected. On 6 September 2026, nine of eleven Aeta communities in Botolan could only be
+reached by helicopter — so SMS and the siren are not fallbacks, they are the primary
+channels for that population, and the offline screen is the normal case there.
 
 > **Building or extending these? Read `docs/DESIGN_BRIEF.md` first.** It is written to be
 > self-contained — tokens, per-screen specs, the data rules, and a computable acceptance
@@ -69,6 +82,12 @@ figures removed from the v1 plan. The screen says so on its face.
 
 **Sensors reporting shows an em dash**, not a number — the pilot isn't deployed. Showing
 a fabricated sensor count on a mockup of an unbuilt system would be dishonest.
+
+**Live readings are dot-underlined.** River levels and month-to-date rainfall cannot be
+sourced, because no sensor exists to produce them, but em-dashing every reading would leave
+the screens unable to show what they do. They carry a `.sim` marker and a tooltip, and the
+convention is stated once in the page header. Sourced, simulated and absent are three
+visibly different things.
 
 ## `agos-architecture.html` — the P7 diagram
 

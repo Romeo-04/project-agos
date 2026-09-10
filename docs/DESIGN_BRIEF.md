@@ -11,7 +11,7 @@ framework. Each file opens from disk in a browser.
 
 | File | Contains |
 |---|---|
-| `mockups/agos-screens.html` | seven app screens |
+| `mockups/agos-screens.html` | ten app screens, in two modes |
 | `mockups/agos-architecture.html` | the P7 system diagram |
 
 ---
@@ -98,7 +98,10 @@ nothing missing. Keep doing that.
 
   /* neutral ramp — this does most of the work */
   --n0:#ffffff; --n50:#f7f8fa; --n100:#eef1f5; --n200:#dfe4ea;
-  --n300:#c3ccd6; --n500:#7b8794; --n700:#48525e; --n900:#1b2129;
+  /* n500 is the muted-text step. It is darker than a conventional mid-grey on
+     purpose: at 11px it must clear 4.5:1 on white (5.17), n50 (4.87) and
+     n100 (4.57). The old #7b8794 was 3.66:1 and failed. */
+  --n300:#c3ccd6; --n500:#646e7b; --n700:#48525e; --n900:#1b2129;
 
   /* brand — deck chrome only, never a data mark */
   --navy:#10344C; --teal:#1C7293;
@@ -110,7 +113,7 @@ nothing missing. Keep doing that.
   --watch:#F2C14E;    --watch-ink:#4a3708;   --watch-bg:#fdf5e2;
   --warning:#C74A1A;  --warning-ink:#ffffff; --warning-bg:#fdeee7;
   --evacuate:#9E1F17; --evacuate-ink:#ffffff;--evacuate-bg:#fbeae9;
-  --ok:#2F7D4F;       --ok-bg:#eaf4ee;
+  --ok:#2C7549;       --ok-bg:#eaf4ee;   /* 4.98:1 on ok-bg; #2F7D4F was 4.48:1 */
 
   --border:1px solid var(--n200);
   --shadow-card:0 1px 2px rgba(16,52,76,.06), 0 1px 3px rgba(16,52,76,.04);
@@ -157,8 +160,12 @@ same thing, so the two constraints resolve to one action.
 
 ## 4. The screens
 
-`agos-screens.html` renders all seven in one scrollable page, each in a phone or desktop
-frame with a caption naming its user and its job.
+`agos-screens.html` renders all ten, and does it **twice from one DOM**:
+
+- **Gallery** — every screen laid out at once, for screenshotting into the storyboard PDF
+- **Prototype** — one screen at a time, arrow keys and tap-through, for the finals demo
+
+Nothing is duplicated between the two, so a screen can never drift between them.
 
 | # | Screen | User | The one job |
 |---|---|---|---|
@@ -169,6 +176,9 @@ frame with a caption naming its user and its job.
 | 5 | **EYE — river dashboard** | LGU engineer | river levels and lahar risk across the city |
 | 6 | **FUND — treasurer widget** | provincial treasurer | is the self-funding loop working |
 | 7 | **Home** | resident | barangay status, and a way into the other four |
+| 8 | **VOICE — SMS fallback** | resident, feature phone | the alert as one 160-character SMS on 2G |
+| 9 | **VOICE — solar siren** | resident, no signal | the channel that works when the network does not |
+| 10 | **Home — offline** | resident | last-known data, honestly aged, and what still works |
 
 ### 4.1 VOICE, screens 1–3
 
@@ -212,6 +222,19 @@ used in the mockups:
 - **1.06%** dredged in 35 years — the FUND progress bar is *deliberately* almost invisible
 - **21 barangays** under threat — 6 Bucao, 15 Santo Tomas
 - **866 mm** August rainfall normal
+
+### Simulated readings are marked, not faked
+
+No sensor is deployed, so a live river level cannot be sourced — but em-dashing every
+reading would leave the screens unable to show what they are for. The resolution is a third
+category between *sourced* and *absent*:
+
+- **Sourced** figures carry their citation on the screen (866 mm, 4.7 bn m³, 2,519 families)
+- **Simulated** device readings carry a dotted underline via `.sim`, plus a `title`, and the
+  convention is explained once in the page header (1.4 m, 3.8 m, 612 mm)
+- **Absent** values stay em dashes with a note saying what is missing and who supplies it
+
+Never let a simulated reading render as though it were sourced.
 
 ### Where a number does not exist, show that it does not exist
 
@@ -300,7 +323,7 @@ that no source supports**.
 - [ ] Real inline SVG icons, consistent size and stroke
 - [ ] Tap targets ≥ 44px on resident-facing screens
 - [ ] Motion ≤ 250ms and respects reduced-motion
-- [ ] **Every number traces to `docs/SOURCES.md`; anything unsourced is an em dash**
+- [ ] **Every number is sourced-and-cited, `.sim`-marked, or an em dash — never bare**
 - [ ] File opens standalone from disk with no missing asset
 - [ ] Rendered and looked at, not just written
 
