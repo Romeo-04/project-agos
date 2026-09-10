@@ -1,0 +1,13 @@
+MonthNumber,Month,MonthShort,RainfallMm,MeanTempC,ShareOfAnnualPct,IsWettestMonth,Municipality,Province
+1,January,Jan,5.64,26.39,0.2,No,Olongapo City,Zambales
+2,February,Feb,6.49,26.96,0.2,No,Olongapo City,Zambales
+3,March,Mar,14.34,28.17,0.4,No,Olongapo City,Zambales
+4,April,Apr,24.06,29.41,0.7,No,Olongapo City,Zambales
+5,May,May,233.8,29.14,6.9,No,Olongapo City,Zambales
+6,June,Jun,506.8,28.15,15.0,No,Olongapo City,Zambales
+7,July,Jul,788.38,27.37,23.3,No,Olongapo City,Zambales
+8,August,Aug,865.97,27.09,25.6,Yes,Olongapo City,Zambales
+9,September,Sep,632.31,27.25,18.7,No,Olongapo City,Zambales
+10,October,Oct,202.11,27.61,6.0,No,Olongapo City,Zambales
+11,November,Nov,69.87,27.49,2.1,No,Olongapo City,Zambales
+12,December,Dec,35.98,26.88,1.1,No,Olongapo City,Zambales

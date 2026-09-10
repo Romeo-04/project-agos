@@ -131,6 +131,8 @@ Each page lists: scope tag · headline · SAC visual · data binding · rubric t
 - **SAC visual:** column chart, 12-month rainfall normals, August highlighted; 2026 actuals overlaid **as a second series on the same axis** (never a dual axis)
 - **Data:** `data/raw/Olongapo City_municipal_monthly.csv` — **verified**: Aug 865.97 mm vs. Jul 788.38, Sep 632.31. August leads by 78 mm.
 - **Citation:** PAGASA ClimGridPh CliMap v2.0, Olongapo City municipal normals (2001–2020 rainfall; 1991–2020 temperature)
+- **Two derived findings that strengthen the page further:** **August alone carries 25.6% of Olongapo's annual rainfall**, and **June–September together carry 82.5%** (annual normal 3,385.75 mm). The city's entire flood risk is compressed into four months, and one of them dominates. That concentration is precisely what makes a seasonal early-warning system tractable rather than a year-round burden — a Viability point earned from the problem data.
+- **Chart the highlight from the data, not by hand:** the dataset carries an `IsWettestMonth` flag and `ShareOfAnnualPct`, so August's emphasis is data-driven and survives a refresh.
 - **Why here:** v1 buried this on slide 9. It is the hinge of the entire argument — *the data already said this would happen* — and it belongs at the problem's climax, immediately before the solution.
 - **Also on this page:** the three-bridge mechanism (Del Rosario, Sta. Rita, Kalaklan) and the August 2026 sequence: **517 evacuated (10 Aug, 165 families) → 1,076 individuals / 336 families (18 Aug) → renewed flooding and erosion (28–29 Aug)**, 11 barangays affected.
 
