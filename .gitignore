@@ -1,0 +1,33 @@
+# Playwright / browser automation artifacts — never committed (per project policy)
+screenshots/
+.playwright/
+playwright-report/
+test-results/
+*.webm
+trace.zip
+build/screens/
+**/playwright/**/*.png
+
+# Claude skills ARE tracked (explicit exception to the image rule)
+!.claude/skills/**
+
+# Local env / secrets
+.env
+.env.*
+credentials.json
+*.pem
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/

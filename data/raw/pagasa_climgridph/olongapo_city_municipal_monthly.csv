@@ -1,0 +1,13 @@
+id,Month,Rainfall,MaxTemp,MinTemp,MeanTemp,Region,Province,Municipality
+1037,January,5.64,30.66,22.13,26.39,"Region III",Zambales,"Olongapo City"
+2684,February,6.49,31.61,22.3,26.96,"Region III",Zambales,"Olongapo City"
+4331,March,14.34,33.08,23.25,28.17,"Region III",Zambales,"Olongapo City"
+5978,April,24.06,34.16,24.65,29.41,"Region III",Zambales,"Olongapo City"
+7625,May,233.8,33.17,25.12,29.14,"Region III",Zambales,"Olongapo City"
+9272,June,506.8,31.6,24.71,28.15,"Region III",Zambales,"Olongapo City"
+10919,July,788.38,30.51,24.23,27.37,"Region III",Zambales,"Olongapo City"
+12566,August,865.97,29.91,24.27,27.09,"Region III",Zambales,"Olongapo City"
+14213,September,632.31,30.37,24.14,27.25,"Region III",Zambales,"Olongapo City"
+15860,October,202.11,31.27,23.95,27.61,"Region III",Zambales,"Olongapo City"
+17507,November,69.87,31.34,23.64,27.49,"Region III",Zambales,"Olongapo City"
+19154,December,35.98,30.74,23.02,26.88,"Region III",Zambales,"Olongapo City"
