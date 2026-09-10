@@ -4,7 +4,11 @@ Exact specification for every storyboard chart, so any of us can build them in S
 
 **Story:** `AGOS_Storyboard_NaiveBais` (Canvas) · **Tenant:** `https://aseandse.ap11.hcs.cloud.sap`
 
-**Status:** ✅ built and verified · ⬜ not built · 🔒 blocked
+**Status:** ✅ built · ⬜ not built · 🔒 blocked
+
+**Repointing a chart's dataset:** the Select Model dropdown will not accept a scripted
+`.click()` on an option. Click the combobox, press **ArrowDown** to select, **Enter** to
+commit, then **OK**. That sequence works reliably.
 
 ---
 
@@ -49,15 +53,14 @@ August auto-highlights off the `Wettest month` flag. Month order is alphabetical
 
 ---
 
-## ⬜ P2 — ASEAN flood exposure
+## ✅ P2 — ASEAN flood exposure
 
-**Bar/Column, orientation Horizontal** · `AGOS_ASEAN_INFORM_2026` *(already in the story)*
+**Bar/Column, orientation Horizontal** · `AGOS_ASEAN_INFORM_2026`
 
-> **Started, not finished.** A chart widget exists on the canvas but is still bound to
-> `AGOS_Olongapo_Rainfall`. Repoint it via the Data Source pencil → *Select Model* → pick
-> `AGOS_ASEAN_INFORM_2026` from the dropdown → **OK**, then bind the two slots below.
-> The dropdown selection needs a real click; a scripted `.click()` on the option silently
-> does nothing.
+Renders all 10 states with data labels: Viet Nam 9.90 · Thailand 9.80 · Myanmar 8.80 ·
+Cambodia 8.60 · Indonesia 8.40 · Lao PDR 8.20 · Malaysia 6.80 · **Philippines 6.70** ·
+Brunei 4.70 · Singapore 0.00. Currently ordered alphabetically; sort descending by measure
+during polish.
 
 | Slot | Field |
 |---|---|
