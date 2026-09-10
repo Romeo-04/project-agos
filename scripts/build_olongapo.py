@@ -92,6 +92,12 @@ def main() -> None:
         rows.append(
             {
                 "MonthNumber": MONTH_ORDER.index(month) + 1,
+                # A real ISO date, so SAC types this as a DATE dimension.
+                # Time Series charts (and therefore the Predictive Forecast
+                # add-on on P8) refuse a text dimension - "Month" alone is not
+                # enough. Year is nominal: these are 30-year normals, not a
+                # single year's observations, and the page says so.
+                "Date": f"2026-{MONTH_ORDER.index(month) + 1:02d}-01",
                 # Zero-padded numeric prefix so SAC's dimension sort yields
                 # CALENDAR order. Without it SAC reorders the months
                 # arbitrarily, which destroys the seasonal curve that is the
@@ -120,7 +126,7 @@ def main() -> None:
 
     write_csv(
         PROC / "olongapo_rainfall_normals.csv",
-        ["MonthNumber", "Month", "Month short", "Rainfall (mm)",
+        ["MonthNumber", "Date", "Month", "Month short", "Rainfall (mm)",
          "Mean temperature (C)", "Share of annual rainfall (%)",
          "Wettest month", "Municipality", "Province"],
         rows,

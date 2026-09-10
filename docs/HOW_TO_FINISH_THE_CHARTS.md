@@ -97,13 +97,23 @@ Then annotate the weak-capacity corner: **Myanmar 5.6 · Lao PDR 5.6 · Cambodia
 
 ### 3. P8 — Rainfall forecast ⭐ this one earns the Innovation marks
 
-No import — reuses `AGOS_Olongapo_Rainfall`.
+**Import first.** SAC's Time Series chart refuses a text dimension, and `Month` is text — so
+the CSV now carries a real ISO `Date` column. Import it fresh:
+
+- Recipe A with `data/processed/olongapo_rainfall_normals.csv`
+- Name it **`AGOS_Olongapo_Rainfall_v2`**
+
+Then Recipe B:
 
 | Setting | Value |
 |---|---|
 | Chart type | **Time Series** |
 | Measure | `Rainfall (mm)` |
-| Time dimension | `Month` |
+| Time dimension | **`Date`** (not `Month` — Time Series rejects text dimensions) |
+
+The year 2026 in the `Date` column is nominal: these are 30-year normals, not one year's
+observations. Say so on the page — "PAGASA 30-year monthly normals" — so nobody reads it as
+a single season.
 
 Then: **Chart Add-Ons → Predictive Forecast**.
 
