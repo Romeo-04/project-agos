@@ -79,7 +79,19 @@ reverted to its last genuine save.
 - On "Session Ended", clicking **Log On** re-authenticates from the existing SSO cookie
   without re-entering credentials — but everything since the last genuine save is gone.
 
-**8. Screenshots default to the repo root.**
+**8. Reimport requires an exact schema match.**
+`Reimport Data` on an existing dataset is far cheaper than a fresh import, because it keeps
+the dataset ID and every chart binding pointing at it stays valid. But SAC rejects it with
+*"Reimport is allowed only when all columns match in terms of name and data type"* if a
+single column has been renamed.
+
+**So: when changing data that is already imported, change values freely but never the column
+names.** If a rename is genuinely needed, it is a fresh import plus rebinding every chart.
+
+Also note the **Dependencies** dialog fires before the reimport dialog and blocks the
+toolbar; click its OK, then click Reimport again.
+
+**9. Screenshots default to the repo root.**
 Always pass `.playwright-mcp/<name>.png`. Root-level images are gitignored as a backstop, but the artifacts belong in the ignored folder, not scattered.
 
 ---
