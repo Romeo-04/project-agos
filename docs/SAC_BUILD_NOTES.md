@@ -221,17 +221,24 @@ Renders all 12 months with data labels on, and the **August bar is highlighted a
 because `Wettest month = Yes` drives the colour. That part works exactly as designed — the
 emphasis is data-driven, not hand-picked.
 
-### Open issue: month order
+### Open issue: month order (cosmetic, one chart)
 
-SAC sorts the dimension alphabetically, which scrambles the calendar and destroys the seasonal
-curve. The fix is in the data — `Month` now reads `01 Jan` … `12 Dec`, so alphabetical *is*
-calendar order — and the **dataset has been reimported and verified to hold the new values**.
+SAC sorts the dimension alphabetically, so the months render out of calendar sequence. The
+data fix is done and verified — the dataset holds `01 Jan` … `12 Dec` — but the **story keeps
+its own cached copy of the model's dimension members**, and none of these clears it:
 
-**But the chart still displays the old member names.** SAC caches dimension members in the
-chart definition; a story reload does not refresh them. The remaining step is to remove and
-re-add the `Month` dimension in the Builder, which forces the chart to re-read members.
+- reloading the story page
+- deleting the chart and building a brand-new one
+- `Data Refresh` from the File toolbar
 
-Nothing is wrong with the data. This is one rebinding action away from correct.
+So this is a story-level model cache, not a chart-level one. Untried options, cheapest first:
+1. Remove `AGOS_Olongapo_Rainfall` from the story's Data panel entirely, then re-add it
+2. Build the affected pages in a **new story** (a fresh story reads members fresh)
+3. Leave it and fix the order during page assembly, since the export is an image anyway
+
+**This is cosmetic and affects one chart.** It does not touch any figure: August is still
+865.97 mm, still highlighted automatically off the `Wettest month` flag, still 25.6% of annual.
+Deprioritised in favour of building the remaining charts.
 
 ---
 
