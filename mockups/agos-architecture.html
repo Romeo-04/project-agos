@@ -20,15 +20,23 @@
   --t-lg:19px; --t-xl:25px; --t-2xl:33px;
 
   --n0:#ffffff; --n50:#f7f8fa; --n100:#eef1f5; --n200:#dfe4ea;
-  --n300:#c3ccd6; --n500:#7b8794; --n700:#48525e; --n900:#1b2129;
+  /* n500 is the muted-text step, darker than a conventional mid-grey on purpose:
+     at 11-13px it must clear 4.5:1 on white (5.17) and n50 (4.87). */
+  --n300:#c3ccd6; --n500:#646e7b; --n700:#48525e; --n900:#1b2129;
 
   --navy:#10344C; --teal:#1C7293;
   --accent:#1C7293;
 
-  /* Validated categorical palette — the same five hues the charts use.
-     Run scripts/validate_palette.js before changing any of them. */
-  --cat1:#2E6FA8; --cat2:#E0762F; --cat3:#1FA8C4;
-  --cat4:#8C5BB0; --cat5:#5A9E3E;
+  /* Component tags. The categorical chart hues are validated as DATA MARKS,
+     not as solid fills behind white text — used that way they fail AA at
+     2.8-3.3:1. Each tag therefore gets a 12% tint of its hue plus a
+     same-hue ink darkened until it clears 4.5:1 on that tint. The hue
+     identity survives; the contrast failure does not. */
+  --cat1:#2E6FA8; --cat1-bg:#E6EEF5;
+  --cat2:#9D5321; --cat2-bg:#FBEFE6;
+  --cat3:#167689; --cat3-bg:#E4F5F8;
+  --cat4:#7E529E; --cat4-bg:#F1EBF6;
+  --cat5:#3F6F2B; --cat5-bg:#EBF3E8;
 
   --evacuate:#9E1F17;
 
@@ -37,6 +45,15 @@
 }
 
 * { box-sizing:border-box; }
+
+/* ---- browser surfaces: the parts we did not draw still carry the design ---- */
+:root { color-scheme:light; accent-color:var(--accent); }
+::selection { background:rgba(28,114,147,.20); color:var(--n900); }
+:focus-visible { outline:3px solid var(--teal); outline-offset:2px; border-radius:var(--r-ctl); }
+* { scrollbar-width:thin; scrollbar-color:var(--n300) transparent; }
+*::-webkit-scrollbar { width:10px; height:10px; }
+*::-webkit-scrollbar-track { background:transparent; }
+*::-webkit-scrollbar-thumb { background:var(--n300); border-radius:var(--r-pill); border:3px solid var(--n50); }
 body {
   margin:0;
   font:400 var(--t-md)/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -48,11 +65,7 @@ h1 { font-size:var(--t-2xl); line-height:1.2; margin:0 0 var(--s2); letter-spaci
 .sub { color:var(--n700); max-width:70ch; margin:0 0 var(--s7); }
 .note { color:var(--n500); font-size:var(--t-sm); max-width:78ch; }
 
-.sheet {
-  max-width:1240px; margin-inline:auto; background:var(--n0);
-  border:var(--border); border-radius:var(--r-card);
-  box-shadow:var(--shadow-card); padding:var(--s7);
-}
+.sheet { max-width:1240px; margin-inline:auto; }
 
 /* ---- the diagram ------------------------------------------------ */
 .flow { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s5); align-items:stretch; }
@@ -61,6 +74,7 @@ h1 { font-size:var(--t-2xl); line-height:1.2; margin:0 0 var(--s2); letter-spaci
 
 .stage { display:flex; flex-direction:column; gap:var(--s3); }
 .stage-label {
+  margin:0;
   display:flex; align-items:center; gap:var(--s2);
   font-size:var(--t-xs); font-weight:600; letter-spacing:.08em;
   text-transform:uppercase; color:var(--n500);
@@ -69,7 +83,8 @@ h1 { font-size:var(--t-2xl); line-height:1.2; margin:0 0 var(--s2); letter-spaci
 
 .card {
   border:var(--border); border-radius:var(--r-card); padding:var(--s4);
-  background:var(--n0); display:flex; flex-direction:column; gap:var(--s2);
+  background:var(--n0); box-shadow:var(--shadow-card);
+  display:flex; flex-direction:column; gap:var(--s2);
 }
 /* Cards are content-sized, so no card carries dead space. Only the SAC card
    grows to fill its column — it is the one thing on this page that is built,
@@ -81,14 +96,14 @@ h1 { font-size:var(--t-2xl); line-height:1.2; margin:0 0 var(--s2); letter-spaci
 .tag {
   align-self:flex-start; font-size:var(--t-xs); font-weight:700;
   letter-spacing:.06em; padding:var(--s1) var(--s2);
-  border-radius:var(--r-pill); color:var(--n0);
+  border-radius:var(--r-pill);
 }
-.t-eye   { background:var(--cat1); }
-.t-pulse { background:var(--cat3); }
-.t-voice { background:var(--cat2); }
-.t-path  { background:var(--cat4); }
-.t-fund  { background:var(--cat5); }
-.t-sap   { background:var(--navy); }
+.t-eye   { background:var(--cat1-bg); color:var(--cat1); }
+.t-pulse { background:var(--cat3-bg); color:var(--cat3); }
+.t-voice { background:var(--cat2-bg); color:var(--cat2); }
+.t-path  { background:var(--cat4-bg); color:var(--cat4); }
+.t-fund  { background:var(--cat5-bg); color:var(--cat5); }
+.t-sap   { background:var(--navy);    color:var(--n0); }
 
 .card h3 { margin:0; font-size:var(--t-md); font-weight:600; }
 .card p  { margin:0; font-size:var(--t-sm); color:var(--n700); }
@@ -140,7 +155,7 @@ footer { max-width:1240px; margin:var(--s5) auto 0; }
 
     <!-- 1. SENSE -->
     <div class="stage">
-      <div class="stage-label">1 · Sense</div>
+      <h2 class="stage-label">1 · Sense</h2>
       <div class="card">
         <span class="tag t-eye">EYE</span>
         <h3>Sentinel-1 SAR scanning</h3>
@@ -159,7 +174,7 @@ footer { max-width:1240px; margin:var(--s5) auto 0; }
 
     <!-- 2. INTEGRATE & MODEL -->
     <div class="stage">
-      <div class="stage-label">2 · Integrate &amp; model</div>
+      <h2 class="stage-label">2 · Integrate &amp; model</h2>
       <div class="card">
         <span class="tag t-sap">SAP BTP</span>
         <h3>Ingestion and integration</h3>
@@ -177,7 +192,7 @@ footer { max-width:1240px; margin:var(--s5) auto 0; }
 
     <!-- 3. ANALYSE -->
     <div class="stage">
-      <div class="stage-label">3 · Analyse</div>
+      <h2 class="stage-label">3 · Analyse</h2>
       <div class="card built">
         <span class="tag t-sap">SAP Analytics Cloud</span>
         <h3>The layer this entry demonstrates</h3>
@@ -191,7 +206,7 @@ footer { max-width:1240px; margin:var(--s5) auto 0; }
 
     <!-- 4. ACT & SUSTAIN -->
     <div class="stage">
-      <div class="stage-label">4 · Act &amp; sustain</div>
+      <h2 class="stage-label">4 · Act &amp; sustain</h2>
       <div class="card">
         <span class="tag t-voice">VOICE</span>
         <h3>Three-tier alerting</h3>
