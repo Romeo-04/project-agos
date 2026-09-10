@@ -67,7 +67,19 @@ After choosing a field, a `.uqmMenuBackdrop` or `ui5-li-content` overlay can int
 **6. Leaving the dataset editor prompts to save.**
 Navigating away raises "You have unsaved changes." Click **Save** in that dialog; it completes the navigation afterwards.
 
-**7. Screenshots default to the repo root.**
+**7. The session expires, and a failed save looks exactly like a successful one.**
+This bit us once and cost a rebuild. SAC's session died mid-build; the next `Save` silently
+did nothing, and **the breadcrumb showed no unsaved-changes asterisk**, because the page was
+stale rather than saved. Everything looked fine until a re-login revealed the story had
+reverted to its last genuine save.
+
+- **Never treat the missing asterisk as proof of a save.** On a dead session it means nothing.
+- **Verify a save by reloading the page and re-reading the chart**, not by inspecting UI state.
+- Save after *every* chart, so a session death costs one chart at most.
+- On "Session Ended", clicking **Log On** re-authenticates from the existing SSO cookie
+  without re-entering credentials — but everything since the last genuine save is gone.
+
+**8. Screenshots default to the repo root.**
 Always pass `.playwright-mcp/<name>.png`. Root-level images are gitignored as a backstop, but the artifacts belong in the ignored folder, not scattered.
 
 ---
