@@ -92,8 +92,13 @@ def main() -> None:
         rows.append(
             {
                 "MonthNumber": MONTH_ORDER.index(month) + 1,
-                "Month": month,
-                "Month short": month[:3],
+                # Zero-padded numeric prefix so SAC's dimension sort yields
+                # CALENDAR order. Without it SAC reorders the months
+                # arbitrarily, which destroys the seasonal curve that is the
+                # entire point of P6. Same reasoning as the column renames:
+                # fix it in the data, once, rather than per chart in the UI.
+                "Month": f"{MONTH_ORDER.index(month) + 1:02d} {month[:3]}",
+                "Month full": month,
                 "Rainfall (mm)": float(r["Rainfall"]),
                 "Mean temperature (C)": float(r["MeanTemp"]),
                 "Municipality": r["Municipality"].strip(),
@@ -108,14 +113,14 @@ def main() -> None:
     # Flags SAC uses for conditional highlighting on P6, so the emphasis is
     # driven by the data rather than by hand-picking a bar in the chart editor.
     for r in rows:
-        r["Wettest month"] = "Yes" if r["Month"] == wettest["Month"] else "No"
+        r["Wettest month"] = "Yes" if r["Month full"] == wettest["Month full"] else "No"
         r["Share of annual rainfall (%)"] = round(
             r["Rainfall (mm)"] / annual * 100, 1
         )
 
     write_csv(
         PROC / "olongapo_rainfall_normals.csv",
-        ["MonthNumber", "Month", "Month short", "Rainfall (mm)",
+        ["MonthNumber", "Month", "Month full", "Rainfall (mm)",
          "Mean temperature (C)", "Share of annual rainfall (%)",
          "Wettest month", "Municipality", "Province"],
         rows,
@@ -130,11 +135,11 @@ def main() -> None:
 
     # ---- console summary, for the citation register --------------------------
     runner_up = sorted(rows, key=lambda r: -r["Rainfall (mm)"])[1]
-    jja_son = [r for r in rows if r["Month"] in ("June", "July", "August", "September")]
+    jja_son = [r for r in rows if r["Month full"] in ("June", "July", "August", "September")]
     print("\n  Findings for SOURCES.md:")
-    print(f"    Wettest month: {wettest['Month']} at {wettest['Rainfall (mm)']} mm")
+    print(f"    Wettest month: {wettest['Month full']} at {wettest['Rainfall (mm)']} mm")
     print(
-        f"    Margin over {runner_up['Month']}: "
+        f"    Margin over {runner_up['Month full']}: "
         f"{round(wettest['Rainfall (mm)'] - runner_up['Rainfall (mm)'], 2)} mm"
     )
     print(f"    August share of annual rainfall: {wettest['Share of annual rainfall (%)']}%")
