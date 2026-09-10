@@ -151,9 +151,9 @@ find on the source filename rather than caching a ref.
 
 ---
 
-## P3 — BUILT AND SAVED
+## P3 — BUILT, SAVED, VERIFIED BY RELOAD
 
-**Chart:** Bubble · **Dataset:** `AGOS_ASEAN_INFORM_2026` · **Size:** 960 × 560 px
+**Chart:** Bubble · **Dataset:** `AGOS_ASEAN_INFORM_2026` · **Size:** default (resize during page assembly)
 
 | Slot | Field |
 |---|---|
@@ -172,6 +172,18 @@ hazard / Stronger capacity*. True property of the data, not a rendering fault.
 
 Data spot-checked against source via the chart tooltip — Brunei Darussalam reads 4.70 /
 2.80 / 2.30, matching `asean_inform_multidim_2026.csv` exactly.
+
+**Persistence confirmed the hard way.** The first attempt at this rebuild was lost to a
+silent save failure on an expired session. This version was re-verified by reloading the
+page and re-reading the chart: title, both axis labels, legend and all 10 bubbles came back.
+
+**A working save route when the toolbar menu misbehaves:** click `button[title="Save"]` to
+open the File menu, then press **Enter** — the menu opens with *Save* already highlighted,
+and the menu items sit in shadow DOM where text selectors cannot reach them.
+
+**Superseded dataset removed.** On save, SAC offered to drop the now-unused
+`AGOS_P3_ASEAN_INFORM_2026` from the story ("Remove Models"); accepted, so only the
+re-headered dataset remains attached.
 
 ### Still to do on P3
 
