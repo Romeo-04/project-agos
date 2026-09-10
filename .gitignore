@@ -1,3 +1,9 @@
+# Stray screenshots at repo root (Playwright writes here when the filename
+# has no path prefix). Always pass .playwright-mcp/<name>.png instead.
+/*.png
+/*.jpeg
+/*.webp
+
 # Playwright MCP session artifacts (snapshots, traces, page dumps)
 .playwright-mcp/
 
