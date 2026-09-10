@@ -112,6 +112,33 @@ Every type the storyboard plan calls for is present.
 
 ---
 
+## Datasets in the tenant
+
+| Dataset | Source CSV | Backs |
+|---|---|---|
+| `AGOS_ASEAN_INFORM_2026` | `asean_inform_multidim_2026.csv` | P2, P3, P15 |
+| `AGOS_PH_vs_ASEAN` | `ph_vs_asean_dimensions.csv` | P4 |
+| `AGOS_Olongapo_Rainfall` | `olongapo_rainfall_normals.csv` | P6, P8 |
+| `AGOS_Aeta_Isolation` | `aeta_botolan_isolation_sept2026.csv` | P11 |
+
+Still to import: `leadtime_scenarios` (P10), `risk_matrix` (P12), `roadmap_phases` (P14),
+`zambales_lahar_share` + `zambales_lahar_dredging` (P13), `olongapo_aug2026_events` (P6 support).
+
+`AGOS_P3_ASEAN_INFORM_2026` is the **superseded** first import, kept only until the P3 chart
+is repointed at `AGOS_ASEAN_INFORM_2026`. Delete it after that, or it will confuse whoever
+opens the tenant next.
+
+### Import loop, condensed
+
+Datasets nav → *(Save if the unsaved-changes prompt appears)* → CSV tile →
+`button:has-text("Select Source File")` → `browser_file_upload` →
+`button:has-text("Create")` → wait ~8s → set Name → `button:has-text("Save")` → wait ~8s.
+
+Roughly nine calls per dataset. The Name field ref changes every time, so locate it with a
+find on the source filename rather than caching a ref.
+
+---
+
 ## P3 — built
 
 **Chart:** Bubble
