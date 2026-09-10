@@ -1,11 +1,11 @@
-RiskId,Component,Risk,Likelihood (1-5),Impact (1-5),Risk score,Mitigation
-R1,PULSE,Sensor destroyed or swept away in extreme flow,4,4,16,"Non-contact ultrasonic/radar sensors mounted above historical maximum flood line; replacement budgeted as a consumable, not capex"
-R2,PULSE,"Cellular signal lost during the storm, when it matters most",4,5,20,"Dual uplink - LoRaWAN mesh between sensors as primary, cellular as backup"
-R3,EYE,Monsoon cloud cover blocks optical satellite imagery,5,3,15,Sentinel-1 SAR imagery penetrates cloud; primary feed during active monsoon
-R4,EYE,Satellite revisit too slow to catch fast lahar shifts after one storm,3,3,9,Drone flyover auto-triggered when a PULSE sensor crosses its warning threshold
-R5,VOICE,Alert fatigue erodes trust after false alarms,4,4,16,Three-tier language - Watch / Warning / Evacuate Now - instead of binary alerting
-R6,VOICE,Power or cell outage cuts off the highest-risk households,4,5,20,Solar-charged barangay siren/beacon on the same PULSE threshold; no phone required
-R7,PATH,Crowd-sourced road status goes stale,4,3,12,Status older than 2 hours auto-downgrades to 'Unconfirmed - proceed with caution'
-R8,PATH,Malicious or mistaken false reports,2,4,8,Only barangay-verified officer accounts can set status; residents may flag for review
-R9,FUND,Lahar-sand revenue fluctuates with construction demand,4,3,12,Reserve-fund structure - bank surplus in high-demand quarters against low ones
-R10,Programme,LGU turnover ends political sponsorship mid-rollout,3,4,12,"MOU at provincial PDRRMO level, not city administration alone; data stays with the LGU"
+RiskId,Component,Risk,Likelihood,Impact,Likelihood (1-5),Impact (1-5),Risk score,Mitigation
+R1,PULSE,Sensor destroyed or swept away in extreme flow,4 Likely,4 Major,4,4,16,"Non-contact ultrasonic/radar sensors mounted above historical maximum flood line; replacement budgeted as a consumable, not capex"
+R2,PULSE,"Cellular signal lost during the storm, when it matters most",4 Likely,5 Severe,4,5,20,"Dual uplink - LoRaWAN mesh between sensors as primary, cellular as backup"
+R3,EYE,Monsoon cloud cover blocks optical satellite imagery,5 Almost certain,3 Moderate,5,3,15,Sentinel-1 SAR imagery penetrates cloud; primary feed during active monsoon
+R4,EYE,Satellite revisit too slow to catch fast lahar shifts after one storm,3 Possible,3 Moderate,3,3,9,Drone flyover auto-triggered when a PULSE sensor crosses its warning threshold
+R5,VOICE,Alert fatigue erodes trust after false alarms,4 Likely,4 Major,4,4,16,Three-tier language - Watch / Warning / Evacuate Now - instead of binary alerting
+R6,VOICE,Power or cell outage cuts off the highest-risk households,4 Likely,5 Severe,4,5,20,Solar-charged barangay siren/beacon on the same PULSE threshold; no phone required
+R7,PATH,Crowd-sourced road status goes stale,4 Likely,3 Moderate,4,3,12,Status older than 2 hours auto-downgrades to 'Unconfirmed - proceed with caution'
+R8,PATH,Malicious or mistaken false reports,2 Unlikely,4 Major,2,4,8,Only barangay-verified officer accounts can set status; residents may flag for review
+R9,FUND,Lahar-sand revenue fluctuates with construction demand,4 Likely,3 Moderate,4,3,12,Reserve-fund structure - bank surplus in high-demand quarters against low ones
+R10,Programme,LGU turnover ends political sponsorship mid-rollout,3 Possible,4 Major,3,4,12,"MOU at provincial PDRRMO level, not city administration alone; data stays with the LGU"

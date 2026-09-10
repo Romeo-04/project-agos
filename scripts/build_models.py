@@ -128,14 +128,28 @@ def main() -> None:
         LEADTIME,
     )
 
+    # SAC types a column of bare integers as a MEASURE. A heat map needs a
+    # DIMENSION on each axis, so the 1-5 scores are also emitted as ordered text
+    # labels. The leading digit keeps the axis in scale order, since SAC sorts
+    # dimension members as strings.
+    LIKELIHOOD_LABEL = {
+        1: "1 Rare", 2: "2 Unlikely", 3: "3 Possible",
+        4: "4 Likely", 5: "5 Almost certain",
+    }
+    IMPACT_LABEL = {
+        1: "1 Negligible", 2: "2 Minor", 3: "3 Moderate",
+        4: "4 Major", 5: "5 Severe",
+    }
+
     risk_rows = [
-        (rid, comp, desc, lik, imp, lik * imp, mit)
+        (rid, comp, desc, LIKELIHOOD_LABEL[lik], IMPACT_LABEL[imp],
+         lik, imp, lik * imp, mit)
         for rid, comp, desc, lik, imp, mit in RISKS
     ]
     write_csv(
         PROC / "risk_matrix.csv",
-        ["RiskId", "Component", "Risk", "Likelihood (1-5)", "Impact (1-5)",
-         "Risk score", "Mitigation"],
+        ["RiskId", "Component", "Risk", "Likelihood", "Impact",
+         "Likelihood (1-5)", "Impact (1-5)", "Risk score", "Mitigation"],
         risk_rows,
     )
 
