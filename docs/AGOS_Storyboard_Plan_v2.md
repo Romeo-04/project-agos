@@ -179,9 +179,12 @@ Each page lists: scope tag · headline · SAC visual · data binding · rubric t
 ### P11 — Who this reaches: the Aeta communities
 **Scope:** ZAMBALES · **Rubric:** Relevancy & Impact (underrepresented communities)
 
-- **Headline:** "The most exposed communities are the least connected."
-- **Content:** the **Aeta** indigenous communities displaced by the 1991 Pinatubo eruption, whose resettlement areas sit in and beside the Bucao and Santo Tomas lahar channels — simultaneously the most lahar-exposed, the least served by mobile coverage, and the least represented in formal DRRM planning
-- **SAC visual:** exposure vs. connectivity by barangay/community, or lahar-channel proximity mapped against coverage
+- **Headline:** "Nine of eleven could only be reached by helicopter."
+- **The evidence, and it is three days old.** On **6 September 2026**, **11 Aeta communities** in Botolan, Zambales — **2,519 families** — were cut off from the town proper by swollen rivers and impassable roads along the **Bucao River** and two tributaries draining Mount Pinatubo. Relief took **over seven hours**: **nine communities reached by Philippine Air Force helicopter, two by carabao-drawn cart**. Earlier that week a father and his **5-year-old daughter** drowned when their cart was swept away crossing to Barangay Palis.
+- **Why this is the right anchor:** the Bucao is the *same river system* AGOS's EYE and PULSE components target. This is not an illustrative anecdote borrowed from elsewhere — it is the pilot site, this monsoon season, with a named human cost.
+- **SAC visual:** the 11 barangays by access method during the cutoff (9 airlift / 2 cart), against distance from response capacity — the isolation made quantitative
+- **Data:** `data/processed/aeta_botolan_isolation_sept2026.csv` — **read the sidecar before charting**, the distance figure is a group range and must not be drawn as a per-barangay measurement
+- **Standing context:** Botolan holds Zambales' largest Aeta population; 16,000 ha near Pinatubo was declared Aeta ancestral domain in 2010; the 2009 Bucao dike collapse displaced over 20,000 people across nine villages. The exposure is structural, not a one-off.
 - **Design consequence — this is the point of the page:** because the most exposed users are the least connected, the **solar-powered barangay siren/beacon is not a fallback, it is the primary channel for the highest-risk population.** v1 had this feature as a mitigation footnote. Here the equity finding *justifies* the design decision, which is worth considerably more.
 - **Entirely absent from v1.** Free points on a 20% criterion.
 

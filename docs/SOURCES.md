@@ -24,6 +24,10 @@ Each row records: the figure, its **exact geographic scope**, the source, public
 | S11 | ~3,200 houses damaged (355 destroyed, ~2,800 partially) | **Philippines, national** | NDRRMC | Aug 2026 | 2026-09-10 |
 | S13 | **Philippines vs. ASEAN median (gap):** river flood hazard −1.6 (rank 8/10) · all-hazard Hazard & Exposure +2.25 (rank **1/10**, tied MMR) · Vulnerability +1.3 (rank 3) · Lack of coping capacity −0.1 (rank 7) · INFORM Risk +1.1 (rank 3) | ASEAN-10, national | INFORM Risk Mid 2026 — derived, `scripts/build_asean_inform.py` | 2026 | 2026-09-10 |
 | S14 | ASEAN medians used for P3 quadrant lines: river flood hazard **8.3**, lack of coping capacity **3.9** | ASEAN-10, national | INFORM Risk Mid 2026 — derived | 2026 | 2026-09-10 |
+| S15 | **11 Aeta communities cut off** in Botolan (brgys Villar, Moraza, Belbel, Burgos, Nacolcol, Palis, Maguisguis, Cabatuan, Owaog Nebloc, Malomboy, Poonbato); **2,519 families** affected; 4,564 food packs; **9 reached by helicopter, 2 by carabao cart**; relief took >7 hrs; 25–30 km from town proper | **Botolan, Zambales** | Inquirer, "11 Aeta communities get food aid as swollen rivers cut off access" | **2026-09-07** | 2026-09-10 |
+| S16 | A father and his 5-year-old daughter drowned when their cart was swept away crossing to Barangay Palis | **Botolan, Zambales** | Inquirer | 2026-09-07 | 2026-09-10 |
+| S17 | Botolan is Zambales' largest town and holds the province's largest Aeta population; 16,000 ha (160 km²) near Pinatubo declared Aeta ancestral domain by NCIP in 2010 | **Botolan, Zambales** | Inquirer / NCIP | 2010 / ongoing | 2026-09-10 |
+| S18 | Bucao River dike collapse (Typhoon Kiko, Aug 2009) flooded Botolan and 10 villages; further breach two months later raised lahar and floodwater >1.5 m, **displacing over 20,000 people across 9 villages** | **Botolan, Zambales** | Global Volcanism Program / ReliefWeb | 2011 | 2026-09-10 |
 | S12 | Earlier NDRRMC counts in the same episode: 3.65 M people / 1.06 M families, rising to ~5 M / 1.43 M, across 10 regions | **Philippines, national** | NDRRMC | Aug 2026 | 2026-09-10 |
 
 ## Competition rules — verified
@@ -53,9 +57,9 @@ Figures from v1 that failed verification. Recorded so they are not reintroduced.
 
 | # | Needed for | Status |
 |---|---|---|
-| N1 | Aeta community exposure + connectivity (P11) | to research |
+| N1 | Aeta community exposure + connectivity (P11) | **RESOLVED** — see S15–S18 |
 | N2 | Zambales lahar volume; ~1% dredged since 2020 baseline (P13, P14) | to verify — v1 asserts, no source |
 | N3 | Zambales province-wide evacuation totals, Aug 2026 (may be the true home of the 17,317 figure) | to research |
-| N4 | Barangay-level mobile/SMS coverage, Zambales (P11) | to research |
+| N4 | Barangay-level mobile/SMS coverage, Zambales (P11) | still open — S15 gives *physical* access as a usable proxy if coverage data is not found |
 | N5 | AHA Centre ADInet submission process (P15) | to research |
 | N6 | Sentinel-1 SAR revisit frequency over Luzon (P8) | to verify |
