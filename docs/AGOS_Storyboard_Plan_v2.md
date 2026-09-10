@@ -93,10 +93,23 @@ Each page lists: scope tag · headline · SAC visual · data binding · rubric t
 
 - Full-bleed Olongapo/Zambales flood photograph (≤2 MB, compressed)
 - Title: **AGOS** + hook subtitle
-- Required cover block: Team Name · Institution · **Philippines** · **SDG 11, SDG 13** · brief storyboard description
-- The description must name the solution in one sentence — a judge should know the destination from page one
 
-> **BLOCKED — needs team input:** team name, institution, member names, final title line.
+**Required cover block — all six ADSE elements, confirmed:**
+
+| Element | Value |
+|---|---|
+| Storyboard Title | **AGOS** + subtitle *(final hook line to confirm)* |
+| Team Name | **Naive Bais** |
+| Institution | **FEU – Institute of Technology** |
+| Country represented | **Philippines** |
+| SDG(s) | **SDG 11** (Sustainable Cities and Communities) · **SDG 13** (Climate Action) |
+| Brief description | one sentence naming AGOS and what it does |
+
+**Team members:** Jhezra A. Tolentino · Sean Matthew L. Viacrusis
+
+**Export filename:** `PHILIPPINES_NAIVE BAIS.pdf`
+
+- The description must name the solution in one sentence — a judge should know the destination from page one
 
 ---
 
@@ -358,7 +371,20 @@ Nothing here is discarded. It is deferred to the artifact that has pages for it.
 
 ## 7. Open items requiring team input
 
-1. **Cover block** — team name, institution, member names, final title line *(blocks P1)*
-2. **SAC tenant URL** and the login hand-off *(blocks all chart construction)*
-3. **Submission deadline** — to confirm against the one-day working target
-4. **KPI target numbers** — baselines are specified; targets are the team's call *(P14)*
+**Resolved**
+
+- Cover block — Naive Bais · FEU – Institute of Technology · Philippines · Tolentino, Viacrusis
+- SAC tenant — `https://aseandse.ap11.hcs.cloud.sap`
+- **Deadline — tomorrow, 2026-09-11, 23:59**
+
+**Still open**
+
+| # | Item | Blocks | Severity |
+|---|---|---|---|
+| 1 | **Lahar-sand sale price per m³** (Provincial Treasurer's Office) | **P13** | **Blocking** — no placeholder will be invented |
+| 2 | **Sensor unit cost, installation cost, annual LGU subscription** (vendor quotes) | **P13** | **Blocking** |
+| 3 | KPI target numbers — baselines are set, targets are a team commitment | P14 | Page ships with baselines only if unresolved |
+| 4 | Final hook subtitle for the cover | P1 | Low — placeholder usable |
+| 5 | Image sourcing route — official agency / licensed stock / team photos | P1, P5, P9 | Medium — affects attribution captions |
+
+See `data/processed/model_assumptions.csv` for the full assumption register.

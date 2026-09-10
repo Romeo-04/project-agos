@@ -1,3 +1,6 @@
+# Playwright MCP session artifacts (snapshots, traces, page dumps)
+.playwright-mcp/
+
 # Playwright / browser automation artifacts — never committed (per project policy)
 screenshots/
 .playwright/
