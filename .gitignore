@@ -17,6 +17,13 @@ trace.zip
 build/screens/
 **/playwright/**/*.png
 
+# Exported chart images and the assembled PDF. These are screenshots of the
+# SAC story, so the no-screenshots rule covers them. The README that explains
+# how to regenerate them IS tracked.
+deck/charts/
+deck/photos/
+deck/*.pdf
+
 # Claude skills ARE tracked (explicit exception to the image rule)
 !.claude/skills/**
 
