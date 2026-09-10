@@ -53,7 +53,7 @@ The argument in one line per act:
 
 1. **Flood exposure is an ASEAN condition, not a Philippine one** — six of ten member states score ≥8.0 on river flood hazard. *(This is v1's own thesis, now provable.)*
 2. **What separates outcomes is not hazard, it is coping capacity** — and that is a solvable variable.
-3. **The Philippines sits at the sharp end** — tied-highest Hazard & Exposure in ASEAN (8.3), second-highest overall INFORM Risk (5.3).
+3. **The Philippines sits at the sharp end — but standard flood indices miss it.** 8th of 10 on *river flood* hazard (6.7), yet **1st in ASEAN on all-hazard exposure (8.3, tied with Myanmar)** and 3rd on composite INFORM Risk (5.3). Philippine flooding is compound — typhoon-driven, and in Zambales lahar-amplified — so a river-flood metric under-counts it by 1.6 points against the ASEAN median. **That measurement gap is the problem AGOS exists to close.**
 4. **Zambales/Olongapo shows the mechanism** — three floods in one month, August 2026.
 5. **It was foreseeable.** PAGASA's own 30-year normals already made August Olongapo's wettest month at 865.97 mm. The data existed; the warning did not reach anyone.
 6. **Therefore: close the gap between the data that exists and the people who need it.** That is AGOS.
@@ -92,10 +92,12 @@ Each page lists: scope tag · headline · SAC visual · data binding · rubric t
 ### P3 — Hazard is not the differentiator; coping capacity is
 **Scope:** ASEAN · **Rubric:** Problem Definition + Analysis
 
-- **Headline:** "Where high hazard meets weak coping capacity, floods become disasters."
-- **SAC visual:** **scatter/bubble chart** — x = river flood hazard, y = lack of coping capacity, bubble size = INFORM Risk score, quadrant lines at the ASEAN medians. Label the high-hazard/low-capacity quadrant.
+- **Headline:** "Hazard and capacity are independent. Where they diverge, floods become disasters."
+- **SAC visual:** **scatter/bubble chart** — x = river flood hazard, y = lack of coping capacity, bubble size = composite INFORM Risk, quadrant lines drawn at the **ASEAN medians** (FloodHazard 8.3, LackOfCopingCapacity 3.9). Both medians ship as columns in the dataset so SAC draws the lines from the data, not from a hardcoded value.
 - **Data:** `data/processed/asean_inform_multidim_2026.csv` — indicators `HA.NAT.FL`, `CC`, `VU`, `HA`, `INFORM`
-- **Why this chart:** it is the analytical heart of the deck. It reframes the problem from "who gets the most rain" to "who can least absorb it," which is the only framing under which a software early-warning system is the right answer. It also pre-loads the replication argument delivered on P15.
+- **Axis direction warning:** `LackOfCopingCapacity` is scored so **higher = worse**. The y-axis must be labelled "Lack of coping capacity (higher = weaker)" or the chart reads backwards.
+- **Why this chart:** it is the analytical heart of the deck. It reframes the problem from "who gets the most rain" to "who can least absorb it" — the only framing under which a software early-warning system is the right answer — and it pre-loads the P15 replication argument.
+- **Handle the Philippines' position honestly.** On these two axes the Philippines falls in the *lower-hazard / stronger-capacity* quadrant. Do not hide this and do not re-cut the axes to move it. **Name it on the page**, because it is the setup for P4: a river-flood metric is the wrong instrument for Philippine flood risk, and the chart demonstrating that is more persuasive than a chart concealing it.
 - **This page does the heaviest lifting for the 25% criterion. Build it first and build it best.**
 
 ---
@@ -103,8 +105,10 @@ Each page lists: scope tag · headline · SAC visual · data binding · rubric t
 ### P4 — The Philippines at the sharp end
 **Scope:** PHILIPPINES · **Rubric:** Problem Definition
 
-- **Headline:** "Tied-highest hazard exposure in ASEAN. Second-highest overall risk."
-- **SAC visual:** grouped bar — Philippines vs. ASEAN median across the four INFORM dimensions (Hazard & Exposure, Vulnerability, Lack of Coping Capacity, Risk)
+- **Headline:** "8th in ASEAN for river floods. 1st for hazard exposure. The index is measuring the wrong thing."
+- **The argument, and the deck's sharpest analytical move.** Against the ASEAN median the Philippines scores **−1.6 on river flood hazard (rank 8/10)** yet **+2.25 on all-hazard Hazard & Exposure (rank 1/10, tied with Myanmar at 8.3)** and **+1.1 on composite INFORM Risk (5.3, rank 3/10)**. Philippine flooding is *compound* — typhoon-driven, and in Zambales lahar-amplified — so single-hazard river-flood indices systematically under-count it. **This measurement gap is the problem statement:** if regional indices cannot see the hazard Zambales faces, local sensing and community verification are not a convenience, they are the only instrument that can.
+- **SAC visual:** diverging bar of `GapVsMedian` — Philippines vs. ASEAN median across all five INFORM dimensions, so the −1.6 / +2.25 inversion is visible in a single read. Diverging palette: two hues with a neutral gray at zero, never a hue at the midpoint.
+- **Data:** `data/processed/ph_vs_asean_dimensions.csv` (carries `GapVsMedian` and `PhilippinesRank`)
 - **Supporting stat band (all cited):** August 2026 — **8.1 M people affected across 10 regions**; **PHP 3.4 B** infrastructure damage; **PHP 689 M** agriculture damage; **437 road sections and 27 bridges** affected
 - **Correction from v1:** these figures are national and are labelled national. v1 presented the agriculture figure as one city's flood damage.
 

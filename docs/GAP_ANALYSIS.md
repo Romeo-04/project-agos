@@ -101,7 +101,11 @@ v1 planned a bar chart implying Philippine flood exceptionalism, then a line rea
 
 **The Philippines ranks 8th of 10 on river flood hazard.** A chart built to imply Philippine exceptionalism would be *refuted by its own axis* — the worst possible outcome on a credibility-scored criterion.
 
-**This is a gift, not a problem.** The data proves v1's own thesis line *literally*: six ASEAN states score ≥8.0. Flood exposure genuinely **is** an ASEAN condition. And the Philippines' real distinction is visible in a different column — **overall Hazard & Exposure 8.3, tied highest in ASEAN with Myanmar; INFORM Risk 5.3, second highest.**
+**This is a gift, not a problem.** The data proves v1's own thesis line *literally*: six ASEAN states score ≥8.0. Flood exposure genuinely **is** an ASEAN condition.
+
+And the Philippines' real distinction sits in a different column. Against the ASEAN median it is **−1.6 on river flood hazard (rank 8/10)** but **+2.25 on all-hazard Hazard & Exposure (rank 1/10, tied with Myanmar at 8.3)** and +1.1 on composite INFORM Risk (5.3, rank 3/10).
+
+**This yields a better thesis than v1 had.** Philippine flooding is *compound* — typhoon-driven, and in Zambales lahar-amplified — so single-hazard river-flood indices systematically under-count it. The measurement gap is itself the argument for AGOS: national and regional indices cannot see the hazard Zambales actually faces, which is precisely why local sensing and community verification are required.
 
 **Fix:** replace the single-bar "who's worst" chart with a **two-axis analysis** (flood hazard × lack of coping capacity). This is a stronger analytical move, it is honest, and it hands the solution its replication argument for free: the countries where hazard is high *and* coping capacity is weakest (Myanmar 5.6, Lao PDR 5.6, Cambodia 5.5) are precisely where a low-cost early-warning system transfers best. That argument is worth points under Relevancy & Impact (20%, "replication across ASEAN member states").
 

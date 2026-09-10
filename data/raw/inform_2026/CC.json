@@ -1,0 +1,1912 @@
+[
+ {
+  "Iso3": "AFG",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "AGO",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ALB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ARE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ARG",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ARM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ATG",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "AUS",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "AUT",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "AZE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BDI",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BEL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BEN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BFA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BGD",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BGR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BHR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BHS",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BIH",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BLR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BLZ",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BOL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BRA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BRB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BRN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BTN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BWA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CAF",
+  "IndicatorId": "CC",
+  "IndicatorScore": 8.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CAN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CHE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CHL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CHN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CIV",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CMR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "COD",
+  "IndicatorId": "CC",
+  "IndicatorScore": 8.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "COG",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "COL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "COM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CPV",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CRI",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CUB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CYP",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CZE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DEU",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DJI",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DMA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DNK",
+  "IndicatorId": "CC",
+  "IndicatorScore": 0.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DOM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DZA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ECU",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "EGY",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ERI",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ESP",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "EST",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ETH",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "FIN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "FJI",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "FRA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "FSM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GAB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GBR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GEO",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GHA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GIN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GMB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GNB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GNQ",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GRC",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GRD",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GTM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GUY",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "HND",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "HRV",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "HTI",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "HUN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IDN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IND",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IRL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IRN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IRQ",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ISL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ISR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ITA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "JAM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "JOR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "JPN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 0.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KAZ",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KEN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KGZ",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KHM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KIR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KNA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KOR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KWT",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LAO",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LBN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LBR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LBY",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LCA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LIE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LKA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LSO",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LTU",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LUX",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LVA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MAR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MDA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MDG",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MDV",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MEX",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MHL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MKD",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MLI",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MLT",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MMR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MNE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MNG",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MOZ",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MRT",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MUS",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MWI",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MYS",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NAM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NER",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NGA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NIC",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NLD",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NOR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NPL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NRU",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NZL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "OMN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PAK",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PAN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PER",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PHL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PLW",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PNG",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "POL",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PRK",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PRT",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PRY",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PSE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "QAT",
+  "IndicatorId": "CC",
+  "IndicatorScore": 1.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ROU",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "RUS",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "RWA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SAU",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SDN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SEN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SGP",
+  "IndicatorId": "CC",
+  "IndicatorScore": 0.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SLB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SLE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SLV",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SOM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 7.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SRB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SSD",
+  "IndicatorId": "CC",
+  "IndicatorScore": 9.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "STP",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SUR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SVK",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SVN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SWE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SWZ",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SYC",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SYR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TCD",
+  "IndicatorId": "CC",
+  "IndicatorScore": 8.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TGO",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "THA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TJK",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TKM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TLS",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TON",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TTO",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TUN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TUR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TUV",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TZA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "UGA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "UKR",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "URY",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "USA",
+  "IndicatorId": "CC",
+  "IndicatorScore": 2.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "UZB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "VCT",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "VEN",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "VNM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 4.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "VUT",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "WSM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 3.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "YEM",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ZAF",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ZMB",
+  "IndicatorId": "CC",
+  "IndicatorScore": 6.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ZWE",
+  "IndicatorId": "CC",
+  "IndicatorScore": 5.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ }
+]

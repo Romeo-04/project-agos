@@ -1,0 +1,1912 @@
+[
+ {
+  "Iso3": "AFG",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "AGO",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ALB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ARE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ARG",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ARM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ATG",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "AUS",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "AUT",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "AZE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BDI",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BEL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BEN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BFA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BGD",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 9.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BGR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BHR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BHS",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BIH",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BLR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BLZ",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BOL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BRA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BRB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BRN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BTN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "BWA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CAF",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CAN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CHE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CHL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CHN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 9.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CIV",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CMR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "COD",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "COG",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "COL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "COM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CPV",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CRI",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CUB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CYP",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "CZE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DEU",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DJI",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DMA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DNK",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DOM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "DZA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ECU",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "EGY",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 9.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ERI",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 1.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ESP",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "EST",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ETH",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "FIN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "FJI",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "FRA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "FSM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GAB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GBR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GEO",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GHA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GIN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GMB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GNB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GNQ",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GRC",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GRD",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GTM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "GUY",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "HND",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "HRV",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "HTI",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "HUN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IDN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IND",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 9.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IRL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IRN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "IRQ",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 9.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ISL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ISR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ITA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "JAM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "JOR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "JPN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KAZ",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KEN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KGZ",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KHM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KIR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KNA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KOR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "KWT",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LAO",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LBN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LBR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LBY",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LCA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LIE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LKA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 1.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LSO",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LTU",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LUX",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "LVA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MAR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MDA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MDG",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MDV",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MEX",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MHL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MKD",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MLI",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MLT",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MMR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MNE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 1.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MNG",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MOZ",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MRT",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MUS",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MWI",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "MYS",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NAM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NER",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NGA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NIC",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NLD",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NOR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NPL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NRU",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "NZL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "OMN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 1.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PAK",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 9.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PAN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PER",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PHL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PLW",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PNG",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "POL",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PRK",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PRT",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PRY",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "PSE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "QAT",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ROU",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "RUS",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "RWA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 2.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SAU",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SDN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SEN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SGP",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SLB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SLE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SLV",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SOM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SRB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SSD",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "STP",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SUR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SVK",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SVN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.5,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SWE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SWZ",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 1.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SYC",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "SYR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TCD",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TGO",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "THA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 9.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TJK",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TKM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TLS",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TON",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TTO",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TUN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TUR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TUV",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "TZA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "UGA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "UKR",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 6.1,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "URY",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "USA",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 7.4,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "UZB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 8.3,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "VCT",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "VEN",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.7,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "VNM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 9.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "VUT",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "WSM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 0.0,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "YEM",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 5.9,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ZAF",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.2,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ZMB",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 4.8,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ },
+ {
+  "Iso3": "ZWE",
+  "IndicatorId": "HA.NAT.FL",
+  "IndicatorScore": 3.6,
+  "IndicatorName": "",
+  "nodelevel": 0,
+  "ValidityYear": 0,
+  "Unit": "",
+  "Note": ""
+ }
+]

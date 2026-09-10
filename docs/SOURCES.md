@@ -12,7 +12,7 @@ Each row records: the figure, its **exact geographic scope**, the source, public
 | # | Figure | Scope | Source | Published | Retrieved |
 |---|---|---|---|---|---|
 | S1 | River flood hazard & exposure, all 10 ASEAN states (0–10): VNM 9.9 · THA 9.8 · MMR 8.8 · KHM 8.6 · IDN 8.4 · LAO 8.2 · MYS 6.8 · **PHL 6.7** · BRN 4.7 · SGP 0.0 | ASEAN-10, national | INFORM Risk Mid 2026, EC Joint Research Centre — API workflow `515`, indicator `HA.NAT.FL` | 2026 | 2026-09-10 |
-| S2 | INFORM dimensions, ASEAN-10 — Hazard & Exposure, Vulnerability, Lack of Coping Capacity, Risk. **PHL: HA 8.3 (tied highest w/ MMR) · VU 4.7 · CC 3.8 · RISK 5.3 (2nd highest)** | ASEAN-10, national | INFORM Risk Mid 2026 — workflow `515`, indicators `HA`, `VU`, `CC`, `INFORM` | 2026 | 2026-09-10 |
+| S2 | INFORM dimensions, ASEAN-10 — Hazard & Exposure, Vulnerability, Lack of Coping Capacity, Risk. **PHL: HA 8.3 (tied highest w/ MMR) · VU 4.7 · CC 3.8 · RISK 5.3 (3rd highest, after MMR 6.7 and KHM 6.1)** | ASEAN-10, national | INFORM Risk Mid 2026 — workflow `515`, indicators `HA`, `VU`, `CC`, `INFORM` | 2026 | 2026-09-10 |
 | S3 | Lack of coping capacity, highest in ASEAN: MMR 5.6 · LAO 5.6 · KHM 5.5 | ASEAN-10, national | INFORM Risk Mid 2026 — indicator `CC` | 2026 | 2026-09-10 |
 | S4 | Olongapo monthly rainfall normals — **August 865.97 mm (wettest month)**, July 788.38, September 632.31, June 506.80 | **Olongapo City, municipal** | PAGASA ClimGridPh CliMap v2.0, municipal climate normals (rainfall 2001–2020; temperature 1991–2020) | — | file in hand, verified 2026-09-10 |
 | S5 | 517 individuals / 165 families evacuated; river overflowed beneath Del Rosario, Sta. Rita and Kalaklan bridges; 11 barangays affected | **Olongapo City** | Inquirer / GMA News | 2026-08-10 | 2026-09-10 |
@@ -22,6 +22,8 @@ Each row records: the figure, its **exact geographic scope**, the source, public
 | S9 | Infrastructure damage **PHP 3.4 B**; agriculture damage **PHP 689 M** | **Philippines, national** | NDRRMC | Aug 2026 | 2026-09-10 |
 | S10 | **437 road sections and 27 bridges** affected by floods, landslides and related incidents | **Philippines, national** | NDRRMC | Aug 2026 | 2026-09-10 |
 | S11 | ~3,200 houses damaged (355 destroyed, ~2,800 partially) | **Philippines, national** | NDRRMC | Aug 2026 | 2026-09-10 |
+| S13 | **Philippines vs. ASEAN median (gap):** river flood hazard −1.6 (rank 8/10) · all-hazard Hazard & Exposure +2.25 (rank **1/10**, tied MMR) · Vulnerability +1.3 (rank 3) · Lack of coping capacity −0.1 (rank 7) · INFORM Risk +1.1 (rank 3) | ASEAN-10, national | INFORM Risk Mid 2026 — derived, `scripts/build_asean_inform.py` | 2026 | 2026-09-10 |
+| S14 | ASEAN medians used for P3 quadrant lines: river flood hazard **8.3**, lack of coping capacity **3.9** | ASEAN-10, national | INFORM Risk Mid 2026 — derived | 2026 | 2026-09-10 |
 | S12 | Earlier NDRRMC counts in the same episode: 3.65 M people / 1.06 M families, rising to ~5 M / 1.43 M, across 10 regions | **Philippines, national** | NDRRMC | Aug 2026 | 2026-09-10 |
 
 ## Competition rules — verified

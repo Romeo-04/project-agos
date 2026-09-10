@@ -1,0 +1,11 @@
+Country,ISO3,FloodHazard,HazardExposure,Vulnerability,LackOfCopingCapacity,InformRisk,Quadrant,MedianFloodHazard,MedianLackOfCopingCapacity
+Viet Nam,VNM,9.9,5.2,2.6,4.3,3.9,High flood hazard / Weak capacity,8.3,3.9
+Thailand,THA,9.8,7.4,4.1,3.9,4.9,High flood hazard / Weak capacity,8.3,3.9
+Myanmar,MMR,8.8,8.3,6.6,5.6,6.7,High flood hazard / Weak capacity,8.3,3.9
+Cambodia,KHM,8.6,6.9,6.0,5.5,6.1,High flood hazard / Weak capacity,8.3,3.9
+Indonesia,IDN,8.4,8.0,3.0,3.9,4.5,High flood hazard / Weak capacity,8.3,3.9
+Lao PDR,LAO,8.2,2.6,3.4,5.6,3.7,Lower flood hazard / Weak capacity,8.3,3.9
+Malaysia,MYS,6.8,3.0,3.4,3.2,3.2,Lower flood hazard / Stronger capacity,8.3,3.9
+Philippines,PHL,6.7,8.3,4.7,3.8,5.3,Lower flood hazard / Stronger capacity,8.3,3.9
+Brunei Darussalam,BRN,4.7,1.5,2.9,2.8,2.3,Lower flood hazard / Stronger capacity,8.3,3.9
+Singapore,SGP,0.0,0.7,0.5,0.8,0.7,Lower flood hazard / Stronger capacity,8.3,3.9
