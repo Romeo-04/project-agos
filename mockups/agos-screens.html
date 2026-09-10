@@ -35,10 +35,20 @@
   --accent:#1C7293; --accent-press:#155b76;
 
   /* RESERVED status palette — severity only, never a series colour.
-     Always paired with an icon and a text label, never colour alone. */
-  --watch:#F2C14E;    --watch-ink:#4a3708;  --watch-bg:#fdf5e2;
-  --warning:#D9531E;  --warning-ink:#ffffff;--warning-bg:#fdeee7;
-  --evacuate:#B3251C; --evacuate-ink:#ffffff;--evacuate-bg:#fbeae9;
+     Always paired with an icon and a text label, never colour alone.
+     Aligned to PAGASA's rainfall-warning convention (amber/orange/red).
+
+     Severity reads as a LIGHTNESS RAMP, not just a hue change:
+       watch 0.576 -> warning 0.171 -> evacuate 0.083 (relative luminance)
+     so the escalation survives greyscale print and colour-blind vision.
+
+     Every pairing below is WCAG AA verified against its own ink:
+       watch    #F2C14E on #4a3708 = 6.80:1
+       warning  #C74A1A on #ffffff = 4.75:1
+       evacuate #9E1F17 on #ffffff = 7.89:1 */
+  --watch:#F2C14E;    --watch-ink:#4a3708;   --watch-bg:#fdf5e2;
+  --warning:#C74A1A;  --warning-ink:#ffffff; --warning-bg:#fdeee7;
+  --evacuate:#9E1F17; --evacuate-ink:#ffffff;--evacuate-bg:#fbeae9;
   --ok:#2F7D4F;       --ok-bg:#eaf4ee;
 
   --border:1px solid var(--n200);
@@ -89,9 +99,13 @@ h1,h2,h3 { margin:0; line-height:1.2; }
 .alert .sev { font-size:var(--t-xs); font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
 .alert .headline { font-size:var(--t-lg); font-weight:700; }
 .alert .meta { font-size:var(--t-xs); opacity:.9; }
-.alert--watch    { background:var(--watch-bg);    color:var(--watch-ink);    border-left:5px solid var(--watch); }
-.alert--warning  { background:var(--warning);     color:var(--warning-ink);  }
-.alert--evacuate { background:var(--evacuate);    color:var(--evacuate-ink); }
+/* All three states share one treatment — a solid fill — so the tier reads as a
+   single escalating scale. An earlier draft gave Watch a pale background plus a
+   thick left border, which made it look like a different kind of component
+   rather than the first step of the same ladder. */
+.alert--watch    { background:var(--watch);    color:var(--watch-ink); }
+.alert--warning  { background:var(--warning);  color:var(--warning-ink); }
+.alert--evacuate { background:var(--evacuate); color:var(--evacuate-ink); }
 
 /* ---- generic card ---- */
 .card { background:var(--n0); border:var(--border); border-radius:var(--r-card); padding:var(--s4); box-shadow:var(--shadow-card); }

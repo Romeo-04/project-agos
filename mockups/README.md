@@ -24,6 +24,16 @@ python -m http.server 8823
   Warning orange, Evacuate red — so residents don't have to learn a second colour language.
 - **Severity is never colour alone.** Every state carries an icon *and* a text label,
   which also keeps it readable for colour-blind users and in greyscale print.
+- **Severity reads as a lightness ramp**, not just a hue change — relative luminance
+  0.576 → 0.171 → 0.083 across Watch → Warning → Evacuate. The escalation therefore
+  survives greyscale printing and colour-blind vision, not only colour perception.
+- **All three states share one treatment** (a solid fill) so the tier reads as a single
+  ladder. An earlier draft gave Watch a pale background plus a thick left border, which
+  made it look like a different component rather than step one of the same scale.
+- **Every fill is WCAG AA verified against its own ink:** Watch 6.80:1, Warning 4.75:1,
+  Evacuate 7.89:1. The first draft's warning orange was 4.03:1 and would have shipped
+  failing AA — worth re-checking with a contrast calculation, not by eye, if these
+  colours are ever adjusted.
 - **Status colours are reserved.** They never appear as chart-series colours; the
   analytical charts use a separate validated categorical palette.
 - One 4px spacing scale, one neutral ramp, one accent (`--accent`, used only for the
