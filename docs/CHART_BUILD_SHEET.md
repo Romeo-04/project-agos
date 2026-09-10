@@ -53,6 +53,12 @@ August auto-highlights off the `Wettest month` flag. Month order is alphabetical
 
 **Bar/Column, orientation Horizontal** · `AGOS_ASEAN_INFORM_2026` *(already in the story)*
 
+> **Started, not finished.** A chart widget exists on the canvas but is still bound to
+> `AGOS_Olongapo_Rainfall`. Repoint it via the Data Source pencil → *Select Model* → pick
+> `AGOS_ASEAN_INFORM_2026` from the dropdown → **OK**, then bind the two slots below.
+> The dropdown selection needs a real click; a scripted `.click()` on the option silently
+> does nothing.
+
 | Slot | Field |
 |---|---|
 | Measure | `River flood hazard (0-10)` |
