@@ -16,6 +16,10 @@ Each row records: the figure, its **exact geographic scope**, the source, public
 | S3 | Lack of coping capacity, highest in ASEAN: MMR 5.6 · LAO 5.6 · KHM 5.5 | ASEAN-10, national | INFORM Risk Mid 2026 — indicator `CC` | 2026 | 2026-09-10 |
 | S4 | Olongapo monthly rainfall normals — **August 865.97 mm (wettest month)**, July 788.38, September 632.31, June 506.80 | **Olongapo City, municipal** | PAGASA ClimGridPh CliMap v2.0, municipal climate normals (rainfall 2001–2020; temperature 1991–2020) | — | file in hand, verified 2026-09-10 |
 | S19 | **August alone is 25.6% of Olongapo's annual rainfall**; **June–September together are 82.5%**; annual normal total 3,385.75 mm; August leads July by **77.59 mm** | **Olongapo City, municipal** | Derived from S4 — `scripts/build_olongapo.py` | — | 2026-09-10 |
+| S20 | **4.7 billion m³** of Pinatubo lahar deposited in Zambales river systems — **Bucao 3.0 bn m³ (63.8%)**, **Santo Tomas 1.6 bn m³ (34.0%)** | **Zambales province** | MGB Central Luzon, via Daily Tribune / BusinessMirror | 2025-08-27 / 2026-08-12 | 2026-09-10 |
+| S21 | **Only 50 million m³ dredged** of the 4.7 bn m³ — **1.06% removed** in 35 years. Zambales River Restoration Program running since **2023**; river deltas cleared only | **Zambales province** | MGB Central Luzon, via Daily Tribune / BusinessMirror | 2025-08-27 / 2026-08-12 | 2026-09-10 |
+| S22 | Barangays under lahar threat: **6 from Bucao overflow** (San Juan, Paudpod, Carael, Bangan, Capayawan, Batonlapoc — all Botolan); **15 across three towns from Santo Tomas** (San Marcelino, San Felipe, San Narciso) | **Zambales province** | BusinessMirror | 2026-08-12 | 2026-09-10 |
+| S23 | Zambales evacuees as of 12 Aug 2026: **7,044 individuals / 2,441 families** — 4,706 persons (1,621 families) in evacuation centres, 285 individuals (102 families) with relatives | **Zambales province** | BusinessMirror | 2026-08-12 | 2026-09-10 |
 | S5 | 517 individuals / 165 families evacuated; river overflowed beneath Del Rosario, Sta. Rita and Kalaklan bridges; 11 barangays affected | **Olongapo City** | Inquirer / GMA News | 2026-08-10 | 2026-09-10 |
 | S6 | 1,076 individuals / 336 families evacuated | **Olongapo City** | Inquirer | 2026-08-18 | 2026-09-10 |
 | S7 | Widespread flooding and soil erosion; major roads impassable; riverside barangay evacuated; erosion in Barangay Kalaklan | **Olongapo City** | Inquirer | 2026-08-28/29 | 2026-09-10 |
@@ -59,8 +63,8 @@ Figures from v1 that failed verification. Recorded so they are not reintroduced.
 | # | Needed for | Status |
 |---|---|---|
 | N1 | Aeta community exposure + connectivity (P11) | **RESOLVED** — see S15–S18 |
-| N2 | Zambales lahar volume; ~1% dredged since 2020 baseline (P13, P14) | to verify — v1 asserts, no source |
-| N3 | Zambales province-wide evacuation totals, Aug 2026 (may be the true home of the 17,317 figure) | to research |
+| N2 | Zambales lahar volume; dredging baseline (P13, P14) | **RESOLVED** — S20–S21. v1's "~1% removed since 2020" was directionally right but wrong on timeframe: it is **1.06% removed since 1991**, and the dredging programme only began in 2023. |
+| N3 | Zambales province-wide evacuation totals, Aug 2026 | **PARTIALLY RESOLVED** — S23 gives 7,044 individuals / 2,441 families at 12 Aug 2026, province-wide. Still does not reconcile with v1's 17,317; that figure remains unsourced and stays rejected. |
 | N4 | Barangay-level mobile/SMS coverage, Zambales (P11) | still open — S15 gives *physical* access as a usable proxy if coverage data is not found |
 | N5 | AHA Centre ADInet submission process (P15) | to research |
 | N6 | Sentinel-1 SAR revisit frequency over Luzon (P8) | to verify |
