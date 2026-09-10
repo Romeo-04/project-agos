@@ -120,12 +120,23 @@ def main() -> None:
         ASSUMPTIONS,
     )
 
+    # The x-axis of P10 is time-since-alert, which has to reach SAC as a
+    # DIMENSION. Every column here is numeric, and SAC will not accept an
+    # all-measure dataset - it silently demotes one column to a dimension, and
+    # it picks the last one, which is the measure the whole chart is about.
+    # Writing the minutes as a zero-padded text label settles the typing at the
+    # data layer: the axis is a dimension, both percentages stay measures, and
+    # the padding keeps the members in chronological order under string sort.
+    leadtime_rows = [
+        (f"{minutes:03d} min", reactive, agos)
+        for minutes, reactive, agos in LEADTIME
+    ]
     write_csv(
         PROC / "leadtime_scenarios.csv",
         ["Minutes from first alert",
          "Current reactive warning (% evacuated)",
          "With AGOS lead time (% evacuated)"],
-        LEADTIME,
+        leadtime_rows,
     )
 
     # SAC types a column of bare integers as a MEASURE. A heat map needs a

@@ -1,10 +1,10 @@
 Minutes from first alert,Current reactive warning (% evacuated),With AGOS lead time (% evacuated)
-0,0,0
-15,3,18
-30,9,41
-45,18,63
-60,30,80
-75,44,91
-90,58,96
-105,70,99
-120,79,100
+000 min,0,0
+015 min,3,18
+030 min,9,41
+045 min,18,63
+060 min,30,80
+075 min,44,91
+090 min,58,96
+105 min,70,99
+120 min,79,100
