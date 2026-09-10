@@ -5,6 +5,17 @@ Exact specification for every storyboard chart, so any of us can build them in S
 **Story:** `AGOS_Storyboard_NaiveBais` (Canvas) · **Tenant:** `https://aseandse.ap11.hcs.cloud.sap`
 
 **Status:** ✅ built · ⬜ not built · 🔒 blocked
+**7 of 13 built and verified by reload: P2, P3, P4, P6, P8, P11, P15.**
+
+**Reliable way to change chart type** (the scripted approaches silently fail):
+click the *value* text in the Currently Selected Chart combobox, then click the type inside
+`[data-testid="custom-select-popper"]`. Clicking the combobox wrapper toggles it shut again.
+
+**Do not use the Delete key to remove a chart** — selection is easy to misjudge and it acts
+on whatever SAC thinks is focused. Use the chart's own **More Actions → Delete**.
+
+**Charts scroll horizontally off-canvas and SAC virtualises them.** A DOM text scan will
+report a chart as missing when it is only off-screen. Verify by screenshot, not by scanning.
 
 **Repointing a chart's dataset:** the Select Model dropdown will not accept a scripted
 `.click()` on an option. Click the combobox, press **ArrowDown** to select, **Enter** to
@@ -88,27 +99,27 @@ Still to polish: two hues with a neutral grey at zero — never a hue at the mid
 
 ---
 
-## ⬜ P11 — Aeta community isolation
+## ✅ P11 — Aeta community isolation
 
-**Bar/Column** · `AGOS_Aeta_Isolation` *(already imported)*
+**Bar/Column** · `AGOS_Aeta_Isolation_v2`
 
 | Slot | Field |
 |---|---|
-| Measure | `Barangay` (count) |
+| Measure | `Communities` |
 | Dimension | `Access method during cutoff` |
-| Colour | `Access method during cutoff` |
 
-Result: **9 helicopter airlift, 2 carabao cart.** Do **not** chart `Distance from town proper (km)` per barangay — it is a single group range (25–30 km) from the source, carried as a midpoint so the file is loadable. Charting it per barangay would invent precision. Use it as a page annotation instead.
-
----
-
-## ⬜ P15 — Scaling priority
-
-**Bubble** · `AGOS_ASEAN_INFORM_2026` — same build as P3, then filter or annotate the high-hazard / weak-capacity quadrant. Call out **Myanmar 5.6, Lao PDR 5.6, Cambodia 5.5** on lack of coping capacity.
+Renders **Helicopter airlift 9, Carabao-drawn cart 2** — verified. Do **not** chart `Distance from town proper (km)` per barangay — it is a single group range (25–30 km) from the source, carried as a midpoint so the file is loadable. Charting it per barangay would invent precision. Use it as a page annotation instead.
 
 ---
 
-## ⬜ P8 — Rainfall to river level (forecast)
+## ✅ P15 — Scaling priority
+
+**Bubble** · `AGOS_ASEAN_INFORM_2026` — built, same bindings as P3. Still to do: annotate the
+high-hazard / weak-capacity corner and call out **Myanmar 5.6, Lao PDR 5.6, Cambodia 5.5**.
+
+---
+
+## ✅ P8 — Rainfall to river level
 
 **Time Series** · `AGOS_Olongapo_Rainfall`
 
@@ -117,7 +128,12 @@ Result: **9 helicopter airlift, 2 carabao cart.** Do **not** chart `Distance fro
 | Measure | `Rainfall (mm)` |
 | Time dimension | `Month` |
 
-Then **Chart Add-Ons → Predictive Forecast**. This page is the whole Innovation claim (15%): a visible forecast band is scoreable, the adjective "predictive" is not.
+Renders the seasonal curve in correct calendar order.
+
+> **Forecast is not available on this tenant.** Chart Add-Ons offers only Reference Line,
+> Tooltip, Hyperlink and Structure — no Predictive Forecast. Likely licence-gated. If it
+> cannot be enabled, the Innovation claim rests on the SAR/Sentinel-1 cloud-penetration
+> reasoning and the sensor architecture instead, both already written up in the plan.
 
 ---
 
