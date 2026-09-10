@@ -1,0 +1,5 @@
+Phase,PhaseName,StartMonth,EndMonth,Step,Action,KpiName,KpiBaseline,KpiTarget
+1,Engagement & Planning,1,3,Co-design with Olongapo OCDRRMO and Zambales PDRRMO,Formal MOU signed,Barangays with signed participation,0,
+2,Deployment & Set-up,4,9,Convert 3 manual Olongapo bridge gauges to PULSE; install upstream Bucao/Santo Tomas sensors,Devices reporting into the platform,Sensors live and reporting,0,
+3,Operation & Monsoon Stress Test,10,15,VOICE alerts and PATH live; SAC dashboard live for LGU engineers,First full monsoon season monitored,Sensor uptime in monsoon season (%),n/a,
+4,Scaling & Reporting,16,24,Expand to Region III neighbours; first submission to AHA Centre ADInet,Annual Flood Resilience Report published,Lahar dredged per quarter vs. baseline,1.06% in 35 years,

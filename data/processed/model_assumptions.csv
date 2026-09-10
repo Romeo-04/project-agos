@@ -1,0 +1,11 @@
+AssumptionId,Page,Assumption,Status,Basis
+A1,P10,"Olongapo evacuation, 18 Aug 2026: 1,076 individuals / 336 families",SOURCED,SOURCES.md S6
+A2,P10,Current warning is reactive: alert issued when river reaches evacuation level at the bridge,SOURCED,"Reported practice, SOURCES.md S5-S7"
+A3,P10,AGOS lead time of 2 hours from upstream sensor threshold to downstream evacuation level,ESTIMATE,Team to validate against Bucao-to-Olongapo channel travel time
+A4,P10,Evacuation completion follows an S-curve; households move faster once neighbours do,ESTIMATE,Standard evacuation-behaviour assumption
+A5,P13,4.7 bn m3 lahar in Zambales rivers; 50 m m3 dredged to date (1.06%),SOURCED,SOURCES.md S20-S21
+A6,P13,"Zambales River Restoration Program operating since 2023, deltas only",SOURCED,SOURCES.md S21
+A7,P13,Lahar-sand sale price per m3,UNSOURCED - BLOCKING,Team must supply a Provincial Treasurer figure before P13 ships
+A8,P13,"Sensor unit cost, installation cost, annual platform subscription per LGU",UNSOURCED - BLOCKING,Team to set from vendor quotes
+A9,P14,24-month roadmap across 4 phases,ESTIMATE,Carried from v1 plan section 4.4
+A10,P12,"Likelihood and impact scored 1-5 by the team, not measured",ESTIMATE,Qualitative risk assessment
