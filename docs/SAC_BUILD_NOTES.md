@@ -91,7 +91,48 @@ names.** If a rename is genuinely needed, it is a fresh import plus rebinding ev
 Also note the **Dependencies** dialog fires before the reimport dialog and blocks the
 toolbar; click its OK, then click Reimport again.
 
-**9. Screenshots default to the repo root.**
+**9. SAC refuses an all-numeric dataset and silently demotes a column to a dimension.**
+`leadtime_scenarios.csv` was three integer columns. SAC imported it as **two** measures plus
+one dimension — and the column it demoted was the last one, `With AGOS lead time
+(% evacuated)`, the measure the whole chart exists to show. Nothing warned; the field was
+simply absent from the measure picker.
+
+The same rule bites the other way round: a dataset of nothing but text (the first Aeta
+import) gives SAC no measure to chart.
+
+**Fix it in the data, not the UI.** Every dataset needs at least one text column and at
+least one numeric column, and you choose which is which by choosing the type:
+
+- an axis that must be a dimension → write it as text (`000 min`, `4 Likely`)
+- a value that must be a measure → keep it a bare number, and add a `= 1` count column if
+  the file has no natural one
+
+Zero-pad or number-prefix those text labels (`000 min`…`120 min`, `1 Rare`…`5 Almost
+certain`), because SAC sorts dimension members as strings. That single convention buys
+correct typing *and* correct axis order with no per-chart UI work.
+
+**10. Aggregation is a dataset property, and the story has no Average.**
+A heat map of `Risk score` over Likelihood × Impact summed the risks sharing a cell: the
+4×5 cell read **40** instead of 20. The measure's `...` menu in the story Builder only
+offers Display Options and Rename — no aggregation.
+
+Set it on the dataset: open the dataset → click the measure's `SUM` chip → **Details** tab →
+**Aggregation Type**. The options are SUM / COUNT / MIN / MAX / NONE; **there is no
+AVERAGE**. Here **MAX** is exactly right, because every risk in a given cell shares the same
+likelihood and impact, so max(L×I) *is* the cell's score. Save the dataset, then reload the
+story before trusting the numbers.
+
+**11. Gradient palettes map position 0 to the *highest* value.**
+A custom light→dark story gradient came out inverted: risk 8 was the darkest cell and risk
+20 the palest. The stops are not "0% = low". Build the ramp, look at it, and if it reads
+backwards use the **swap** button (⇄, beside the stop count) in *Edit Story Gradient Palette*.
+
+SAC's stock gradients are `sapColorfulGradientPalette` (a blue→magenta rainbow — never use
+it for magnitude), `sapBlueGradientPalette`, and `sapIbcsGradientPalette`. For a single-hue
+warm ramp, create a **Story Palette** with two stops: `9E1F17` → `FBE0DD`, the evacuate red
+from the design tokens and a light tint of the same hue.
+
+**12. Screenshots default to the repo root.**
 Always pass `.playwright-mcp/<name>.png`. Root-level images are gitignored as a backstop, but the artifacts belong in the ignored folder, not scattered.
 
 ---
@@ -138,19 +179,26 @@ Every type the storyboard plan calls for is present.
 
 ## Datasets in the tenant
 
+All imported. Where a name carries a version suffix, use it — the unsuffixed one is a
+superseded import kept only so nothing breaks if a chart still points at it.
+
 | Dataset | Source CSV | Backs |
 |---|---|---|
 | `AGOS_ASEAN_INFORM_2026` | `asean_inform_multidim_2026.csv` | P2, P3, P15 |
 | `AGOS_PH_vs_ASEAN` | `ph_vs_asean_dimensions.csv` | P4 |
-| `AGOS_Olongapo_Rainfall` | `olongapo_rainfall_normals.csv` | P6, P8 |
-| `AGOS_Aeta_Isolation` | `aeta_botolan_isolation_sept2026.csv` | P11 |
+| `AGOS_Olongapo_Rainfall` | `olongapo_rainfall_normals.csv` | P6 |
+| `AGOS_Olongapo_Rainfall_v2` | same, with an ISO `Date` column | **P8** (Time Series needs a date) |
+| `AGOS_Aeta_Isolation_v2` | `aeta_botolan_isolation_sept2026.csv` | **P11** (has the `Communities` count) |
+| `AGOS_LeadTime_v3` | `leadtime_scenarios.csv` | **P10** (minutes as text → dimension) |
+| `AGOS_Risk_Matrix_v2` | `risk_matrix.csv` | **P12** (ordered text labels; Risk score = MAX) |
+| `AGOS_Roadmap` | `roadmap_phases.csv` | P14 |
+| `AGOS_Lahar_Dredging` | `zambales_lahar_dredging.csv` | P13 fallback |
 
-Still to import: `leadtime_scenarios` (P10), `risk_matrix` (P12), `roadmap_phases` (P14),
-`zambales_lahar_share` + `zambales_lahar_dredging` (P13), `olongapo_aug2026_events` (P6 support).
-
-`AGOS_P3_ASEAN_INFORM_2026` is the **superseded** first import, kept only until the P3 chart
-is repointed at `AGOS_ASEAN_INFORM_2026`. Delete it after that, or it will confuse whoever
-opens the tenant next.
+**Superseded, do not bind to these:** `AGOS_P3_ASEAN_INFORM_2026`, `AGOS_Olongapo_Rainfall`
+(for P8), `AGOS_Aeta_Isolation`, `AGOS_LeadTime`, `AGOS_LeadTime_v2`, `AGOS_Risk_Matrix`.
+Each was replaced because a column had to change type or be added, and SAC's reimport
+refuses a schema change — see gotchas 8 and 9. Deleting them is safe once the story is
+final; SAC also offers to drop unused ones on save ("Remove Models").
 
 ### Import loop, condensed
 
@@ -242,25 +290,36 @@ Deprioritised in favour of building the remaining charts.
 
 ---
 
-## Remaining build queue
+## Build queue — 11 of 13 done
 
-Pages in score order, per `EXECUTION_SEQUENCE.md`. Datasets marked ✅ are already in the tenant.
+All eleven charts below were built, saved, and **verified by reloading the story**.
 
-| # | Page | Chart | Dataset |
-|---|---|---|---|
-| ~~1~~ | ~~P3~~ | ~~Bubble quadrant~~ | ✅ **DONE** |
-| 2 | P6 | Column, August highlighted | ✅ `AGOS_Olongapo_Rainfall` |
-| 3 | P8 | Time series + SAC forecast | ✅ `AGOS_Olongapo_Rainfall` |
-| 4 | P2 | Horizontal bar, 10 states | ✅ `AGOS_ASEAN_INFORM_2026` |
-| 5 | P4 | Diverging bar, gap vs median | ✅ `AGOS_PH_vs_ASEAN` |
-| 6 | P11 | Access method by barangay | ✅ `AGOS_Aeta_Isolation` |
-| 7 | P15 | Quadrant + deployment priority | ✅ `AGOS_ASEAN_INFORM_2026` |
-| 8 | P10 | Lead-time scenarios | ⬜ import `leadtime_scenarios.csv` |
-| 9 | P13 | Revenue vs cost | ⬜ **blocked on pricing inputs** |
-| 10 | P12 | Risk heat map | ⬜ import `risk_matrix.csv` |
-| 11 | P14 | Roadmap timeline | ⬜ import `roadmap_phases.csv` |
-| 12 | P9 | Alert reach by channel | ⬜ |
-| 13 | P7 | Architecture data tile | ⬜ |
+| # | Page | Chart | Dataset | Status |
+|---|---|---|---|---|
+| 1 | P3 | Bubble quadrant | `AGOS_ASEAN_INFORM_2026` | ✅ |
+| 2 | P6 | Column, August highlighted | `AGOS_Olongapo_Rainfall` | ✅ *(month order cosmetic, below)* |
+| 3 | P8 | Time series | `AGOS_Olongapo_Rainfall_v2` | ✅ *(no forecast — see below)* |
+| 4 | P2 | Horizontal bar, 10 states | `AGOS_ASEAN_INFORM_2026` | ✅ |
+| 5 | P4 | Diverging bar, gap vs median | `AGOS_PH_vs_ASEAN` | ✅ |
+| 6 | P11 | Access method during cutoff | `AGOS_Aeta_Isolation_v2` | ✅ |
+| 7 | P15 | Quadrant + deployment priority | `AGOS_ASEAN_INFORM_2026` | ✅ |
+| 8 | P10 | Lead-time scenarios | `AGOS_LeadTime_v3` | ✅ both series on one axis |
+| 9 | P12 | Risk heat map | `AGOS_Risk_Matrix_v2` | ✅ single-hue ramp, MAX aggregation |
+| 10 | P14 | Roadmap timeline | `AGOS_Roadmap` | ✅ sorted End month ascending = phase order |
+| 11 | P13 | Lahar dredged vs remaining | `AGOS_Lahar_Dredging` | ✅ **fallback** — 50 vs 4,650 million m³ |
+| — | P9 | Alert reach by channel | — | ⬜ static graphic; no dataset exists |
+| — | P7 | Architecture data tile | — | ⬜ static graphic |
+
+**P13 is the fallback, not the planned chart.** The revenue-vs-cost projection still needs
+the two blocking inputs in `model_assumptions.csv` (A7 lahar-sand price per m³, A8 sensor and
+subscription costs). The dredging chart stands on its own — 50 million m³ moved against
+4,650 million m³ remaining is **1.06% in 35 years**, which argues the constraint is financing
+cadence, not engineering.
+
+**Predictive Forecast is unavailable on this tenant.** Chart Add-Ons offers only Reference
+Line, Tooltip, Hyperlink and Structure, so P8 ships as a plain time series. The Innovation
+claim therefore rests on the SAR/Sentinel-1 reasoning and the sensor architecture, not on a
+visible forecast band. Worth asking ADSE whether the licence can be enabled.
 
 **Pace observed:** roughly 12–15 tool calls per chart once the dataset is in, plus about 9
 per dataset import. The first chart cost far more because of the UI discovery recorded above;

@@ -8,31 +8,44 @@ Written to be followed click-by-click in your own browser. No prior context need
 
 ---
 
-## Datasets already in the tenant — nothing to import for the next three charts
+## Every dataset is imported. Nothing left to import.
 
-| Dataset | Use for |
+| Dataset | Backs |
 |---|---|
-| `AGOS_ASEAN_INFORM_2026` | P2 ✅, P3 ✅, **P15** |
-| `AGOS_Olongapo_Rainfall_v2` | **P8** — has the `Date` column Time Series needs |
-| `AGOS_Aeta_Isolation_v2` | **P11** — has the `Communities` count column |
-| `AGOS_PH_vs_ASEAN` | P4 ✅ |
+| `AGOS_ASEAN_INFORM_2026` | P2, P3, P15 |
+| `AGOS_PH_vs_ASEAN` | P4 |
+| `AGOS_Olongapo_Rainfall` | P6 |
+| `AGOS_Olongapo_Rainfall_v2` | P8 — has the `Date` column Time Series needs |
+| `AGOS_Aeta_Isolation_v2` | P11 — has the `Communities` count column |
+| `AGOS_LeadTime_v3` | P10 — minutes written as text so they type as a dimension |
+| `AGOS_Risk_Matrix_v2` | P12 — ordered text labels; `Risk score` aggregates as MAX |
+| `AGOS_Roadmap` | P14 |
+| `AGOS_Lahar_Dredging` | P13 fallback |
 
-Only P10, P12, P14 and the P13 fallback still need a CSV imported (Recipe A).
+**Always take the highest version suffix.** The unsuffixed twins are superseded imports
+kept only so nothing breaks; binding a chart to one will give you the wrong field types.
 
 ---
 
-## Already done — don't rebuild these
+## Already done — 11 of 13. Don't rebuild these.
+
+All eleven were saved and re-checked after a page reload.
 
 | Page | Chart | What it shows |
 |---|---|---|
-| **P3** | Bubble | ASEAN-10, flood hazard × coping capacity, sized by risk, coloured by quadrant |
-| **P6** | Bar | Olongapo rainfall by month, **August auto-highlighted** |
 | **P2** | Bar | ASEAN-10 river flood hazard, Viet Nam 9.90 → Singapore 0.00 |
+| **P3** | Bubble | ASEAN-10, flood hazard × coping capacity, sized by risk, coloured by quadrant |
 | **P4** | Bar | Philippines gap vs ASEAN median — the −1.6 / +2.25 inversion |
+| **P6** | Bar | Olongapo rainfall by month, **August auto-highlighted** |
+| **P8** | Time Series | Rainfall normals across the year |
+| **P10** | Line | Reactive warning vs AGOS lead time, 0 → 120 min, both on one axis |
+| **P11** | Bar | Aeta access during cutoff — helicopter 9, carabao cart 2 |
+| **P12** | Heat Map | Risk score over Likelihood × Impact, single-hue ramp |
+| **P14** | Bar | Roadmap phases, ordered by End month |
+| **P13** | Bar | Lahar dredged 50 vs remaining 4,650 million m³ — **1.06% in 35 years** |
+| **P15** | Bubble | Where AGOS scales next |
 
-All four are on **Page_1** of the story. Leave them; you'll rearrange during page assembly.
-
----
+They all sit on **Page_1** for now; rearrange during page assembly.
 
 ## The two recipes you'll repeat
 
@@ -63,134 +76,50 @@ All four are on **Page_1** of the story. Leave them; you'll rearrange during pag
 
 ---
 
-## Build these, in this order
+## What is actually left
 
-### 1. P11 — Aeta community isolation ⭐ highest value
+### 1. Polish the eleven built charts ⭐ this is where the marks are now
 
-**Dataset is already imported** as **`AGOS_Aeta_Isolation_v2`** — skip Recipe A, go straight to Recipe B.
+Every chart renders correct numbers. None of them has been styled. Per chart:
 
-| Setting | Value |
-|---|---|
-| Chart type | **Bar/Column** |
-| Measure | `Communities` |
-| Dimension | `Access method during cutoff` |
-| Colour | `Access method during cutoff` |
+- [ ] Replace the auto-generated title with the page headline
+- [ ] Apply the validated categorical palette — `#2E6FA8, #E0762F, #1FA8C4, #8C5BB0, #5A9E3E`
+      *(the heat map keeps its own single-hue ramp; don't put categorical hues on it)*
+- [ ] Data labels on — required by ADSE readability and by the contrast check
+- [ ] Unit and source stated on the chart
+- [ ] Legend for ≥2 series; direct labels where ≤4
 
-**Expected: Helicopter airlift 9, Carabao-drawn cart 2.** If you see 11 and 11, the measure is wrong.
-
-Page text to go beside it: on **6 September 2026**, 11 Aeta communities in Botolan — **2,519 families** — were cut off by the swollen Bucao. Nine reached by Air Force helicopter, two by carabao cart. A father and his 5-year-old daughter drowned that week crossing to Barangay Palis.
-
-> Do **not** chart `Distance from town proper (km)`. The source gives one range for the whole group (25–30 km), stored as a midpoint so the file loads. Charting it per barangay would invent precision that isn't in the source. Use "25–30 km from the town proper" as text on the page.
-
----
-
-### 2. P15 — Where AGOS scales next
-
-No import needed — reuses `AGOS_ASEAN_INFORM_2026`.
-
-Build it exactly like P3 (copy/paste the P3 chart if easier: select it → **More Actions → Copy**, then paste):
-
-| Setting | Value |
-|---|---|
-| Chart type | **Bubble** |
-| X-Axis | `River flood hazard (0-10)` |
-| Y-Axis | `Lack of coping capacity (higher = weaker)` |
-| Size | `INFORM Risk score (0-10)` |
-| Dimension | `Country` |
-| Colour | `Quadrant` |
-
-Then annotate the weak-capacity corner: **Myanmar 5.6 · Lao PDR 5.6 · Cambodia 5.5**. Those are the scaling targets.
-
----
-
-### 3. P8 — Rainfall forecast ⭐ this one earns the Innovation marks
-
-**Dataset is already imported** as **`AGOS_Olongapo_Rainfall_v2`**, with a real `Date` column
-that SAC types as a date — verified. Skip Recipe A, go straight to Recipe B.
-
-| Setting | Value |
-|---|---|
-| Chart type | **Time Series** |
-| Measure | `Rainfall (mm)` |
-| Time dimension | **`Date`** (not `Month` — Time Series rejects text dimensions) |
-
-The year 2026 in the `Date` column is nominal: these are 30-year normals, not one year's
-observations. Say so on the page — "PAGASA 30-year monthly normals" — so nobody reads it as
-a single season.
-
-Then: **Chart Add-Ons → Predictive Forecast**.
-
-Innovation is 15% and explicitly rewards *"integration of AI and digital technologies."* A visible forecast band scores; the word "predictive" in a sentence does not. **If you build only one more chart, build this one.**
-
----
-
-### 4. P10 — What one hour of warning is worth
-
-- Recipe A with `leadtime_scenarios.csv` → name **`AGOS_LeadTime`**
-
-| Setting | Value |
-|---|---|
-| Chart type | **Line** |
-| Measures | `Current reactive warning (% evacuated)` **and** `With AGOS lead time (% evacuated)` |
-| Dimension | `Minutes from first alert` |
-
-Both measures go on the **same axis** — they share a unit. Never make this a dual-axis chart.
-
-**Print the assumptions on the page.** They're in `data/processed/model_assumptions.csv`, rows A1–A4. A model with visible assumptions is credible; one with hidden assumptions gets taken apart in Q&A. The 2-hour lead time (A3) is the number a judge is most likely to challenge — be ready to say it's an estimate pending channel travel-time validation.
-
----
-
-### 5. P12 — Risk matrix
-
-- Recipe A with `risk_matrix.csv` → name **`AGOS_Risk_Matrix`**
-
-| Setting | Value |
-|---|---|
-| Chart type | **Heat Map** |
-| Measure | `Risk score` |
-| Dimensions | `Likelihood (1-5)` and `Impact (1-5)` |
-
-Single-hue ramp, light → dark. Not a rainbow.
-
----
-
-### 6. P14 — Roadmap
-
-- Recipe A with `roadmap_phases.csv` → name **`AGOS_Roadmap`**
-
-| Setting | Value |
-|---|---|
-| Chart type | **Bar/Column**, Horizontal |
-| Measure | `End month` |
-| Dimension | `Phase name` |
-
-`KPI target` is deliberately blank — those numbers are your team's commitment to make, not mine to invent.
-
----
-
-### 7. P13 — FUND 🔒 blocked on you
+### 2. P13 — the real revenue chart 🔒 blocked on you
 
 Needs two figures nobody has yet:
 
 - **Lahar-sand sale price per m³** — Zambales Provincial Treasurer's Office
 - **Sensor unit cost, installation, annual LGU subscription** — vendor quotes
 
-**If you get them:** build revenue vs cost over the roadmap horizon.
+**If you get them:** build revenue vs cost over the roadmap horizon, and put both numbers
+into `data/processed/model_assumptions.csv` rows A7 and A8 first, so they are cited.
 
-**If you don't:** ship the page without a revenue chart. Use the sourced lahar figures instead, which are strong on their own:
+**If you don't:** ship the fallback that is already built. `Volume (million m3)` by `Status`
+says **1.06% dredged in 35 years** — 50 million m³ moved against 4,650 million m³ remaining.
+It is the best argument in the deck that the constraint is financing cadence, not engineering.
 
-- Recipe A with `zambales_lahar_dredging.csv` → **Bar/Column**, Measure `Volume (million m3)`, Dimension `Status`
-- That single chart says **1.06% dredged in 35 years** — the best argument in the deck that the constraint is financing cadence, not engineering
+I deliberately didn't invent placeholder pricing. A made-up revenue projection is the same
+mistake as the misattributed figures we removed from v1, and it would fall apart under the
+first Viability question.
 
-I deliberately didn't invent placeholder pricing. A made-up revenue projection is the same mistake as the misattributed figures we removed from v1, and it would fall apart under the first Viability question.
+### 3. P9 and P7 — build last, or not at all
 
----
+Lowest value. P9 (alert reach by channel) needs a dataset that doesn't exist yet; P7 only
+wants a small tile beside the architecture diagram. **Both pages work fine as static
+graphics** — the mockups in `mockups/agos-screens.html` cover them. If you're short on time,
+these are the two cheapest things to drop.
 
-### 8. P9 and P7 — build last, or not at all
+### 4. Predictive Forecast on P8 — not available here
 
-Lowest value. P9 (alert reach by channel) needs a dataset that doesn't exist yet; P7 only wants a small tile beside the architecture diagram. **Both pages work fine as static graphics.** If you're short on time, these are the two cheapest things to drop.
-
----
+Chart Add-Ons on this tenant offers only Reference Line, Tooltip, Hyperlink and Structure.
+Predictive Forecast appears to be licence-gated. P8 ships as a plain time series, and the
+Innovation claim rests on the SAR/Sentinel-1 reasoning plus the sensor architecture instead.
+Worth one email to ADSE asking whether the licence can be switched on.
 
 ## Traps that will cost you time
 
@@ -201,6 +130,10 @@ Lowest value. P9 (alert reach by channel) needs a dataset that doesn't exist yet
 | Reimporting an existing dataset gets rejected | Reimport needs **identical column names**. Changed a column? Import as a new dataset instead. |
 | A chart shows old values after you fix the data | The story caches the dataset. Remove it from the story's Data panel and re-add it. |
 | P6's months are out of calendar order | Same cache. Same fix. Cosmetic — no figure is wrong. |
+| A column you expect as a measure isn't in the picker | SAC won't accept an all-numeric dataset and demotes the **last** column to a dimension. Fix the CSV, don't fight the UI. |
+| A heat map cell shows a number bigger than any row | It's SUM-ing the rows in that cell. Change the measure's **Aggregation Type** on the *dataset* (Details tab) — the story Builder has no aggregation control, and there is no AVERAGE. |
+| A light→dark gradient renders dark→light | Gradient position 0 maps to the **highest** value. Use the ⇄ swap button in *Edit Story Gradient Palette*. |
+| Bars are in alphabetical order when order is inherent | Chart `...` → **Sort** → the measure → *Lowest to Highest*. |
 
 ---
 
