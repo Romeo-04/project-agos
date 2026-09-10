@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PHILIPPINES_NAIVE BAIS — AGOS storyboard</title>
+<style>
+/* ============================================================
+   AGOS storyboard — 15 landscape pages, A4 (297 × 210 mm).
+
+   Print with scripts/build_deck_pdf.py, which drives headless
+   Chromium. Everything is sized in mm and pt so the PDF matches
+   what the browser shows; do not switch to px.
+
+   Tokens are the project's, unchanged. Chart colours never
+   appear here — the charts carry their own; this file is chrome.
+   ============================================================ */
+:root {
+  --navy:#10344C; --teal:#1C7293;
+  --n0:#ffffff; --n50:#f7f8fa; --n100:#eef1f5; --n200:#dfe4ea;
+  --n300:#c3ccd6; --n500:#646e7b; --n700:#48525e; --n900:#1b2129;
+  --watch:#F2C14E; --warning:#C74A1A; --evacuate:#9E1F17;
+  --ok:#2C7549;
+  --rule:1px solid var(--n200);
+}
+
+@page { size:297mm 210mm; margin:0; }
+
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; background:var(--n100); }
+body {
+  font:400 10.5pt/1.45 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  color:var(--n900);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+
+.pg {
+  position:relative; width:297mm; height:210mm; overflow:hidden;
+  background:var(--n0); page-break-after:always; break-after:page;
+  padding:14mm 16mm 12mm;
+  display:flex; flex-direction:column;
+  margin:0 auto 6mm;                 /* screen only; harmless in print */
+}
+.pg:last-child { page-break-after:auto; break-after:auto; }
+
+/* ---- page furniture ---- */
+.scope {
+  font-size:7.5pt; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--n500); margin-bottom:5mm;
+}
+.scope i { font-style:normal; color:var(--n300); margin:0 1.5mm; }
+h1 { margin:0; font-size:26pt; line-height:1.12; letter-spacing:-.015em; color:var(--navy); font-weight:700; max-width:24ch; }
+h1.sm { font-size:22pt; max-width:30ch; }
+.stand { margin:3mm 0 0; font-size:12pt; line-height:1.35; color:var(--n700); max-width:60ch; }
+.src {
+  position:absolute; left:16mm; right:16mm; bottom:7mm;
+  font-size:7.5pt; line-height:1.35; color:var(--n500);
+  border-top:var(--rule); padding-top:2.5mm;
+}
+.pgno { position:absolute; right:16mm; bottom:7mm; font-size:7.5pt; color:var(--n300); }
+
+/* ---- body layout ---- */
+.cols { display:flex; gap:10mm; flex:1; min-height:0; margin-top:7mm; align-items:flex-start; }
+.cols > .txt { flex:0 0 88mm; }
+.cols > .fig  { flex:1; min-width:0; height:100%; display:flex; align-items:center; justify-content:center; }
+.cols.flip > .txt { order:2; }
+.cols.wide > .txt { flex:0 0 74mm; }
+
+ul.pts { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:3mm; }
+ul.pts li { position:relative; padding-left:5mm; font-size:10.5pt; line-height:1.4; }
+ul.pts li::before { content:""; position:absolute; left:0; top:1.7mm; width:2mm; height:2mm; border-radius:50%; background:var(--teal); }
+b, strong { font-weight:700; color:var(--navy); }
+
+.pull {
+  margin-top:4mm; padding:4mm 5mm; background:var(--n50);
+  border-left:3px solid var(--teal); font-size:10pt; line-height:1.4; color:var(--n700);
+}
+.pull b { color:var(--navy); }
+.warnbox { background:#fdf5e2; border-left-color:var(--watch); }
+.blockbox { background:#fbeae9; border-left-color:var(--evacuate); }
+
+/* ---- figures ---- */
+figure { margin:0; width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; gap:2mm; }
+figure img { width:100%; height:auto; max-height:100%; object-fit:contain; }
+figcaption { font-size:8pt; color:var(--n500); text-align:center; }
+
+/* an asset that has to be supplied, named so it cannot be forgotten */
+.todo {
+  width:100%; height:100%; min-height:60mm; border:1.5px dashed var(--n300); border-radius:3mm;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2mm;
+  background:repeating-linear-gradient(45deg,var(--n50),var(--n50) 4mm,#fff 4mm,#fff 8mm);
+  text-align:center; padding:6mm;
+}
+.todo .t { font-size:9pt; font-weight:700; color:var(--n700); }
+.todo .f { font-size:8.5pt; font-family:ui-monospace,Consolas,monospace; color:var(--navy); }
+.todo .h { font-size:8pt; color:var(--n500); max-width:52ch; }
+
+/* ---- cover & pivot ---- */
+.cover, .pivot { padding:0; }
+.cover .bleed, .pivot .bleed { position:absolute; inset:0; }
+.cover .bleed .todo, .pivot .bleed .todo { height:100%; border:0; border-radius:0; }
+.cover .veil {
+  position:absolute; inset:0;
+  background:linear-gradient(105deg, rgba(16,52,76,.94) 0%, rgba(16,52,76,.88) 46%, rgba(16,52,76,.55) 100%);
+}
+.cover .inner { position:relative; height:100%; padding:16mm 18mm; display:flex; flex-direction:column; color:#fff; }
+.cover .word { font-size:64pt; font-weight:800; letter-spacing:-.02em; line-height:1; }
+.cover .tag  { font-size:16pt; font-weight:400; margin-top:3mm; max-width:38ch; line-height:1.3; opacity:.95; }
+.cover .desc { margin-top:auto; font-size:10.5pt; line-height:1.45; max-width:74ch; opacity:.92; }
+.cover .meta { margin-top:6mm; display:flex; gap:12mm; flex-wrap:wrap; font-size:9pt; }
+.cover .meta div { display:flex; flex-direction:column; gap:1mm; }
+.cover .meta .k { font-size:7pt; letter-spacing:.14em; text-transform:uppercase; opacity:.62; }
+.cover .meta .v { font-weight:600; }
+
+.pivot .veil { position:absolute; inset:0; background:rgba(16,52,76,.9); }
+.pivot .inner { position:relative; height:100%; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center; color:#fff; padding:0 34mm; gap:6mm; }
+.pivot .q { font-size:21pt; line-height:1.35; font-weight:400; max-width:44ch; }
+.pivot .sub { font-size:12pt; opacity:.85; max-width:52ch; }
+
+/* ---- small shared bits ---- */
+.statband { display:flex; gap:6mm; margin-top:4mm; flex-wrap:wrap; }
+.statband div { flex:1 1 0; min-width:32mm; border-top:2px solid var(--navy); padding-top:2mm; }
+.statband .n { font-size:15pt; font-weight:700; color:var(--navy); font-variant-numeric:tabular-nums; }
+.statband .l { font-size:8pt; color:var(--n500); line-height:1.3; }
+
+table.mini { width:100%; border-collapse:collapse; font-size:9pt; margin-top:3mm; }
+table.mini th, table.mini td { text-align:left; padding:1.8mm 2mm; border-bottom:var(--rule); vertical-align:top; }
+table.mini th { font-size:7.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--n500); font-weight:600; }
+table.mini td.n { font-variant-numeric:tabular-nums; font-weight:700; color:var(--navy); white-space:nowrap; }
+
+.sev { display:inline-block; padding:.6mm 2mm; border-radius:1mm; font-size:8pt; font-weight:700; }
+.sev-w { background:var(--watch);    color:#4a3708; }
+.sev-o { background:var(--warning);  color:#fff; }
+.sev-e { background:var(--evacuate); color:#fff; }
+
+@media screen { body { padding:8mm 0; } .pg { box-shadow:0 2px 10px rgba(16,52,76,.14); } }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ P1 — COVER ══════════════ -->
+<section class="pg cover">
+  <div class="bleed">
+    <div class="todo">
+      <span class="t">Cover photograph — full bleed</span>
+      <span class="f">deck/photos/cover.jpg</span>
+      <span class="h">Olongapo or Zambales flooding. Under 2 MB. Credit the source on this page.</span>
+    </div>
+  </div>
+  <div class="veil"></div>
+  <div class="inner">
+    <div class="word">AGOS</div>
+    <div class="tag">The flood warning that reaches the last house on the river.</div>
+    <div class="desc">
+      AGOS is a predictive river-sensing and community-verified alerting system for Zambales,
+      Philippines — turning rainfall data into hours of warning for the households that
+      current flood indices cannot see.
+    </div>
+    <div class="meta">
+      <div><span class="k">Team</span><span class="v">Naive Bais</span></div>
+      <div><span class="k">Institution</span><span class="v">FEU – Institute of Technology</span></div>
+      <div><span class="k">Country</span><span class="v">Philippines</span></div>
+      <div><span class="k">SDGs</span><span class="v">SDG 11 · SDG 13</span></div>
+      <div><span class="k">Members</span><span class="v">Jhezra A. Tolentino · Sean Matthew L. Viacrusis</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ P2 ══════════════ -->
+<section class="pg">
+  <div class="scope">ASEAN</div>
+  <h1>Six of ten ASEAN states face severe river flood hazard.</h1>
+  <p class="stand">This is not one country's problem, and it is not one country's solution.</p>
+  <div class="cols">
+    <div class="txt">
+      <ul class="pts">
+        <li>Viet Nam <b>9.9</b>, Thailand <b>9.8</b>, Myanmar <b>8.8</b>, Cambodia <b>8.6</b>,
+            Indonesia <b>8.4</b> and Lao PDR <b>8.2</b> all sit at or above 8 on a 0–10 scale.</li>
+        <li>The Philippines sits <b>8th of ten</b>, at <b>6.7</b>.</li>
+        <li>Singapore scores <b>0.0</b> — the one member state the monsoon does not reach this way.</li>
+      </ul>
+      <div class="pull"><b>Leave the Philippines where the data puts it.</b> Eighth looks like
+        the wrong country to build in. The next two pages are about why that reading is wrong,
+        and the argument only lands if the rank is shown honestly first.</div>
+    </div>
+    <div class="fig"><figure><img src="charts/P2_asean_flood.png" alt="River flood hazard by ASEAN country"></figure></div>
+  </div>
+  <div class="src">INFORM Risk Index, Mid 2026 (workflow 515), indicator HA.NAT.FL — European Commission, Joint Research Centre. Scope: national, ASEAN-10.</div>
+  <div class="pgno">2</div>
+</section>
+
+<!-- ══════════════ P3 ══════════════ -->
+<section class="pg">
+  <div class="scope">ASEAN</div>
+  <h1>Hazard and capacity are independent.</h1>
+  <p class="stand">Where they diverge, a flood becomes a disaster.</p>
+  <div class="cols flip">
+    <div class="txt">
+      <ul class="pts">
+        <li>The x-axis is what the weather does. The y-axis is what happens next — <b>higher means weaker</b> capacity to respond.</li>
+        <li>Quadrant lines sit at the <b>ASEAN medians</b>, not round numbers: flood hazard <b>8.3</b>, lack of coping capacity <b>3.9</b>. Both ship as columns in the dataset, so the lines come from the data.</li>
+        <li>The legend shows <b>three</b> quadrants, not four.</li>
+      </ul>
+      <div class="pull"><b>No ASEAN state combines high flood hazard with strong coping
+        capacity.</b> That empty quadrant is a real property of the region, not a rendering fault.</div>
+    </div>
+    <div class="fig"><figure><img src="charts/P3_quadrant.png" alt="ASEAN hazard versus coping capacity"></figure></div>
+  </div>
+  <div class="src">INFORM Risk Index, Mid 2026 — EC JRC. Medians derived; see scripts/build_asean_inform.py.</div>
+  <div class="pgno">3</div>
+</section>
+
+<!-- ══════════════ P4 ══════════════ -->
+<section class="pg">
+  <div class="scope">Philippines</div>
+  <h1 class="sm">8th for river floods. 1st for hazard exposure. The index is measuring the wrong thing.</h1>
+  <div class="cols">
+    <div class="txt">
+      <ul class="pts">
+        <li><b>−1.6</b> on river flood hazard — rank <b>8 of 10</b></li>
+        <li><b>+2.25</b> on all-hazard Hazard &amp; Exposure — rank <b>1 of 10</b></li>
+        <li><b>+1.1</b> on composite INFORM Risk (5.3) — rank <b>3 of 10</b></li>
+      </ul>
+      <div class="pull"><b>This inversion is the problem statement.</b> Philippine flooding is
+        compound — typhoon-driven, and in Zambales lahar-amplified — so a single-hazard
+        river-flood index systematically under-counts it. If regional indices cannot see the
+        hazard Zambales faces, local sensing and community verification are the only
+        instrument that can.</div>
+    </div>
+    <div class="fig"><figure><img src="charts/P4_ph_vs_median.png" alt="Philippines gap against the ASEAN median"></figure></div>
+  </div>
+  <div class="statband">
+    <div><div class="n">8.1 M</div><div class="l">people affected, 10 regions</div></div>
+    <div><div class="n">PHP 3.4 B</div><div class="l">infrastructure damage</div></div>
+    <div><div class="n">PHP 689 M</div><div class="l">agriculture damage</div></div>
+    <div><div class="n">437 / 27</div><div class="l">road sections / bridges affected</div></div>
+  </div>
+  <div class="src"><b>These four figures are national totals, not Olongapo's.</b> August 2026 — NDRRMC situational reports · INFORM Risk Index Mid 2026, EC JRC. Scope: Philippines, national.</div>
+  <div class="pgno">4</div>
+</section>
+
+<!-- ══════════════ P5 — PIVOT ══════════════ -->
+<section class="pg pivot">
+  <div class="bleed">
+    <div class="todo">
+      <span class="t">River aerial — full bleed, sits behind the text</span>
+      <span class="f">deck/photos/pivot.jpg</span>
+      <span class="h">Bucao or Olongapo river from above. Under 2 MB. Credit the source.</span>
+    </div>
+  </div>
+  <div class="veil"></div>
+  <div class="inner">
+    <div class="q">There is an opportunity to give every flood-prone community in Zambales the
+      same warning a scientist would have — hours before the water arrives.</div>
+    <div class="sub">One way to do this is via a <b style="color:#fff">predictive</b>,
+      <b style="color:#fff">community-connected</b> early-warning system.</div>
+  </div>
+</section>
+
+<!-- ══════════════ P6 ══════════════ -->
+<section class="pg">
+  <div class="scope">Olongapo</div>
+  <h1>August was already Olongapo's wettest month.</h1>
+  <p class="stand">For thirty years running.</p>
+  <div class="cols flip">
+    <div class="txt">
+      <ul class="pts">
+        <li>August normal <b>865.97 mm</b>, ahead of July's <b>788.38</b> and September's <b>632.31</b>.</li>
+        <li>August alone carries <b>25.6%</b> of annual rainfall. June–September together carry <b>82.5%</b> of a <b>3,385.75 mm</b> annual normal.</li>
+        <li>The city's entire flood exposure is compressed into four months, and one dominates.</li>
+      </ul>
+      <div class="pull"><b>The August 2026 sequence.</b> 10 Aug: 517 individuals / 165 families
+        evacuated, 11 barangays affected. 18 Aug: 1,076 individuals / 336 families. 28–29 Aug:
+        renewed flooding, major roads impassable, erosion at Barangay Kalaklan.</div>
+    </div>
+    <div class="fig"><figure><img src="charts/P6_rainfall_month.png" alt="Olongapo monthly rainfall normals, August highlighted"></figure></div>
+  </div>
+  <div class="src">PAGASA ClimGridPh CliMap v2.0 — Olongapo City municipal monthly normals (rainfall 2001–2020) · Inquirer and GMA News reporting, August 2026. Scope: Olongapo City.</div>
+  <div class="pgno">6</div>
+</section>
+
+<!-- ══════════════ P7 ══════════════ -->
+<section class="pg">
+  <div class="scope">System</div>
+  <h1 class="sm">AGOS: predictive river sensing, joined to community-verified alerting.</h1>
+  <div class="cols wide">
+    <div class="txt">
+      <table class="mini">
+        <tr><td class="n">EYE</td><td>Sentinel-1 SAR scanning — penetrates monsoon cloud</td></tr>
+        <tr><td class="n">PULSE</td><td>Non-contact river sensors on the three existing bridges</td></tr>
+        <tr><td class="n">VOICE</td><td>Watch · Warning · Evacuate Now, plus SMS and solar siren</td></tr>
+        <tr><td class="n">PATH</td><td>Barangay-verified road and route status</td></tr>
+        <tr><td class="n">FUND</td><td>Lahar-sand revenue recycled into operating cost</td></tr>
+      </table>
+      <div class="pull"><b>Scope honestly.</b> The SAP stack beyond SAC is <b>proposed
+        architecture</b> and is labelled so on the diagram. What this entry
+        <b>demonstrates</b> is SAC — every chart in this storyboard is built in it.</div>
+    </div>
+    <div class="fig">
+      <figure>
+        <div class="todo">
+          <span class="t">Architecture diagram</span>
+          <span class="f">deck/charts/P7_architecture.png</span>
+          <span class="h">Open mockups/agos-architecture.html and screenshot the full sheet at 2×.</span>
+        </div>
+      </figure>
+    </div>
+  </div>
+  <div class="src">Proposed architecture. Only the SAP Analytics Cloud layer is demonstrated in this entry.</div>
+  <div class="pgno">7</div>
+</section>
+
+<!-- ══════════════ P8 ══════════════ -->
+<section class="pg">
+  <div class="scope">Olongapo</div>
+  <h1>From rainfall to river level: converting data into hours.</h1>
+  <div class="cols">
+    <div class="txt">
+      <ul class="pts">
+        <li><b>EYE</b> — Sentinel-1 <b>SAR</b> imagery, which sees through monsoon cloud. Optical satellite is blind exactly when the flood is happening; radar is not.</li>
+        <li><b>PULSE</b> — non-contact ultrasonic sensors mounted <b>above the historical maximum flood line</b> on Del Rosario, Sta. Rita and Kalaklan. <b>No new civil works</b> at the pilot site.</li>
+        <li>Antecedent rainfall drives a river-stage forecast; the lead-time interval is what the next page prices.</li>
+      </ul>
+      <div class="pull warnbox"><b>Read this as normals, not one season.</b> The series is
+        PAGASA 30-year monthly normals. The year in the date axis is nominal — this is not
+        August 2026 observed.</div>
+    </div>
+    <div class="fig"><figure><img src="charts/P8_timeseries.png" alt="Olongapo rainfall normals across the year"></figure></div>
+  </div>
+  <div class="src">PAGASA ClimGridPh CliMap v2.0 — Olongapo City. Scope: Olongapo City.</div>
+  <div class="pgno">8</div>
+</section>
+
+<!-- ══════════════ P9 ══════════════ -->
+<section class="pg">
+  <div class="scope">Olongapo</div>
+  <h1>A warning that arrives, on the channel people already have.</h1>
+  <div class="cols wide">
+    <div class="txt">
+      <p style="margin:0 0 3mm; font-size:10pt">Three severity states, aligned to PAGASA's own
+         rainfall-warning convention. Colour never carries the meaning alone — every state
+         ships with an icon <b>and</b> a text label.</p>
+      <table class="mini">
+        <tr><td><span class="sev sev-w">Watch</span></td><td>River rising. Prepare.</td></tr>
+        <tr><td><span class="sev sev-o">Warning</span></td><td>Flooding likely within hours. Be ready to leave.</td></tr>
+        <tr><td><span class="sev sev-e">Evacuate Now</span></td><td>Leave for the evacuation centre immediately.</td></tr>
+      </table>
+      <div class="pull"><b>PATH</b> carries road status from barangay-verified officers.
+        Anything older than <b>2 hours</b> auto-downgrades to <i>Unconfirmed</i>, so a stale
+        green road never reads as safe. <b>437</b> road sections and <b>27</b> bridges were
+        affected nationally in August 2026 — a warning that does not say which way out is
+        still open is half a warning.</div>
+    </div>
+    <div class="fig">
+      <figure>
+        <div class="todo">
+          <span class="t">Alert states and route status</span>
+          <span class="f">deck/charts/P9_alerts.png</span>
+          <span class="h">Open mockups/agos-screens.html and screenshot the three VOICE states plus PATH at 2×.</span>
+        </div>
+      </figure>
+    </div>
+  </div>
+  <div class="src">NDRRMC situational reports, August 2026. Scope: Philippines, national. Severity colours follow PAGASA's rainfall-warning convention.</div>
+  <div class="pgno">9</div>
+</section>
+
+<!-- ══════════════ P10 ══════════════ -->
+<section class="pg">
+  <div class="scope">Zambales</div>
+  <h1>What one hour of warning is worth.</h1>
+  <div class="cols flip">
+    <div class="txt">
+      <ul class="pts">
+        <li>Under <b>current reactive warning</b>, evacuation reaches <b>30%</b> at one hour and <b>79%</b> at two.</li>
+        <li>With <b>AGOS lead time</b>, the same curve reaches <b>80%</b> at one hour and <b>100%</b> at two.</li>
+        <li>The gap is not the technology. It is the head start.</li>
+      </ul>
+      <div class="pull"><b>This is a model, and here are its assumptions.</b><br>
+        <b>A1 · sourced</b> — anchored to the Olongapo evacuation of 18 Aug 2026, 1,076 individuals / 336 families.<br>
+        <b>A2 · sourced</b> — current warning is reactive: the alert is issued when the river reaches evacuation level at the bridge.<br>
+        <b>A3 · estimate</b> — AGOS gives 2 hours of lead time. <i>Pending channel travel-time validation.</i><br>
+        <b>A4 · estimate</b> — evacuation follows an S-curve; households move faster once neighbours do.</div>
+    </div>
+    <div class="fig"><figure><img src="charts/P10_leadtime.png" alt="Evacuation completion, reactive warning versus AGOS lead time"></figure></div>
+  </div>
+  <div class="src">Modelled in this project. Assumptions and their status are in data/processed/model_assumptions.csv; the curve regenerates from scripts/build_models.py.</div>
+  <div class="pgno">10</div>
+</section>
+
+<!-- ══════════════ P11 ══════════════ -->
+<section class="pg">
+  <div class="scope">Zambales</div>
+  <h1>Nine of eleven could only be reached by helicopter.</h1>
+  <p class="stand">On 6 September 2026 — three days before this session — 11 Aeta communities in
+     Botolan, totalling 2,519 families, were cut off by the swollen Bucao.</p>
+  <div class="cols">
+    <div class="txt">
+      <ul class="pts">
+        <li>Relief took <b>over seven hours</b>.</li>
+        <li><b>Nine</b> communities reached by Philippine Air Force helicopter. <b>Two</b> by carabao-drawn cart.</li>
+        <li>Earlier that week a father and his <b>5-year-old daughter</b> drowned crossing to Barangay Palis.</li>
+        <li>Botolan holds Zambales' largest Aeta population; the 2009 Bucao dike collapse displaced over <b>20,000</b> people. The exposure is structural.</li>
+      </ul>
+      <div class="pull blockbox"><b>The design consequence.</b> Because the most exposed users
+        are the least connected, the solar-powered barangay siren is not a fallback — it is
+        the primary channel for the highest-risk population.</div>
+    </div>
+    <div class="fig"><figure><img src="charts/P11_aeta_access.png" alt="Aeta communities by access method during the cutoff"></figure></div>
+  </div>
+  <div class="src">Contemporaneous news reporting, 6–7 September 2026. Scope: Botolan, Zambales. Distance from the town proper is given as one 25–30 km range for the whole group and is not charted per barangay.</div>
+  <div class="pgno">11</div>
+</section>
+
+<!-- ══════════════ P12 ══════════════ -->
+<section class="pg">
+  <div class="scope">System</div>
+  <h1>What breaks, and what we do about it.</h1>
+  <div class="cols flip">
+    <div class="txt">
+      <p style="margin:0 0 2mm; font-size:10pt">Ten identified risks, scored 1–5 on likelihood
+         and impact. The two worst are communications failures, not sensor failures.</p>
+      <table class="mini">
+        <tr><th>Risk</th><th>Score</th><th>Mitigation</th></tr>
+        <tr><td>Cellular signal lost in the storm</td><td class="n">20</td><td>LoRaWAN mesh primary, cellular backup</td></tr>
+        <tr><td>Power or cell outage</td><td class="n">20</td><td>Solar siren on the same threshold; no phone needed</td></tr>
+        <tr><td>Sensor destroyed in extreme flow</td><td class="n">16</td><td>Mounted above historical max; budgeted as a consumable</td></tr>
+        <tr><td>Alert fatigue after false alarms</td><td class="n">16</td><td>Three-tier language instead of binary alerting</td></tr>
+        <tr><td>Monsoon cloud blocks imagery</td><td class="n">15</td><td>Sentinel-1 SAR penetrates cloud</td></tr>
+      </table>
+    </div>
+    <div class="fig"><figure><img src="charts/P12_risk_matrix.png" alt="Risk score over likelihood and impact"></figure></div>
+  </div>
+  <div class="src">Qualitative assessment by the team (assumption A10, model_assumptions.csv). Likelihood and impact are scored, not measured.</div>
+  <div class="pgno">12</div>
+</section>
+
+<!-- ══════════════ P13 ══════════════ -->
+<section class="pg">
+  <div class="scope">Business model</div>
+  <h1>Funded by the sand the floods leave behind.</h1>
+  <div class="cols">
+    <div class="txt">
+      <ul class="pts">
+        <li>Pinatubo left <b>4.7 billion m³</b> of lahar in the Zambales rivers — Bucao <b>3.0 bn (63.8%)</b>, Santo Tomas <b>1.6 bn (34.0%)</b>.</li>
+        <li><b>50 million m³</b> has been dredged. That is <b>1.06% in 35 years.</b></li>
+        <li>Four streams: hardware · platform subscription · anonymised data-insights licensing · grant and development finance.</li>
+      </ul>
+      <div class="pull"><b>At the current rate the backlog is permanent.</b> That is the
+        strongest available argument that the constraint is <b>financing cadence, not
+        engineering</b> — and therefore that a self-funding reserve loop is the right
+        intervention, not a larger one-off budget request.</div>
+      <div class="pull blockbox"><b>Two figures are deliberately absent.</b> Lahar-sand price
+        per m³ and sensor/subscription costs are not yet sourced, so no revenue projection is
+        shown. A fabricated one would not survive the first Viability question.</div>
+    </div>
+    <div class="fig"><figure><img src="charts/P13_lahar.png" alt="Lahar dredged against lahar remaining"></figure></div>
+  </div>
+  <div class="src">MGB Central Luzon lahar volume estimates; Zambales River Restoration Program, running since 2023, river deltas cleared only. Scope: Zambales province.</div>
+  <div class="pgno">13</div>
+</section>
+
+<!-- ══════════════ P14 ══════════════ -->
+<section class="pg">
+  <div class="scope">Roadmap</div>
+  <h1>Twenty-four months, four phases, one monsoon to prove it.</h1>
+  <div class="cols flip">
+    <div class="txt">
+      <table class="mini">
+        <tr><th>Phase</th><th>Months</th><th>What happens</th></tr>
+        <tr><td>Engagement &amp; Planning</td><td class="n">1–3</td><td>Co-design with the LGU; MOU at provincial PDRRMO level</td></tr>
+        <tr><td>Deployment &amp; Set-up</td><td class="n">4–9</td><td>Sensors on three bridges; officer accounts; SAC dashboards live</td></tr>
+        <tr><td>Operation &amp; Stress Test</td><td class="n">10–15</td><td>First full monsoon under AGOS</td></tr>
+        <tr><td>Scaling &amp; Reporting</td><td class="n">16–24</td><td>Region III; annual report; ADInet feed</td></tr>
+      </table>
+      <div class="pull"><b>KPIs each carry a baseline</b>, because a KPI without one is not
+        measurable: sensor uptime <i>(baseline 0 — no sensors exist)</i> · alert lead time
+        <i>(0 — warning currently begins at visible flooding)</i> · barangays with an active
+        PATH account <i>(0)</i> · lahar dredged per quarter <i>(1.06% in 35 years)</i>.
+        <b>Targets are blank on purpose</b> — those are the team's numbers to commit to.</div>
+    </div>
+    <div class="fig"><figure><img src="charts/P14_roadmap.png" alt="Roadmap phases by end month"></figure></div>
+  </div>
+  <div class="src">Programme design by the team. Phase boundaries are planning assumptions. Named partners: AHA Centre / ADInet · ACDM · NDRRMC-OCD · DELSA-JAIF · World Bank / ADB · DENR-MGB · DPWH · PAGASA.</div>
+  <div class="pgno">14</div>
+</section>
+
+<!-- ══════════════ P15 ══════════════ -->
+<section class="pg">
+  <div class="scope">ASEAN</div>
+  <h1>The countries that need this most are the ones we can reach next.</h1>
+  <div class="cols">
+    <div class="txt">
+      <ul class="pts">
+        <li>The weak-capacity corner names its own targets: <b>Myanmar 5.6</b>, <b>Lao PDR 5.6</b>, <b>Cambodia 5.5</b> on lack of coping capacity — all three also above the ASEAN median for river flood hazard.</li>
+        <li>Same monsoon, same river-basin geometry, same gap between hazard and the ability to respond to it.</li>
+      </ul>
+      <div class="pull"><b>The closing move.</b> Push Zambales data into the AHA Centre's
+        <b>ADInet</b>, so a Zambales flood appears in ASEAN's own regional
+        situational-awareness feed rather than only in a national one.</div>
+      <p style="margin-top:4mm; font-size:10pt; color:var(--n700)">The deck opened at ASEAN
+         scale and closes there — having earned the generalisation rather than assumed it.</p>
+    </div>
+    <div class="fig"><figure><img src="charts/P15_scaling.png" alt="Where AGOS scales next"></figure></div>
+  </div>
+  <div class="src">INFORM Risk Index Mid 2026 — EC JRC. Scope: national, ASEAN-10.</div>
+  <div class="pgno">15</div>
+</section>
+
+</body>
+</html>

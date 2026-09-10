@@ -8,10 +8,35 @@ repository. This README and the source documents are the tracked part.
 ```
 deck/
   README.md      ← tracked
+  index.html     ← tracked — the 15 pages, all copy already in place
   charts/        ← gitignored — chart exports from SAC
   photos/        ← gitignored — cover, pivot and alert imagery
   PHILIPPINES_NAIVE BAIS.pdf   ← gitignored — the submission
 ```
+
+## Building the PDF
+
+```bash
+python scripts/build_deck_pdf.py
+```
+
+Drives headless Chromium over `deck/index.html` and writes
+`deck/PHILIPPINES_NAIVE BAIS.pdf`, then checks the three pass/fail rules — page
+count, document size, and per-image size — and exits non-zero if any fails. It also
+lists any referenced asset that is missing, so a placeholder box never reaches the
+submission unnoticed.
+
+The 15 pages are already written and laid out. Four assets are still placeholders,
+each drawn as a labelled dashed box naming the exact file it wants:
+
+| Page | File | Where it comes from |
+|---|---|---|
+| P1 | `deck/photos/cover.jpg` | sourced photograph |
+| P5 | `deck/photos/pivot.jpg` | sourced photograph |
+| P7 | `deck/charts/P7_architecture.png` | screenshot `mockups/agos-architecture.html` |
+| P9 | `deck/charts/P9_alerts.png` | screenshot the VOICE states + PATH from `mockups/agos-screens.html` |
+
+Drop each file in and re-run; nothing else needs editing.
 
 ## What you need, and where it comes from
 
