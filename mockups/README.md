@@ -1,12 +1,21 @@
-# AGOS — interface mockups
+# AGOS — interface mockups and diagrams
 
-`agos-screens.html` — a single self-contained file rendering every AGOS screen.
-No build step, no dependencies. Open it in a browser, or serve the folder:
+Two self-contained files. No build step, no dependencies — open either in a browser, or
+serve the folder:
 
 ```bash
 python -m http.server 8823
 # then http://localhost:8823/agos-screens.html
+#      http://localhost:8823/agos-architecture.html
 ```
+
+| File | Covers |
+|---|---|
+| `agos-screens.html` | the seven app screens — **P9**, P7/P8 support, **P13**, finals deck |
+| `agos-architecture.html` | the system architecture diagram — **P7** |
+
+Both carry the same token block. It is duplicated rather than imported so each file opens
+standalone from disk with nothing missing.
 
 ## Screens
 
@@ -55,6 +64,24 @@ figures removed from the v1 plan. The screen says so on its face.
 
 **Sensors reporting shows an em dash**, not a number — the pilot isn't deployed. Showing
 a fabricated sensor count on a mockup of an unbuilt system would be dishonest.
+
+## `agos-architecture.html` — the P7 diagram
+
+Four stages left to right: **Sense** (EYE, PULSE) → **Integrate & model** (SAP BTP, SAP
+Datasphere) → **Analyse** (SAP Analytics Cloud) → **Act & sustain** (VOICE, PATH, FUND).
+
+**The two-state key is the point of the page.** Exactly one card is marked *Demonstrated* —
+SAC, the layer every chart in this deck was actually built in. Everything else is marked
+*Proposed architecture*, in muted ink, because it is designed and costed but not built.
+
+Claiming a live BTP pipeline that does not exist is the kind of overreach that collapses
+under the first question at finals. The honest split is also the stronger one: it shows the
+team knows which part of the stack it has proven.
+
+Component tags use the **validated categorical palette** (`#2E6FA8`, `#E0762F`, `#1FA8C4`,
+`#8C5BB0`, `#5A9E3E`) — the same five hues as the charts — with SAP layers in brand navy.
+No status colour appears anywhere on this diagram; severity red/orange/amber stay reserved
+for the alert states.
 
 ## Exporting for the deck
 

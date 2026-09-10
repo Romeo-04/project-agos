@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AGOS — system architecture (P7)</title>
+<style>
+/* ============================================================
+   AGOS design tokens — identical to agos-screens.html.
+   Kept duplicated rather than imported so this file opens
+   standalone from disk with no server and no missing asset.
+   ============================================================ */
+:root {
+  --s1:4px;  --s2:8px;  --s3:12px; --s4:16px;
+  --s5:24px; --s6:32px; --s7:48px; --s8:64px;
+
+  --r-ctl:8px; --r-card:14px; --r-pill:999px;
+
+  --t-xs:11px; --t-sm:13px; --t-md:15px;
+  --t-lg:19px; --t-xl:25px; --t-2xl:33px;
+
+  --n0:#ffffff; --n50:#f7f8fa; --n100:#eef1f5; --n200:#dfe4ea;
+  --n300:#c3ccd6; --n500:#7b8794; --n700:#48525e; --n900:#1b2129;
+
+  --navy:#10344C; --teal:#1C7293;
+  --accent:#1C7293;
+
+  /* Validated categorical palette — the same five hues the charts use.
+     Run scripts/validate_palette.js before changing any of them. */
+  --cat1:#2E6FA8; --cat2:#E0762F; --cat3:#1FA8C4;
+  --cat4:#8C5BB0; --cat5:#5A9E3E;
+
+  --evacuate:#9E1F17;
+
+  --border:1px solid var(--n200);
+  --shadow-card:0 1px 2px rgba(16,52,76,.06), 0 1px 3px rgba(16,52,76,.04);
+}
+
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font:400 var(--t-md)/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:var(--n900);
+  background:var(--n50);
+  padding:var(--s7) clamp(var(--s4),4vw,var(--s7));
+}
+h1 { font-size:var(--t-2xl); line-height:1.2; margin:0 0 var(--s2); letter-spacing:-.01em; }
+.sub { color:var(--n700); max-width:70ch; margin:0 0 var(--s7); }
+.note { color:var(--n500); font-size:var(--t-sm); max-width:78ch; }
+
+.sheet {
+  max-width:1240px; margin-inline:auto; background:var(--n0);
+  border:var(--border); border-radius:var(--r-card);
+  box-shadow:var(--shadow-card); padding:var(--s7);
+}
+
+/* ---- the diagram ------------------------------------------------ */
+.flow { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s5); align-items:stretch; }
+@media (max-width:1000px){ .flow { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:620px){ .flow { grid-template-columns:1fr; } }
+
+.stage { display:flex; flex-direction:column; gap:var(--s3); }
+.stage-label {
+  display:flex; align-items:center; gap:var(--s2);
+  font-size:var(--t-xs); font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--n500);
+}
+.stage-label::after { content:""; flex:1; height:1px; background:var(--n200); }
+
+.card {
+  border:var(--border); border-radius:var(--r-card); padding:var(--s4);
+  background:var(--n0); display:flex; flex-direction:column; gap:var(--s2);
+}
+/* Cards are content-sized, so no card carries dead space. Only the SAC card
+   grows to fill its column — it is the one thing on this page that is built,
+   and the emphasis should come from the border and the fill, not from padding. */
+.card.built {
+  flex:1; border-color:var(--accent); box-shadow:0 0 0 1px var(--accent);
+}
+
+.tag {
+  align-self:flex-start; font-size:var(--t-xs); font-weight:700;
+  letter-spacing:.06em; padding:var(--s1) var(--s2);
+  border-radius:var(--r-pill); color:var(--n0);
+}
+.t-eye   { background:var(--cat1); }
+.t-pulse { background:var(--cat3); }
+.t-voice { background:var(--cat2); }
+.t-path  { background:var(--cat4); }
+.t-fund  { background:var(--cat5); }
+.t-sap   { background:var(--navy); }
+
+.card h3 { margin:0; font-size:var(--t-md); font-weight:600; }
+.card p  { margin:0; font-size:var(--t-sm); color:var(--n700); }
+
+.status {
+  margin-top:auto; font-size:var(--t-xs); font-weight:600;
+  display:inline-flex; align-items:center; gap:var(--s1);
+}
+.status.demo { color:var(--accent); }
+.status.prop { color:var(--n500); }
+.dot { width:7px; height:7px; border-radius:50%; background:currentColor; flex:none; }
+
+/* arrows between stages, hidden when the grid wraps */
+.flow > .stage { position:relative; }
+.flow > .stage:not(:last-child)::after {
+  content:"→"; position:absolute; right:calc(var(--s5) / -1 - 2px); top:34px;
+  width:var(--s5); text-align:center; color:var(--n300);
+  font-size:var(--t-lg); line-height:1; pointer-events:none;
+}
+@media (max-width:1000px){ .flow > .stage::after { display:none; } }
+
+/* ---- honesty key ------------------------------------------------ */
+.key {
+  margin-top:var(--s7); padding-top:var(--s5); border-top:var(--border);
+  display:flex; flex-wrap:wrap; gap:var(--s5) var(--s7);
+}
+.key div { display:flex; align-items:flex-start; gap:var(--s2); max-width:44ch; }
+.key strong { display:block; font-size:var(--t-sm); }
+.key span { font-size:var(--t-sm); color:var(--n700); }
+.swatch { width:12px; height:12px; border-radius:3px; flex:none; margin-top:5px; }
+.sw-demo { background:var(--accent); }
+.sw-prop { background:var(--n300); }
+
+footer { max-width:1240px; margin:var(--s5) auto 0; }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <h1>AGOS — where SAP sits in the system</h1>
+  <p class="sub">
+    Predictive river sensing joined to community-verified alerting. Read left to right:
+    the river is measured, the measurements become a forecast, the forecast becomes an
+    alert someone acts on, and the cost of running it is recovered from the sand the
+    floods leave behind.
+  </p>
+
+  <div class="flow">
+
+    <!-- 1. SENSE -->
+    <div class="stage">
+      <div class="stage-label">1 · Sense</div>
+      <div class="card">
+        <span class="tag t-eye">EYE</span>
+        <h3>Sentinel-1 SAR scanning</h3>
+        <p>Radar, not optical — it sees through monsoon cloud, which is exactly when an
+           optical satellite goes blind.</p>
+        <span class="status prop"><span class="dot"></span>Proposed</span>
+      </div>
+      <div class="card">
+        <span class="tag t-pulse">PULSE</span>
+        <h3>Non-contact river sensors</h3>
+        <p>Ultrasonic, mounted above the historical maximum flood line on Del Rosario,
+           Sta. Rita and Kalaklan. No new civil works at the pilot site.</p>
+        <span class="status prop"><span class="dot"></span>Proposed</span>
+      </div>
+    </div>
+
+    <!-- 2. INTEGRATE & MODEL -->
+    <div class="stage">
+      <div class="stage-label">2 · Integrate &amp; model</div>
+      <div class="card">
+        <span class="tag t-sap">SAP BTP</span>
+        <h3>Ingestion and integration</h3>
+        <p>Sensor telemetry, satellite scenes and PAGASA rainfall arriving on one pipeline.</p>
+        <span class="status prop"><span class="dot"></span>Proposed</span>
+      </div>
+      <div class="card">
+        <span class="tag t-sap">SAP Datasphere</span>
+        <h3>Modelling layer</h3>
+        <p>Rainfall-to-river-stage relationships, held once and reused by every downstream
+           consumer.</p>
+        <span class="status prop"><span class="dot"></span>Proposed</span>
+      </div>
+    </div>
+
+    <!-- 3. ANALYSE -->
+    <div class="stage">
+      <div class="stage-label">3 · Analyse</div>
+      <div class="card built">
+        <span class="tag t-sap">SAP Analytics Cloud</span>
+        <h3>The layer this entry demonstrates</h3>
+        <p>Every chart in this storyboard is built in SAC against the datasets in
+           <code>data/processed/</code> — hazard and capacity across ASEAN-10, Olongapo
+           rainfall normals, Aeta access during the September cutoff, the lead-time model,
+           the risk matrix and the lahar backlog.</p>
+        <span class="status demo"><span class="dot"></span>Demonstrated</span>
+      </div>
+    </div>
+
+    <!-- 4. ACT & SUSTAIN -->
+    <div class="stage">
+      <div class="stage-label">4 · Act &amp; sustain</div>
+      <div class="card">
+        <span class="tag t-voice">VOICE</span>
+        <h3>Three-tier alerting</h3>
+        <p>Watch · Warning · Evacuate Now, in PAGASA's own colour convention. Solar-charged
+           barangay siren is the <em>primary</em> channel where phones are not.</p>
+        <span class="status prop"><span class="dot"></span>Proposed</span>
+      </div>
+      <div class="card">
+        <span class="tag t-path">PATH</span>
+        <h3>Route status</h3>
+        <p>Barangay-verified. Anything older than two hours auto-downgrades to
+           <em>Unconfirmed</em>, so a stale green road never reads as a safe one.</p>
+        <span class="status prop"><span class="dot"></span>Proposed</span>
+      </div>
+      <div class="card">
+        <span class="tag t-fund">FUND</span>
+        <h3>Self-funding loop</h3>
+        <p>Lahar-sand dredging revenue banked as a reserve fund against operating cost,
+           rather than passed straight through.</p>
+        <span class="status prop"><span class="dot"></span>Proposed</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="key">
+    <div>
+      <span class="swatch sw-demo"></span>
+      <span><strong>Demonstrated</strong>Built and running in this entry. Every figure in
+      the deck comes out of it.</span>
+    </div>
+    <div>
+      <span class="swatch sw-prop"></span>
+      <span><strong>Proposed architecture</strong>Designed and costed, not built. Labelled
+      so on the page.</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p class="note">
+    <strong>Why the two-state key exists.</strong> Claiming a live BTP pipeline that does not
+    exist is the kind of overreach that collapses under the first question at finals. The
+    honest split is also the stronger one: it shows the team knows which part of the stack it
+    has actually proven.
+  </p>
+</footer>
+
+</body>
+</html>
