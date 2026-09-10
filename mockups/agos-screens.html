@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AGOS — interface mockups</title>
+<style>
+/* ============================================================
+   AGOS design tokens
+   One spacing scale, one neutral ramp, one accent, plus a
+   RESERVED status palette aligned to PAGASA's own rainfall
+   warning colours so residents do not have to learn a second
+   colour language.
+   ============================================================ */
+:root {
+  /* spacing — 4px base, no values outside this scale */
+  --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px;
+  --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+
+  /* radius */
+  --r-ctl: 8px; --r-card: 14px; --r-pill: 999px;
+
+  /* type */
+  --t-xs: 11px; --t-sm: 13px; --t-md: 15px;
+  --t-lg: 19px; --t-xl: 25px; --t-2xl: 33px;
+
+  /* neutral ramp */
+  --n0:#ffffff; --n50:#f7f8fa; --n100:#eef1f5; --n200:#dfe4ea;
+  --n300:#c3ccd6; --n500:#7b8794; --n700:#48525e; --n900:#1b2129;
+
+  /* brand — deck chrome, not data marks */
+  --navy:#10344C; --teal:#1C7293;
+
+  /* accent — one hue, primary action + focus only */
+  --accent:#1C7293; --accent-press:#155b76;
+
+  /* RESERVED status palette — severity only, never a series colour.
+     Always paired with an icon and a text label, never colour alone. */
+  --watch:#F2C14E;    --watch-ink:#4a3708;  --watch-bg:#fdf5e2;
+  --warning:#D9531E;  --warning-ink:#ffffff;--warning-bg:#fdeee7;
+  --evacuate:#B3251C; --evacuate-ink:#ffffff;--evacuate-bg:#fbeae9;
+  --ok:#2F7D4F;       --ok-bg:#eaf4ee;
+
+  --border:1px solid var(--n200);
+  --shadow-card:0 1px 2px rgba(16,52,76,.06), 0 1px 3px rgba(16,52,76,.04);
+  --shadow-float:0 8px 24px rgba(16,52,76,.14);
+}
+
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--n100); color:var(--n900);
+  font:400 var(--t-md)/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3 { margin:0; line-height:1.2; }
+
+.page { padding:var(--s7) clamp(16px,4vw,56px); max-width:1500px; margin-inline:auto; }
+.page > header { margin-bottom:var(--s6); }
+.page > header h1 { font-size:var(--t-2xl); font-weight:700; color:var(--navy); }
+.page > header p  { margin:var(--s2) 0 0; color:var(--n700); max-width:66ch; }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--s6); align-items:start; }
+
+.screen-label { font-size:var(--t-sm); font-weight:600; color:var(--n700); margin-bottom:var(--s3); letter-spacing:.02em; }
+.screen-label span { color:var(--n500); font-weight:400; }
+
+/* ---- phone frame ---- */
+.phone {
+  width:300px; border-radius:28px; background:var(--n0);
+  border:8px solid var(--navy); box-shadow:var(--shadow-float);
+  overflow:hidden; display:flex; flex-direction:column; min-height:560px;
+}
+.statusbar {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:var(--s2) var(--s4); font-size:var(--t-xs); color:var(--n500); background:var(--n0);
+}
+.appbar {
+  display:flex; align-items:center; gap:var(--s2);
+  padding:var(--s3) var(--s4); background:var(--navy); color:var(--n0);
+}
+.appbar .brand { font-weight:700; letter-spacing:.08em; font-size:var(--t-sm); }
+.appbar .brgy  { margin-left:auto; font-size:var(--t-xs); opacity:.85; }
+
+.body { padding:var(--s4); display:flex; flex-direction:column; gap:var(--s4); flex:1; }
+
+/* ---- severity banner ---- */
+.alert { border-radius:var(--r-card); padding:var(--s4); display:flex; flex-direction:column; gap:var(--s2); }
+.alert .row { display:flex; align-items:center; gap:var(--s2); }
+.alert .sev { font-size:var(--t-xs); font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+.alert .headline { font-size:var(--t-lg); font-weight:700; }
+.alert .meta { font-size:var(--t-xs); opacity:.9; }
+.alert--watch    { background:var(--watch-bg);    color:var(--watch-ink);    border-left:5px solid var(--watch); }
+.alert--warning  { background:var(--warning);     color:var(--warning-ink);  }
+.alert--evacuate { background:var(--evacuate);    color:var(--evacuate-ink); }
+
+/* ---- generic card ---- */
+.card { background:var(--n0); border:var(--border); border-radius:var(--r-card); padding:var(--s4); box-shadow:var(--shadow-card); }
+.card h3 { font-size:var(--t-sm); font-weight:600; color:var(--n700); margin-bottom:var(--s3); }
+.kv { display:flex; justify-content:space-between; align-items:baseline; padding:var(--s2) 0; }
+.kv + .kv { border-top:var(--border); }
+.kv .k { font-size:var(--t-sm); color:var(--n700); }
+.kv .v { font-size:var(--t-md); font-weight:600; font-variant-numeric:tabular-nums; }
+
+.steps { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:var(--s3); }
+.steps li { display:flex; gap:var(--s3); align-items:flex-start; font-size:var(--t-sm); }
+.steps .n {
+  flex:none; width:22px; height:22px; border-radius:var(--r-pill);
+  background:var(--navy); color:var(--n0); display:grid; place-items:center;
+  font-size:var(--t-xs); font-weight:700;
+}
+
+/* ---- buttons ---- */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:var(--s2);
+  min-height:44px; padding:0 var(--s4); border-radius:var(--r-ctl);
+  font:600 var(--t-sm)/1 system-ui,sans-serif; cursor:pointer;
+  border:1px solid transparent; transition:background 160ms ease-out, border-color 160ms ease-out;
+}
+.btn--primary { background:var(--accent); color:var(--n0); }
+.btn--primary:hover { background:var(--accent-press); }
+.btn--ghost { background:var(--n0); color:var(--navy); border-color:var(--n300); }
+.btn--ghost:hover { background:var(--n50); }
+.btn--danger { background:var(--evacuate); color:var(--n0); }
+.btn:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
+.btn-row { display:grid; grid-template-columns:1fr 1fr; gap:var(--s2); }
+
+/* ---- status pills (icon + text, never colour alone) ---- */
+.pill {
+  display:inline-flex; align-items:center; gap:var(--s1);
+  padding:3px var(--s2); border-radius:var(--r-pill);
+  font-size:var(--t-xs); font-weight:600; white-space:nowrap;
+}
+.pill--ok       { background:var(--ok-bg);       color:var(--ok); }
+.pill--caution  { background:var(--watch-bg);    color:var(--watch-ink); }
+.pill--blocked  { background:var(--evacuate-bg); color:var(--evacuate); }
+.pill--stale    { background:var(--n100);        color:var(--n700); }
+
+/* ---- route rows ---- */
+.route { display:flex; align-items:center; gap:var(--s3); padding:var(--s3) 0; }
+.route + .route { border-top:var(--border); }
+.route .name { font-size:var(--t-sm); font-weight:500; }
+.route .sub  { font-size:var(--t-xs); color:var(--n500); }
+.route .right{ margin-left:auto; text-align:right; }
+
+/* ---- desktop panels ---- */
+.desktop { background:var(--n0); border:var(--border); border-radius:var(--r-card); box-shadow:var(--shadow-card); overflow:hidden; }
+.desktop .head { background:var(--navy); color:var(--n0); padding:var(--s3) var(--s4); display:flex; align-items:center; gap:var(--s2); }
+.desktop .head .brand { font-weight:700; letter-spacing:.08em; font-size:var(--t-sm); }
+.desktop .head .who { margin-left:auto; font-size:var(--t-xs); opacity:.85; }
+.desktop .inner { padding:var(--s5); display:flex; flex-direction:column; gap:var(--s4); }
+
+.metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:var(--s3); }
+.metric { border:var(--border); border-radius:var(--r-ctl); padding:var(--s3); }
+.metric .lab { font-size:var(--t-xs); color:var(--n500); }
+.metric .val { font-size:var(--t-xl); font-weight:700; font-variant-numeric:tabular-nums; color:var(--navy); }
+.metric .note{ font-size:var(--t-xs); color:var(--n500); }
+
+/* river segment bar */
+.seg { display:flex; flex-direction:column; gap:var(--s2); }
+.seg .top { display:flex; align-items:baseline; gap:var(--s2); font-size:var(--t-sm); }
+.seg .top .vol { margin-left:auto; font-variant-numeric:tabular-nums; color:var(--n700); font-size:var(--t-xs); }
+.bar { height:10px; border-radius:var(--r-pill); background:var(--n100); overflow:hidden; }
+.bar > i { display:block; height:100%; border-radius:var(--r-pill); }
+
+.legend { display:flex; flex-wrap:wrap; gap:var(--s3); font-size:var(--t-xs); color:var(--n700); }
+.legend span { display:inline-flex; align-items:center; gap:var(--s1); }
+.dot { width:9px; height:9px; border-radius:var(--r-pill); display:inline-block; }
+
+.note {
+  font-size:var(--t-xs); color:var(--n700); background:var(--n50);
+  border:var(--border); border-radius:var(--r-ctl); padding:var(--s3);
+}
+.note b { color:var(--navy); }
+.blocked-note { background:var(--watch-bg); border-color:#e8d49a; }
+
+.src { font-size:var(--t-xs); color:var(--n500); margin-top:var(--s2); }
+
+svg.i { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+svg.i-lg { width:20px; height:20px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>AGOS — interface mockups</h1>
+  <p>Six screens for the ASEAN DSE storyboard and finals deck. Severity colours follow
+     PAGASA's own rainfall-warning convention, so residents do not have to learn a second
+     colour language, and every severity state carries an icon and a text label — never
+     colour alone. All figures shown are the sourced values from the citation register.</p>
+</header>
+
+<div class="grid">
+
+  <!-- ============ 1. VOICE — Watch ============ -->
+  <div>
+    <div class="screen-label">VOICE — household alert <span>· state 1 of 3</span></div>
+    <div class="phone">
+      <div class="statusbar"><span>09:41</span><span>LTE</span></div>
+      <div class="appbar">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
+        <span class="brand">AGOS</span><span class="brgy">Brgy. Sta. Rita</span>
+      </div>
+      <div class="body">
+        <div class="alert alert--watch">
+          <div class="row">
+            <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            <span class="sev">Watch</span>
+          </div>
+          <div class="headline">River rising upstream</div>
+          <div class="meta">Kalaklan Bridge · 2.1 m · below evacuation level</div>
+        </div>
+        <div class="card">
+          <h3>What to do now</h3>
+          <ul class="steps">
+            <li><span class="n">1</span><span>Prepare a go-bag: documents, water, medicine.</span></li>
+            <li><span class="n">2</span><span>Check on neighbours who cannot move quickly.</span></li>
+            <li><span class="n">3</span><span>Keep this phone charged. Do not cross the river.</span></li>
+          </ul>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn--ghost">Evacuation route</button>
+          <button class="btn btn--ghost">Nearest centre</button>
+        </div>
+        <div class="src">Updated 4 min ago · PULSE sensor, Kalaklan</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 2. VOICE — Warning ============ -->
+  <div>
+    <div class="screen-label">VOICE — household alert <span>· state 2 of 3</span></div>
+    <div class="phone">
+      <div class="statusbar"><span>12:26</span><span>LTE</span></div>
+      <div class="appbar">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
+        <span class="brand">AGOS</span><span class="brgy">Brgy. Sta. Rita</span>
+      </div>
+      <div class="body">
+        <div class="alert alert--warning">
+          <div class="row">
+            <svg class="i" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+            <span class="sev">Warning</span>
+          </div>
+          <div class="headline">Move valuables up now</div>
+          <div class="meta">Kalaklan Bridge · 3.4 m · approaching evacuation level</div>
+        </div>
+        <div class="card">
+          <h3>What to do now</h3>
+          <ul class="steps">
+            <li><span class="n">1</span><span>Move appliances and documents to the highest floor.</span></li>
+            <li><span class="n">2</span><span>Bring animals in. Move vehicles to higher ground.</span></li>
+            <li><span class="n">3</span><span>Be ready to leave within the hour if this escalates.</span></li>
+          </ul>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn--ghost">Evacuation route</button>
+          <button class="btn btn--ghost">Nearest centre</button>
+        </div>
+        <div class="note"><b>Three tiers, not two.</b> Watch → Warning → Evacuate Now lets
+          people match effort to severity, instead of tuning out a single repeated alarm.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 3. VOICE — Evacuate ============ -->
+  <div>
+    <div class="screen-label">VOICE — household alert <span>· state 3 of 3</span></div>
+    <div class="phone">
+      <div class="statusbar"><span>14:07</span><span>LTE</span></div>
+      <div class="appbar">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
+        <span class="brand">AGOS</span><span class="brgy">Brgy. Sta. Rita</span>
+      </div>
+      <div class="body">
+        <div class="alert alert--evacuate">
+          <div class="row">
+            <svg class="i i-lg" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+            <span class="sev">Evacuate now</span>
+          </div>
+          <div class="headline">Leave for higher ground</div>
+          <div class="meta">Kalaklan Bridge · 4.6 m · evacuation level reached</div>
+        </div>
+        <div class="card">
+          <h3>Nearest open centre</h3>
+          <div class="kv"><span class="k">Sta. Rita Elementary</span><span class="v">700 m</span></div>
+          <div class="kv"><span class="k">Walking time</span><span class="v">9 min</span></div>
+          <div class="kv"><span class="k">Route status</span><span class="v"><span class="pill pill--ok">
+            <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Passable</span></span></div>
+        </div>
+        <button class="btn btn--danger" style="width:100%">
+          <svg class="i" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>Start guided route
+        </button>
+        <div class="note"><b>No signal?</b> The barangay siren carries the same alert.
+          It runs on solar and needs no phone.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 4. PATH ============ -->
+  <div>
+    <div class="screen-label">PATH — barangay officer <span>· road status</span></div>
+    <div class="phone">
+      <div class="statusbar"><span>14:12</span><span>LTE</span></div>
+      <div class="appbar">
+        <svg class="i" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
+        <span class="brand">AGOS · PATH</span><span class="brgy">Officer view</span>
+      </div>
+      <div class="body">
+        <div class="card" style="padding:var(--s3)">
+          <h3 style="margin-bottom:var(--s2)">Set road status</h3>
+          <div class="route">
+            <div><div class="name">Del Rosario Bridge</div><div class="sub">Confirmed 12 min ago</div></div>
+            <div class="right"><span class="pill pill--blocked">
+              <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg>Impassable</span></div>
+          </div>
+          <div class="route">
+            <div><div class="name">Sta. Rita Bridge</div><div class="sub">Confirmed 6 min ago</div></div>
+            <div class="right"><span class="pill pill--caution">
+              <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Caution</span></div>
+          </div>
+          <div class="route">
+            <div><div class="name">Kalaklan Bridge</div><div class="sub">Confirmed 3 min ago</div></div>
+            <div class="right"><span class="pill pill--ok">
+              <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Passable</span></div>
+          </div>
+          <div class="route">
+            <div><div class="name">Gordon Ave.</div><div class="sub">Last set 2h 14m ago</div></div>
+            <div class="right"><span class="pill pill--stale">
+              <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Unconfirmed</span></div>
+          </div>
+        </div>
+        <div class="note"><b>Auto-downgrade.</b> A status older than 2 hours becomes
+          <i>Unconfirmed — proceed with caution</i> rather than showing stale “Passable”.</div>
+        <button class="btn btn--primary" style="width:100%">
+          <svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Update a road
+        </button>
+        <div class="src">Only barangay-verified officers can set status. Residents may flag for review.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 5. EYE ============ -->
+  <div style="grid-column:span 2; min-width:0">
+    <div class="screen-label">EYE — LGU engineer dashboard <span>· desktop</span></div>
+    <div class="desktop">
+      <div class="head">
+        <svg class="i" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span class="brand">AGOS · EYE</span><span class="who">Zambales PDRRMO · Provincial Engineering</span>
+      </div>
+      <div class="inner">
+        <div class="metrics">
+          <div class="metric"><div class="lab">Lahar in Zambales rivers</div><div class="val">4.7 bn</div><div class="note" style="border:0;background:0;padding:0">cubic metres</div></div>
+          <div class="metric"><div class="lab">Dredged since 1991</div><div class="val">1.06%</div><div class="note" style="border:0;background:0;padding:0">50 m m³ of 4.7 bn</div></div>
+          <div class="metric"><div class="lab">Barangays under threat</div><div class="val">21</div><div class="note" style="border:0;background:0;padding:0">6 Bucao · 15 Sto. Tomas</div></div>
+          <div class="metric"><div class="lab">Sensors reporting</div><div class="val">—</div><div class="note" style="border:0;background:0;padding:0">pilot not yet deployed</div></div>
+        </div>
+
+        <div class="card">
+          <h3>Remaining lahar by river segment</h3>
+          <div style="display:flex; flex-direction:column; gap:var(--s4)">
+            <div class="seg">
+              <div class="top"><b>Bucao River</b><span class="pill pill--blocked">
+                <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Priority dredge</span>
+                <span class="vol">3.0 bn m³ · 63.8%</span></div>
+              <div class="bar"><i style="width:63.8%; background:var(--evacuate)"></i></div>
+            </div>
+            <div class="seg">
+              <div class="top"><b>Santo Tomas River</b><span class="pill pill--caution">
+                <svg class="i" style="width:12px;height:12px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Monitor</span>
+                <span class="vol">1.6 bn m³ · 34.0%</span></div>
+              <div class="bar"><i style="width:34%; background:var(--warning)"></i></div>
+            </div>
+            <div class="seg">
+              <div class="top"><b>Other channels</b><span class="vol">0.1 bn m³ · 2.2%</span></div>
+              <div class="bar"><i style="width:2.2%; background:var(--n300)"></i></div>
+            </div>
+          </div>
+          <div class="legend" style="margin-top:var(--s4)">
+            <span><i class="dot" style="background:var(--evacuate)"></i>Priority dredge</span>
+            <span><i class="dot" style="background:var(--warning)"></i>Monitor</span>
+            <span><i class="dot" style="background:var(--n300)"></i>Low volume</span>
+          </div>
+          <div class="src">MGB Central Luzon, via BusinessMirror, 12 Aug 2026. Scope: Zambales province.
+            “Other channels” is the arithmetic residual, not a reported figure.</div>
+        </div>
+
+        <div class="note"><b>Why SAR, not optical.</b> Monsoon cloud blocks optical satellite imagery
+          exactly when scanning matters most, so Sentinel-1 radar is the primary feed during
+          active monsoon windows. A drone flyover is triggered automatically whenever a PULSE
+          sensor crosses its warning threshold.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 6. FUND ============ -->
+  <div>
+    <div class="screen-label">FUND — provincial treasurer <span>· widget</span></div>
+    <div class="desktop">
+      <div class="head">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span class="brand">AGOS · FUND</span><span class="who">Treasurer</span>
+      </div>
+      <div class="inner">
+        <div class="card">
+          <h3>Dredging progress</h3>
+          <div class="seg">
+            <div class="top"><b>Removed</b><span class="vol">50 m m³ · 1.06%</span></div>
+            <div class="bar"><i style="width:1.06%; background:var(--ok)"></i></div>
+          </div>
+          <div class="src" style="margin-top:var(--s3)">35 years since the 1991 eruption.
+            Restoration programme running since 2023; river deltas cleared only.</div>
+        </div>
+
+        <div class="card">
+          <h3>Lahar-sand revenue vs operating cost</h3>
+          <div class="kv"><span class="k">Sand revenue, quarter</span><span class="v">—</span></div>
+          <div class="kv"><span class="k">AGOS operating cost</span><span class="v">—</span></div>
+          <div class="kv"><span class="k">Net to reserve fund</span><span class="v">—</span></div>
+        </div>
+
+        <div class="note blocked-note">
+          <b>Awaiting real figures.</b> Needs lahar-sand price per m³ from the Provincial
+          Treasurer's Office and sensor/subscription costs from vendor quotes. No placeholder
+          pricing is shown — an invented revenue projection would not survive scrutiny.
+        </div>
+
+        <div class="note"><b>Reserve fund, not pass-through.</b> Sand demand swings with
+          construction. Surplus in strong quarters banks against weak ones, so sensor uptime
+          never depends on this month's sand price.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 7. HOME ============ -->
+  <div>
+    <div class="screen-label">Home <span>· resident landing</span></div>
+    <div class="phone">
+      <div class="statusbar"><span>09:41</span><span>LTE</span></div>
+      <div class="appbar">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 2v6M4.9 7.5 9 10M19.1 7.5 15 10"/><path d="M5 21h14l-2-9H7z"/></svg>
+        <span class="brand">AGOS</span><span class="brgy">Brgy. Sta. Rita</span>
+      </div>
+      <div class="body">
+        <div class="card" style="text-align:center">
+          <div style="font-size:var(--t-xs); color:var(--n500); letter-spacing:.08em; text-transform:uppercase">Current status</div>
+          <div style="margin:var(--s3) 0">
+            <span class="pill pill--ok" style="font-size:var(--t-sm); padding:6px 14px">
+              <svg class="i" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Normal</span>
+          </div>
+          <div style="font-size:var(--t-xs); color:var(--n500)">Kalaklan 1.4 m · updated 3 min ago</div>
+        </div>
+
+        <div class="card">
+          <h3>This month</h3>
+          <div class="kv"><span class="k">Rainfall so far</span><span class="v">612 mm</span></div>
+          <div class="kv"><span class="k">August normal</span><span class="v">866 mm</span></div>
+          <div class="kv"><span class="k">Alerts sent</span><span class="v">3</span></div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn--ghost">Route map</button>
+          <button class="btn btn--ghost">Centres</button>
+          <button class="btn btn--ghost">River levels</button>
+          <button class="btn btn--ghost">Report</button>
+        </div>
+        <div class="src">August is Olongapo's wettest month — 865.97 mm on the 30-year normal.
+          PAGASA ClimGridPh CliMap v2.0.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
