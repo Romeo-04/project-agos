@@ -137,6 +137,33 @@ Worth one email to ADSE asking whether the licence can be switched on.
 
 ---
 
+## Exporting the charts
+
+**Do this in your own browser.** A chart on the canvas is only about 370 px wide, and a
+capture at that size is too soft to print. **⋯ → Full Screen** re-renders the chart at
+roughly 1800 px, which is the version you want.
+
+Per chart: click it → **⋯ → Full Screen** → screenshot *(Win+Shift+S)* → **Esc** → next.
+
+Save into `deck/charts/` with these names:
+
+```
+P2_asean_flood.png      P3_quadrant.png       P4_ph_vs_median.png
+P6_rainfall_month.png   P8_timeseries.png     P10_leadtime.png
+P11_aeta_access.png     P12_risk_matrix.png   P13_lahar.png
+P14_roadmap.png         P15_scaling.png
+```
+
+A 1× preview set may already be there — fine to lay pages out against, **not good enough to
+submit**. Overwrite each as you export it properly.
+
+**Style before you export, not after.** Otherwise you export twice.
+
+Assembly instructions, the page template and the photography that is still unsourced are in
+`deck/README.md`. The page text is finished and waiting in `docs/PAGE_COPY.md`.
+
+---
+
 ## Before you export
 
 Hard rules from ADSE. Any miss is fatal.
