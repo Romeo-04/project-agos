@@ -49,7 +49,7 @@ The finals permit an app prototype. v1 §3.6 already specifies five screens, and
 
 **Design tokens** carry over from `AGOS_Storyboard_Plan_v2.md` §4. Two rules that matter:
 
-- Alert severity uses the **reserved status palette** — Watch `#F2C14E`, Warning `#D9531E`, Evacuate Now `#B3251C` — aligned to PAGASA's own rainfall-warning convention so residents do not have to learn a second colour language. Always paired with an icon and a text label, never colour alone.
+- Alert severity uses the **reserved status palette** — Watch `#F2C14E`, Warning `#C74A1A`, Evacuate Now `#9E1F17` — aligned to PAGASA's own rainfall-warning convention so residents do not have to learn a second colour language. Always paired with an icon and a text label, never colour alone. These are the contrast-corrected values (6.80:1 / 4.75:1 / 7.89:1); the earlier `#D9531E` failed AA at 4.03:1. Full rationale in `docs/DESIGN_BRIEF.md`.
 - The categorical chart palette (`#2E6FA8`, `#E0762F`, `#1FA8C4`, `#8C5BB0`, `#5A9E3E`) is for **analytical charts only** and must not appear as alert states.
 
 Keep each screen to a single task. This is a tool for people who may be evacuating.

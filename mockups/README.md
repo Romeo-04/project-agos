@@ -27,6 +27,11 @@ standalone from disk with nothing missing.
 | 6 | **FUND** provincial treasurer widget | Storyboard **P13**, finals deck |
 | 7 | **Home** resident landing | Finals deck |
 
+> **Building or extending these? Read `docs/DESIGN_BRIEF.md` first.** It is written to be
+> self-contained — tokens, per-screen specs, the data rules, and a computable acceptance
+> checklist — so a fresh session can work from it without reading the rest of the repo.
+> What follows here is the summary.
+
 ## Design rules these follow
 
 - **Severity colours are PAGASA's own rainfall-warning convention** — Watch amber,

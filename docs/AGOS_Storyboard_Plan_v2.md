@@ -296,7 +296,9 @@ Validator result (light, surface `#fcfcfb`): lightness band **PASS** · chroma f
 
 **Sequential** (magnitude — rainfall, lahar volume, exposure): single blue hue, light → dark. Never a rainbow.
 
-**Status — alert severity only, PAGASA-aligned:** Watch `#F2C14E` · Warning `#D9531E` · Evacuate Now `#B3251C`. Always shipped with icon **and** text label, never colour alone.
+**Status — alert severity only, PAGASA-aligned:** Watch `#F2C14E` · Warning `#C74A1A` · Evacuate Now `#9E1F17`. Always shipped with icon **and** text label, never colour alone.
+
+**Corrected after a contrast check.** The first pass used Warning `#D9531E` and Evacuate `#B3251C`. `#D9531E` gives white text **4.03:1** — below AA — and would have shipped failing. The replacements are verified: Watch `#F2C14E` on `#4a3708` **6.80:1**, Warning `#C74A1A` on white **4.75:1**, Evacuate `#9E1F17` on white **7.89:1**. Darkening the two lower tiers also turned the ramp into a **lightness** ramp (relative luminance 0.576 → 0.171 → 0.083), so the escalation now survives greyscale print and colour-blind vision rather than depending on hue.
 
 **Reservation rule.** Amber is structurally required in the categorical set — without a warm pole, blue and purple fail CVD separation (ΔE 2.6 protan). To keep status colours reserved, the two systems are separated **by page role**: categorical series appear only on analytical pages; status colours appear only on the P9 alert mockups. They never co-occur on a page.
 
