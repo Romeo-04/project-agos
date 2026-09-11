@@ -159,6 +159,9 @@ evacuated, 11 barangays affected [S5] → 18 Aug: 1,076 individuals / 336 famili
 evacuated [S6] → 28–29 Aug: renewed flooding, major roads impassable, erosion in Barangay
 Kalaklan [S7].**
 
+> **Three evacuations in one month, on a river whose wettest month has been known for thirty
+> years.** Foreseeable is not the same as forecast — and that gap is what the next page is for.
+
 > The highlight on August is **driven by the data**, not hand-picked: the dataset carries a
 > `Wettest month` flag, so the emphasis survives a refresh.
 
@@ -171,7 +174,8 @@ Kalaklan [S7].**
 
 `—` · **Architecture diagram** + one small SAC tile
 
-> ## AGOS: predictive river sensing, joined to community-verified alerting.
+> ## AGOS: river sensing joined to community-verified alerting.
+> ### Knowing that August floods is climatology. It does not tell a household on a Tuesday night whether to leave. Converting a season into hours is the whole job.
 
 **Flow, left to right:**
 

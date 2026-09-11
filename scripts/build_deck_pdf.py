@@ -41,6 +41,25 @@ def check_images() -> list:
     return problems
 
 
+def unused_assets() -> list:
+    """Files that exist but no page references.
+
+    A file sitting in deck/charts/ is not the same as a page using it. P7 and
+    P9 were captured, passed the missing-file check because the file existed,
+    and still rendered their placeholder box because nothing pointed at them.
+    """
+    import re
+    html = SRC.read_text(encoding="utf-8")
+    used = {m.group(1).split("/")[-1] for m in re.finditer(r'src="([^"]+)"', html)}
+    stray = []
+    d = ROOT / "deck" / "charts"
+    if d.exists():
+        for f in sorted(d.iterdir()):
+            if f.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"} and f.name not in used:
+                stray.append(f"{f.relative_to(ROOT)} exists but no page references it")
+    return stray
+
+
 def missing_assets() -> list:
     """Report referenced files that do not exist, so a blank box is never a surprise."""
     import re
@@ -73,6 +92,8 @@ def main() -> None:
 
     for note in missing_assets():
         print(f"  MISSING  {note}")
+    for note in unused_assets():
+        print(f"  UNUSED   {note}")
 
     with sync_playwright() as p:
         browser = p.chromium.launch()
