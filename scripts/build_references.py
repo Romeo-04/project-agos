@@ -15,6 +15,8 @@ Usage:  python scripts/build_references.py
 import re
 from pathlib import Path
 
+from _refs_deck import write_deck_pages
+
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "docs" / "SOURCES.md"
 OUT = ROOT / "docs" / "REFERENCES.md"
@@ -146,6 +148,8 @@ def main() -> None:
 
     OUT.write_text("\n".join(out), encoding="utf-8")
     print(f"  wrote {OUT.relative_to(ROOT)}")
+
+    write_deck_pages(grouped, order, rules)
     print(f"  {len(sources)} sourced figures across {len(grouped)} organisations")
     print(f"  {len(rules)} competition rules")
 

@@ -98,12 +98,21 @@ def main() -> None:
     if pages <= 0:
         pages = raw.count(b"/Type/Page") - raw.count(b"/Type/Pages")
 
+    # References are required, and explicitly exempt from the page cap, so
+    # they are counted apart from the pages that must fit inside it.
+    ref_pages = SRC.read_text(encoding="utf-8").count('data-refs="1"')
+    content_pages = pages - ref_pages
+
     print(f"\n  wrote {OUT.relative_to(ROOT)}")
-    print(f"  {pages} pages · {size_mb:.2f} MB")
+    plural = "" if ref_pages == 1 else "s"
+    print(f"  {content_pages} content pages + {ref_pages} reference page{plural}"
+          f" = {pages} total · {size_mb:.2f} MB")
 
     fails = []
-    if pages > MAX_PAGES:
-        fails.append(f"{pages} pages exceeds the {MAX_PAGES}-page cap")
+    if content_pages > MAX_PAGES:
+        fails.append(f"{content_pages} content pages exceeds the {MAX_PAGES}-page cap")
+    if ref_pages == 0:
+        fails.append("no references page, and ADSE requires one")
     if size_mb > MAX_MB:
         fails.append(f"{size_mb:.1f} MB exceeds the {MAX_MB} MB cap")
     fails += check_images()
@@ -113,9 +122,10 @@ def main() -> None:
         for f in fails:
             print(f"  FAIL  {f}")
         sys.exit(1)
-    print("  PASS  page count, file size and per-image size are all within the ADSE limits.")
+    print("  PASS  page count, file size, per-image size and the references page")
+    print("        all satisfy the ADSE rules.")
     print("  Still to check by eye: every chart legible at 100% and in print,")
-    print("  the cover's six required elements, and the references page.")
+    print("  and the cover's six required elements.")
 
 
 if __name__ == "__main__":
