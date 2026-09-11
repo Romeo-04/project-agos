@@ -272,8 +272,8 @@ half a warning.
 
 > ## Nine of eleven could only be reached by helicopter.
 
-**On 6 September 2026 — three days before this session — 11 Aeta communities in Botolan,
-Zambales, totalling 2,519 families, were cut off** by swollen rivers and impassable roads
+**On 6 September 2026, five days before this storyboard was submitted, 11 Aeta communities
+in Botolan, Zambales, totalling 2,519 families, were cut off** by swollen rivers and impassable roads
 along the **Bucao River** and two tributaries draining Mount Pinatubo. [S15]
 
 - Relief took **over seven hours**.
