@@ -37,9 +37,16 @@ part that matters most here — the **geographic scope**.
 
 **Description (one sentence, must name the solution):**
 
-> AGOS is a predictive river-sensing and community-verified alerting system for Zambales,
-> Philippines — turning rainfall data into hours of warning for the households that current
-> flood indices cannot see.
+> AGOS is a river-sensing and community-verified flood warning system for Zambales,
+> Philippines — turning rainfall into hours of warning for the households that regional
+> flood indices under-count and existing alerts reach last.
+
+*Two words carry weight here.* **Under-count**, not "cannot see": an index is a
+country-level scoring instrument with no detection function, and what P4 proves is that it
+scores the hazard too low. And the word **predictive** was removed — it was the first
+adjective a judge read, and P8 ships as a plain time series because SAC's Predictive
+Forecast is licence-gated on this tenant. "Turning rainfall into hours of warning" makes the
+same claim as an outcome, which the deck can actually show.
 
 **Export as** `PHILIPPINES_NAIVE BAIS.pdf`
 
@@ -101,9 +108,9 @@ Against the ASEAN median, the Philippines scores: [S13]
 
 > **This inversion is the problem statement.** Philippine flooding is *compound* —
 > typhoon-driven, and in Zambales lahar-amplified — so a single-hazard river-flood index
-> systematically under-counts it. If regional indices cannot see the hazard Zambales faces,
-> local sensing and community verification are not a convenience. They are the only
-> instrument that can.
+> systematically under-counts it. If regional indices score the hazard Zambales faces too
+> low, local sensing and community verification are not a convenience. They are the only
+> instruments that measure it directly.
 
 **Stat band — August 2026, national scope:** **8.1 million** people affected across
 **10 regions** · **PHP 3.4 billion** infrastructure damage · **PHP 689 million** agriculture

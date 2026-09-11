@@ -36,6 +36,11 @@ AGOS is a flood early-warning system for Zambales, Philippines. River sensors an
 radar feed a river-stage forecast; the forecast becomes an alert delivered on the channel a
 household actually has. Success is a household leaving earlier than it otherwise would have.
 
+**One-sentence description, as it appears on the cover:** AGOS is a river-sensing and
+community-verified flood warning system for Zambales, Philippines — turning rainfall into
+hours of warning for the households that regional flood indices under-count and existing
+alerts reach last.
+
 The project's modelled claim is that lead time is the variable that matters: under current
 reactive warning, evacuation reaches 30% at one hour, against 80% with AGOS lead time.
 
@@ -45,8 +50,8 @@ Regional flood indices under-count Philippine flood risk because Philippine floo
 *compound* — typhoon-driven, and in Zambales lahar-amplified. Against the ASEAN median the
 Philippines scores −1.6 on river flood hazard (rank 8 of 10) yet +2.25 on all-hazard
 exposure (rank 1 of 10). **That measurement gap is the product's reason to exist:** if
-regional indices cannot see the hazard Zambales faces, local sensing plus community
-verification is the only instrument that can.
+regional indices score the hazard Zambales faces too low, local sensing plus community
+verification is the only instrument that measures it directly.
 
 The funding mechanism is the second differentiator: lahar-sand dredging revenue recycled
 into operating cost as a reserve fund. Only 1.06% of the 4.7 bn m³ Pinatubo lahar backlog
