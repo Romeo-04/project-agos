@@ -38,6 +38,15 @@ each drawn as a labelled dashed box naming the exact file it wants:
 
 Drop each file in and re-run; nothing else needs editing.
 
+## Rebuilding this in a slide tool
+
+`deck/index.html` is the reference implementation. To rebuild the same deck in PowerPoint,
+Google Slides or Canva, follow **`docs/SLIDE_BUILD_BRIEF.md`** — it is self-contained
+(page size, layout template, tokens, slide inventory, acceptance checklist) and written so a
+session with no other context can work from it.
+
+Canva page size: **Custom, 297 × 210 mm**.
+
 ## What you need, and where it comes from
 
 | Input | Source |
