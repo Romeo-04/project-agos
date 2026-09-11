@@ -132,7 +132,22 @@ it for magnitude), `sapBlueGradientPalette`, and `sapIbcsGradientPalette`. For a
 warm ramp, create a **Story Palette** with two stops: `9E1F17` → `FBE0DD`, the evacuate red
 from the design tokens and a light tint of the same hue.
 
-**12. Screenshots default to the repo root.**
+**12. "Round Data Label Values" silently falsifies a label.**
+The P4 chart printed **-2** where the dataset held **-1.6**, sitting on the same page as
+copy that said -1.6. The data was right, the dataset's Decimal Places was already 2, and
+every other label on that chart showed two decimals - only this one was wrong, which is
+what made it hard to spot.
+
+The cause is a per-chart toggle, **Styling -> Data Label -> Round Data Label Values**, on by
+default. It rounds a label when it judges the space tight, so it damages some values and not
+others, and it does it to the *label* while the underlying value stays correct.
+
+**Turn it off on any chart whose numbers appear in the deck copy.** A chart that disagrees
+with the sentence beside it costs more credibility than a slightly wider label. Number
+formatting for charts lives in **Styling**, not Builder - Builder's measure menu only offers
+Display Options (Description / ID) and Rename.
+
+**13. Screenshots default to the repo root.**
 Always pass `.playwright-mcp/<name>.png`. Root-level images are gitignored as a backstop, but the artifacts belong in the ignored folder, not scattered.
 
 ---
